@@ -40,3 +40,6 @@ build/
 /mvnw
 /mvnw.bat
 mvnw.cmd
+
+### openapi files ###
+/.openapi-generator

@@ -77,18 +77,20 @@
 							<goal>generate</goal>
 						</goals>
 						<configuration>
+							<configOptions>
+								<sourceFolder>src/gen/java</sourceFolder>
+								<delegatePattern>true</delegatePattern>
+							</configOptions>
+							<output>.</output>
 							<inputSpec>
 								${project.basedir}/src/main/resources/soundgood.yml
 							</inputSpec>
 							<generatorName>spring</generatorName>
-							<apiPackage>se.kth.openapi.api</apiPackage>
-							<modelPackage>se.kth.openapi.model</modelPackage>
+							<apiPackage>se.kth.iv1351.openapi</apiPackage>
+							<modelPackage>se.kth.iv1351.openapi.model</modelPackage>
 							<supportingFilesToGenerate>
 								ApiUtil.java
 							</supportingFilesToGenerate>
-							<configOptions>
-								<delegatePattern>true</delegatePattern>
-							</configOptions>
 						</configuration>
 					</execution>
 				</executions>
