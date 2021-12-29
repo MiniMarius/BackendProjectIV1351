@@ -12,9 +12,29 @@ paths:
       responses:
         '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
     put:
       description: ""
       parameters: []
       responses:
         "200":
           description: "OK"
+
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        personNumber:
+          type: string
+        age:
+          type: integer
+        email:
+          type: string
