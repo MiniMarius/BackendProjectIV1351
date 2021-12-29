@@ -78,7 +78,7 @@
 						</goals>
 						<configuration>
 							<configOptions>
-								<sourceFolder>src/gen/java</sourceFolder>
+								<sourceFolder>src/main/java</sourceFolder>
 								<delegatePattern>true</delegatePattern>
 							</configOptions>
 							<output>.</output>
