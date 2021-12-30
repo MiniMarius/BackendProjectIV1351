@@ -6,9 +6,15 @@ info:
 servers:
   - url: https://soundgood.music/
 paths:
-  /user:
+  /user/{userid}:
     get:
-      description: Returns a list of stuff
+      description: Returns a user
+      parameters:
+        - name: userid
+          in: path
+          required: true
+          schema:
+            type: integer
       responses:
         '200':
           description: Successful response
@@ -16,6 +22,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/User"
+  /user:
     post:
       description: Lets a user post a new user
       requestBody:

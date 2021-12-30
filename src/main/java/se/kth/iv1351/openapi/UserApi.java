@@ -17,7 +17,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2021-12-30T16:22:33.219973+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2021-12-30T17:42:51.855306+02:00[Europe/Mariehamn]")
 @Validated
 @Api(value = "user", description = "the user API")
 public interface UserApi {
@@ -25,24 +25,6 @@ public interface UserApi {
     default UserApiDelegate getDelegate() {
         return new UserApiDelegate() {};
     }
-
-    /**
-     * GET /user
-     * Returns a list of stuff
-     *
-     * @return Successful response (status code 200)
-     */
-    @ApiOperation(value = "", nickname = "userGet", notes = "Returns a list of stuff", response = User.class, tags={  })
-    @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "Successful response", response = User.class) })
-    @GetMapping(
-        value = "/user",
-        produces = { "application/json" }
-    )
-    default ResponseEntity<User> userGet() {
-        return getDelegate().userGet();
-    }
-
 
     /**
      * POST /user
@@ -62,6 +44,25 @@ public interface UserApi {
     )
     default ResponseEntity<Void> userPost(@ApiParam(value = "" ,required=true )  @Valid @RequestBody User user) {
         return getDelegate().userPost(user);
+    }
+
+
+    /**
+     * GET /user/{userid}
+     * Returns a user
+     *
+     * @param userid  (required)
+     * @return Successful response (status code 200)
+     */
+    @ApiOperation(value = "", nickname = "userUseridGet", notes = "Returns a user", response = User.class, tags={  })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 200, message = "Successful response", response = User.class) })
+    @GetMapping(
+        value = "/user/{userid}",
+        produces = { "application/json" }
+    )
+    default ResponseEntity<User> userUseridGet(@ApiParam(value = "",required=true) @PathVariable("userid") Integer userid) {
+        return getDelegate().userUseridGet(userid);
     }
 
 }
