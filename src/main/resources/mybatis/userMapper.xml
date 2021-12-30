@@ -14,13 +14,4 @@
         FROM
         USER
     </select>
-    <insert
-            id="insertUser"
-            parameterType="org.mybatis.example.User"
-            flushCache="true"
-            timeout="20">
-        INSERT INTO USER (USERID, USERNAME)
-        VALUES (#{userid}, #{username})
-
-    </insert>
 </mapper>
