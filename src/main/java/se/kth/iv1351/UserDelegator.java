@@ -18,7 +18,15 @@ public class UserDelegator implements UserApiDelegate {
     public ResponseEntity<User> userGet() {
         UserData userData = userMapper.selectUser();
         User user  = new User();
-        user.setName("Fisen");
+        user.setId(userData.getId());
+        user.setName(userData.getName());
+        user.setAge(userData.getAge());
         return new ResponseEntity<User>(user, HttpStatus.OK);
+    }
+
+    @Override
+    public ResponseEntity<Void> userPost(User user) {
+        userMapper.insertUser();
+        return UserApiDelegate.super.userPost(user);
     }
 }

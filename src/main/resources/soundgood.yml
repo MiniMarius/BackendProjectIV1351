@@ -16,12 +16,23 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/User"
-    put:
-      description: ""
-      parameters: []
+    post:
+      description: Lets a user post a new user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/User"
+
       responses:
-        "200":
-          description: "OK"
+        '200':
+          description: Successfully created a new user
+
+        '400':
+          description: Invalid request
+
+
 
 components:
   schemas:

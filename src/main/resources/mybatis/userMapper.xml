@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="se.kth.iv1351.dao.UserMapper">
-    <select id="select" parameterType="java.lang.String" resultType="se.kth.iv1351.model.User">
-        SELECT
-        USERID,
-        USERNAME
-        FROM
-        USER
+    <select id="selectUser" parameterType="java.lang.String" resultType="se.kth.iv1351.model.UserData">
+        SELECT * from USERS;
     </select>
-    <select id="selectX" parameterType="String" resultType="String">
-        SELECT
-        USERNAME
-        FROM
-        USER
+    <select id="insertUser" parameterType="String" resultType="String">
+        INSERT INTO USERS (id, name, age)
+        VALUES ('1', 'Bajskorv', '18');
     </select>
 </mapper>

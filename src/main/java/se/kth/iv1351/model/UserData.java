@@ -2,7 +2,7 @@ package se.kth.iv1351.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class User {
+public class UserData {
     private Integer id;
 
     private String name;
