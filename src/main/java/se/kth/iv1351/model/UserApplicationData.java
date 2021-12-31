@@ -5,15 +5,13 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class UserPaymentData {
+public class UserApplicationData {
 
     private Integer id;
 
-    private String type;
+    private String letter;
 
-    private Integer amount;
-
-    private String currency;
+    private Integer instrument_type_id;
 
     private Integer user_id;
 }

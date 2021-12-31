@@ -1,5 +1,6 @@
 CREATE TABLE users (
  id INT NOT NULL,
+ person_number VARCHAR(500),
  name VARCHAR(500),
  age VARCHAR(500),
  address VARCHAR(500),
