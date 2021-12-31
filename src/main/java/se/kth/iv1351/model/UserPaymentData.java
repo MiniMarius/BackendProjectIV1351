@@ -15,5 +15,5 @@ public class UserPaymentData {
 
     private String currency;
 
-    private Integer user_id;
+    private Integer userid;
 }

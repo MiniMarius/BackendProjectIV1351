@@ -15,9 +15,9 @@ public class LessonData {
 
     private String level;
 
-    private Integer min_participants;
+    private Integer minParticipants;
 
-    private Integer max_participants;
+    private Integer maxParticipants;
 
     private String type;
 

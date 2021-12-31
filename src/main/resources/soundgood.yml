@@ -56,3 +56,98 @@ components:
           type: integer
         email:
           type: string
+    InstrumentType:
+      type: object
+      properties:
+        id:
+          type: integer
+        type:
+          type: string
+    Lease:
+      type: object
+      properties:
+        id:
+          type: integer
+        startTime:
+          type: string
+        endTime:
+          type: string
+        rentalInstrumentId:
+          type: integer
+        studentId:
+          type: integer
+    Lesson:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        description:
+          type: string
+        level:
+          type: string
+        minParticipants:
+          type: integer
+        maxParticipants:
+          type: integer
+        type:
+          type: string
+        genre:
+          type: string
+    Parent:
+      type: object
+      properties:
+        studentId:
+          type: integer
+        parentId:
+          type: integer
+    RentalInstrument:
+      type: object
+      properties:
+        id:
+          type: integer
+        description:
+          type: string
+        serialNumber:
+          type: string
+        instrumentTypeId:
+          type: integer
+    Sibling:
+      type: object
+      properties:
+        studentIdOne:
+          type: integer
+        studentIdTwo:
+          type: integer
+    UserApplication:
+      type: object
+      properties:
+        id:
+          type: integer
+        letter:
+          type: string
+        instrumentTypeId:
+          type: integer
+        userId:
+          type: integer
+    UserInstrument:
+      type: object
+      properties:
+        id:
+          type: integer
+        instrumentTypeId:
+          type: integer
+    UserPayment:
+      type: object
+      properties:
+        id:
+          type: integer
+        type:
+          type: string
+        amount:
+          type: integer
+        currency:
+          type: string
+        userid:
+          type: integer

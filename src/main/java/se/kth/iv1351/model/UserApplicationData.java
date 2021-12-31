@@ -11,7 +11,7 @@ public class UserApplicationData {
 
     private String letter;
 
-    private Integer instrument_type_id;
+    private Integer instrumentTypeId;
 
-    private Integer user_id;
+    private Integer userId;
 }

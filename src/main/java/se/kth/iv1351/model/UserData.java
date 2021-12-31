@@ -9,7 +9,7 @@ public class UserData {
 
     private Integer id;
 
-    private String person_number;
+    private String personNumber;
 
     private String name;
 
@@ -19,5 +19,5 @@ public class UserData {
 
     private String email;
 
-    private String phone_number;
+    private String phoneNumber;
 }

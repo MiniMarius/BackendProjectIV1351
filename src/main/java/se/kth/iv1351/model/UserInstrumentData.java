@@ -7,7 +7,7 @@ import lombok.Setter;
 @Setter
 public class UserInstrumentData {
 
-    private int userid;
+    private Integer userid;
 
-    private int instrumentTypeId;
+    private Integer instrumentTypeId;
 }

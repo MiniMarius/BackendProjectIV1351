@@ -11,7 +11,7 @@ public class RentalInstrumentData {
 
     private String description;
 
-    private String serial_number;
+    private String serialNumber;
 
-    private Integer instrument_type_id;
+    private Integer instrumentTypeId;
 }

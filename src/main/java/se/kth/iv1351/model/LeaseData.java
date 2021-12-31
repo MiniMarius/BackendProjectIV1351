@@ -9,11 +9,11 @@ public class LeaseData {
 
     private Integer id;
 
-    private String start_time;
+    private String startTime;
 
-    private String end_time;
+    private String endTime;
 
-    private Integer rental_instrument_id;
+    private Integer rentalInstrumentId;
 
-    private Integer student_id;
+    private Integer studentId;
 }
