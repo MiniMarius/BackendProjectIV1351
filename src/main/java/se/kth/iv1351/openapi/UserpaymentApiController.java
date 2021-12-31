@@ -6,16 +6,16 @@ import java.util.Optional;
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2021-12-31T14:02:40.800669+02:00[Europe/Mariehamn]")
 @Controller
 @RequestMapping("${openapi.sample.base-path:}")
-public class UserApiController implements UserApi {
+public class UserpaymentApiController implements UserpaymentApi {
 
-    private final UserApiDelegate delegate;
+    private final UserpaymentApiDelegate delegate;
 
-    public UserApiController(@org.springframework.beans.factory.annotation.Autowired(required = false) UserApiDelegate delegate) {
-        this.delegate = Optional.ofNullable(delegate).orElse(new UserApiDelegate() {});
+    public UserpaymentApiController(@org.springframework.beans.factory.annotation.Autowired(required = false) UserpaymentApiDelegate delegate) {
+        this.delegate = Optional.ofNullable(delegate).orElse(new UserpaymentApiDelegate() {});
     }
 
     @Override
-    public UserApiDelegate getDelegate() {
+    public UserpaymentApiDelegate getDelegate() {
         return delegate;
     }
 

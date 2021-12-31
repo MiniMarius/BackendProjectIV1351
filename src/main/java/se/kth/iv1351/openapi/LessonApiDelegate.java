@@ -1,6 +1,6 @@
 package se.kth.iv1351.openapi;
 
-import se.kth.iv1351.openapi.model.User;
+import se.kth.iv1351.openapi.model.Lesson;
 import io.swagger.annotations.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -13,43 +13,29 @@ import java.util.Map;
 import java.util.Optional;
 
 /**
- * A delegate to be called by the {@link UserApiController}}.
+ * A delegate to be called by the {@link LessonApiController}}.
  * Implement this interface with a {@link org.springframework.stereotype.Service} annotated class.
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2021-12-31T14:02:40.800669+02:00[Europe/Mariehamn]")
-public interface UserApiDelegate {
+public interface LessonApiDelegate {
 
     default Optional<NativeWebRequest> getRequest() {
         return Optional.empty();
     }
 
     /**
-     * POST /user
-     * Lets a user post a new user
+     * GET /lesson/{lessonid}
+     * Returns a lesson
      *
-     * @param user  (required)
-     * @return Successfully created a new user (status code 200)
-     *         or Invalid request (status code 400)
-     * @see UserApi#userPost
-     */
-    default ResponseEntity<Void> userPost(User user) {
-        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
-
-    }
-
-    /**
-     * GET /user/{userid}
-     * Returns a user
-     *
-     * @param userid  (required)
+     * @param lessonid  (required)
      * @return Successful response (status code 200)
-     * @see UserApi#userUseridGet
+     * @see LessonApi#lessonLessonidGet
      */
-    default ResponseEntity<User> userUseridGet(Integer userid) {
+    default ResponseEntity<Lesson> lessonLessonidGet(Integer lessonid) {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
-                    String exampleString = "{ \"name\" : \"name\", \"id\" : 0, \"personNumber\" : \"personNumber\", \"age\" : 6, \"email\" : \"email\" }";
+                    String exampleString = "{ \"level\" : \"level\", \"name\" : \"name\", \"genre\" : \"genre\", \"description\" : \"description\", \"id\" : 0, \"type\" : \"type\", \"minParticipants\" : 6, \"maxParticipants\" : 1 }";
                     ApiUtil.setExampleResponse(request, "application/json", exampleString);
                     break;
                 }

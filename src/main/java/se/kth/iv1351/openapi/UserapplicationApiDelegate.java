@@ -1,6 +1,6 @@
 package se.kth.iv1351.openapi;
 
-import se.kth.iv1351.openapi.model.User;
+import se.kth.iv1351.openapi.model.UserApplication;
 import io.swagger.annotations.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -13,43 +13,29 @@ import java.util.Map;
 import java.util.Optional;
 
 /**
- * A delegate to be called by the {@link UserApiController}}.
+ * A delegate to be called by the {@link UserapplicationApiController}}.
  * Implement this interface with a {@link org.springframework.stereotype.Service} annotated class.
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2021-12-31T14:02:40.800669+02:00[Europe/Mariehamn]")
-public interface UserApiDelegate {
+public interface UserapplicationApiDelegate {
 
     default Optional<NativeWebRequest> getRequest() {
         return Optional.empty();
     }
 
     /**
-     * POST /user
-     * Lets a user post a new user
+     * GET /userapplication/{applicationid}
+     * Returns a user application
      *
-     * @param user  (required)
-     * @return Successfully created a new user (status code 200)
-     *         or Invalid request (status code 400)
-     * @see UserApi#userPost
-     */
-    default ResponseEntity<Void> userPost(User user) {
-        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
-
-    }
-
-    /**
-     * GET /user/{userid}
-     * Returns a user
-     *
-     * @param userid  (required)
+     * @param applicationid  (required)
      * @return Successful response (status code 200)
-     * @see UserApi#userUseridGet
+     * @see UserapplicationApi#userapplicationApplicationidGet
      */
-    default ResponseEntity<User> userUseridGet(Integer userid) {
+    default ResponseEntity<UserApplication> userapplicationApplicationidGet(Integer applicationid) {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
-                    String exampleString = "{ \"name\" : \"name\", \"id\" : 0, \"personNumber\" : \"personNumber\", \"age\" : 6, \"email\" : \"email\" }";
+                    String exampleString = "{ \"letter\" : \"letter\", \"instrumentTypeId\" : 6, \"id\" : 0, \"userId\" : 1 }";
                     ApiUtil.setExampleResponse(request, "application/json", exampleString);
                     break;
                 }
