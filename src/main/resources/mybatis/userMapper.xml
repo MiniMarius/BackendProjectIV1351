@@ -4,8 +4,8 @@
     <select id="selectUser" parameterType="java.lang.Integer" resultType="se.kth.iv1351.model.UserData">
         SELECT * FROM USERS WHERE id= #{userid};
     </select>
-    <select id="insertUser" parameterType="String" resultType="String">
+    <insert id="insertUser" parameterType="String">
         INSERT INTO USERS (id, name, age)
         VALUES (1, 'Bajskorv', '18');
-    </select>
+    </insert>
 </mapper>
