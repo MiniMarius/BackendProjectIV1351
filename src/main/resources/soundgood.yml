@@ -38,7 +38,166 @@ paths:
 
         '400':
           description: Invalid request
-
+  /booking/{bookingid}:
+    get:
+      description: Returns a booking
+      parameters:
+        - name: bookingid
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Booking"
+  /instrumenttype/{instrumentid}:
+    get:
+      description: Returns a instrument type
+      parameters:
+        - name: instrumentid
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InstrumentType"
+  /lease/{leaseid}:
+    get:
+      description: Returns a lease
+      parameters:
+        - name: leaseid
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Lease"
+  /lesson/{lessonid}:
+    get:
+      description: Returns a lesson
+      parameters:
+        - name: lessonid
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Lesson"
+  /parent/{parentid}:
+    get:
+      description: Returns a parent
+      parameters:
+        - name: parentid
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Parent"
+  /rentalinstrument/{rentalid}:
+    get:
+      description: Returns a rental instrument
+      parameters:
+        - name: rentalid
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RentalInstrument"
+  /sibling/{siblingid}:
+    get:
+      description: Returns a sibling
+      parameters:
+        - name: siblingid
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Sibling"
+  /userapplication/{applicationid}:
+    get:
+      description: Returns a user application
+      parameters:
+        - name: applicationid
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UserApplication"
+  /userinstrument/{instrumentid}:
+    get:
+      description: Returns a user instrument
+      parameters:
+        - name: instrumentid
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UserInstrument"
+  /userpayment/{paymentid}:
+    get:
+      description: Returns a user payment
+      parameters:
+        - name: paymentid
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UserPayment"
 
 
 components:
@@ -56,6 +215,21 @@ components:
           type: integer
         email:
           type: string
+    Booking:
+      type: object
+      properties:
+        id:
+          type: integer
+        startTime:
+          type: string
+        endTime:
+          type: string
+        lessonId:
+          type: integer
+        studentId:
+          type: integer
+        instructorId:
+          type: integer
     InstrumentType:
       type: object
       properties:
