@@ -1,4 +1,27 @@
 package se.kth.iv1351;
 
-public class UserApplicationDelegator {
+import lombok.AllArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+import se.kth.iv1351.dao.UserApplicationMapper;
+import se.kth.iv1351.model.UserApplicationData;
+import se.kth.iv1351.openapi.UserapplicationApiDelegate;
+import se.kth.iv1351.openapi.model.UserApplication;
+
+@AllArgsConstructor
+@Service
+public class UserApplicationDelegator implements UserapplicationApiDelegate {
+    UserApplicationMapper userApplicationMapper;
+
+    @Override
+    public ResponseEntity<UserApplication> userapplicationApplicationidGet(Integer applicationid) {
+        UserApplicationData userApplicationData = userApplicationMapper.selectUserApplication(applicationid);
+        UserApplication userApplication = new UserApplication();
+        userApplication.setId(userApplicationData.getId());
+        userApplication.setUserId(userApplicationData.getUserId());
+        userApplication.setLetter(userApplicationData.getLetter());
+        userApplication.setInstrumentTypeId(userApplicationData.getInstrumentTypeId());
+        return new ResponseEntity<UserApplication>(userApplication, HttpStatus.OK);
+    }
 }
