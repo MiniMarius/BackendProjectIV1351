@@ -6,6 +6,6 @@
     </select>
     <insert id="insertUserPayment" parameterType="se.kth.iv1351.openapi.model.UserPayment">
         INSERT INTO BOOKINGS (id, type, amount, currency, user_id)
-        VALUES (#{id}, #{type}, #{amount}, #{currency}, #{userId});
+        VALUES (#{id}, #{type}, #{amount}, #{currency}, #{userid});
     </insert>
 </mapper>
