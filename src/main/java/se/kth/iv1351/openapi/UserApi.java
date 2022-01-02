@@ -17,7 +17,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-02T14:27:28.397731+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-02T14:46:14.705685+02:00[Europe/Mariehamn]")
 @Validated
 @Api(value = "user", description = "the user API")
 public interface UserApi {
@@ -34,15 +34,16 @@ public interface UserApi {
      * @return Successfully created a new user (status code 200)
      *         or Invalid request (status code 400)
      */
-    @ApiOperation(value = "", nickname = "userPost", notes = "Lets a user post a new user", tags={  })
+    @ApiOperation(value = "", nickname = "userPost", notes = "Lets a user post a new user", response = User.class, tags={  })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "Successfully created a new user"),
+        @ApiResponse(code = 200, message = "Successfully created a new user", response = User.class),
         @ApiResponse(code = 400, message = "Invalid request") })
     @PostMapping(
         value = "/user",
+        produces = { "application/json" },
         consumes = { "application/json" }
     )
-    default ResponseEntity<Void> userPost(@ApiParam(value = "" ,required=true )  @Valid @RequestBody User user) {
+    default ResponseEntity<User> userPost(@ApiParam(value = "" ,required=true )  @Valid @RequestBody User user) {
         return getDelegate().userPost(user);
     }
 

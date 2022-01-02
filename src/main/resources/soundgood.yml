@@ -35,9 +35,14 @@ paths:
       responses:
         '200':
           description: Successfully created a new user
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
 
         '400':
           description: Invalid request
+
   /booking/{bookingid}:
     get:
       description: Returns a booking

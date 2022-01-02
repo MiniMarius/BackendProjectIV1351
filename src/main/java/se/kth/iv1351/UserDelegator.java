@@ -8,6 +8,7 @@ import se.kth.iv1351.dao.UserMapper;
 import se.kth.iv1351.model.UserData;
 import se.kth.iv1351.openapi.UserApiDelegate;
 import se.kth.iv1351.openapi.model.User;
+import se.kth.iv1351.util.IdGenerator;
 
 @AllArgsConstructor
 @Service
@@ -29,8 +30,10 @@ public class UserDelegator implements UserApiDelegate {
     }
 
     @Override
-    public ResponseEntity<Void> userPost(User user) {
+    public ResponseEntity<User> userPost(User user) {
+        Integer id = IdGenerator.generate();
+        user.setId(id);
         userMapper.insertUser(user);
-        return new ResponseEntity<>(HttpStatus.OK);
+        return userUseridGet(id);
     }
 }
