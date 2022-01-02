@@ -4,4 +4,8 @@
     <select id="selectUserPayment" parameterType="java.lang.Integer" resultType="se.kth.iv1351.model.UserPaymentData">
         SELECT * FROM USER_PAYMENTS WHERE id= #{paymentid};
     </select>
+    <insert id="insertUserPayment" parameterType="se.kth.iv1351.openapi.model.UserPayment">
+        INSERT INTO BOOKINGS (id, type, amount, currency, user_id)
+        VALUES (#{id}, #{type}, #{amount}, #{currency}, #{userId});
+    </insert>
 </mapper>

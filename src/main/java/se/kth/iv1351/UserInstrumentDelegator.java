@@ -8,6 +8,7 @@ import se.kth.iv1351.dao.UserInstrumentMapper;
 import se.kth.iv1351.model.UserInstrumentData;
 import se.kth.iv1351.openapi.UserinstrumentApiDelegate;
 import se.kth.iv1351.openapi.model.UserInstrument;
+import se.kth.iv1351.util.IdGenerator;
 
 @AllArgsConstructor
 @Service
@@ -21,5 +22,12 @@ public class UserInstrumentDelegator implements UserinstrumentApiDelegate {
         userInstrument.setInstrumentTypeId(userInstrumentData.getInstrumentTypeId());
         userInstrument.setId(userInstrumentData.getUserid());
         return new ResponseEntity<UserInstrument>(userInstrument, HttpStatus.OK);
+    }
+
+    @Override
+    public ResponseEntity<UserInstrument> userinstrumentPost(UserInstrument userInstrument) {
+        Integer id = IdGenerator.generate();
+        userInstrumentMapper.insertUserInstrument(userInstrument);
+        return userinstrumentInstrumentidGet(id);
     }
 }

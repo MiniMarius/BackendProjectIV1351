@@ -8,6 +8,7 @@ import se.kth.iv1351.dao.LeaseMapper;
 import se.kth.iv1351.model.LeaseData;
 import se.kth.iv1351.openapi.LeaseApiDelegate;
 import se.kth.iv1351.openapi.model.Lease;
+import se.kth.iv1351.util.IdGenerator;
 
 @AllArgsConstructor
 @Service
@@ -24,5 +25,12 @@ public class LeaseDelegator implements LeaseApiDelegate {
         lease.setStudentId(lease.getStudentId());
         lease.setRentalInstrumentId(lease.getRentalInstrumentId());
         return new ResponseEntity<Lease>(lease, HttpStatus.OK);
+    }
+
+    @Override
+    public ResponseEntity<Lease> leasePost(Lease lease) {
+        Integer id = IdGenerator.generate();
+        leaseMapper.insertLease(lease);
+        return leaseLeaseidGet(id);
     }
 }

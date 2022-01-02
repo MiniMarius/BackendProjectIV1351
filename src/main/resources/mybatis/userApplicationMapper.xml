@@ -4,4 +4,8 @@
     <select id="selectUserApplication" parameterType="java.lang.Integer" resultType="se.kth.iv1351.model.UserApplicationData">
         SELECT * FROM USER_APPLICATIONS WHERE id= #{applicationid};
     </select>
+    <insert id="insertUserApplication" parameterType="se.kth.iv1351.openapi.model.UserApplication">
+        INSERT INTO BOOKINGS (id, letter, instrument_type_id, user_id)
+        VALUES (#{id}, #{letter}, #{instrumentTypeId}, #{userId});
+    </insert>
 </mapper>

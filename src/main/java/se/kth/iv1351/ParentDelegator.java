@@ -8,6 +8,7 @@ import se.kth.iv1351.dao.ParentMapper;
 import se.kth.iv1351.model.ParentData;
 import se.kth.iv1351.openapi.ParentApiDelegate;
 import se.kth.iv1351.openapi.model.Parent;
+import se.kth.iv1351.util.IdGenerator;
 
 @AllArgsConstructor
 @Service
@@ -21,5 +22,12 @@ public class ParentDelegator implements ParentApiDelegate {
         parent.setParentId(parentData.getParentId());
         parent.setStudentId(parentData.getStudentId());
         return new ResponseEntity<Parent>(parent, HttpStatus.OK);
+    }
+
+    @Override
+    public ResponseEntity<Parent> parentPost(Parent parent) {
+        Integer id = IdGenerator.generate();
+        parentMapper.insertParent(parent);
+        return parentParentidGet(id);
     }
 }

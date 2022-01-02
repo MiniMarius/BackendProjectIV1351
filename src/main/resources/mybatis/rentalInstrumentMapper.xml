@@ -4,4 +4,8 @@
     <select id="selectRentalInstrument" parameterType="java.lang.Integer" resultType="se.kth.iv1351.model.RentalInstrumentData">
         SELECT * FROM BOOKINGS WHERE id= #{rentalid};
     </select>
+    <insert id="insertRentalInstrument" parameterType="se.kth.iv1351.openapi.model.RentalInstrument">
+        INSERT INTO BOOKINGS (id, description, serial_number, instrument_type_id)
+        VALUES (#{id}, #{description} #{serialNumber}, #{instrumentTypeId});
+    </insert>
 </mapper>

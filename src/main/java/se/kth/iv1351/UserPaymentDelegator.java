@@ -8,6 +8,7 @@ import se.kth.iv1351.dao.UserPaymentMapper;
 import se.kth.iv1351.model.UserPaymentData;
 import se.kth.iv1351.openapi.UserpaymentApiDelegate;
 import se.kth.iv1351.openapi.model.UserPayment;
+import se.kth.iv1351.util.IdGenerator;
 
 @AllArgsConstructor
 @Service
@@ -24,5 +25,12 @@ public class UserPaymentDelegator implements UserpaymentApiDelegate {
         userPayment.setCurrency(userPaymentData.getCurrency());
         userPayment.setType(userPaymentData.getType());
         return new ResponseEntity<UserPayment>(userPayment, HttpStatus.OK);
+    }
+
+    @Override
+    public ResponseEntity<UserPayment> userpaymentPost(UserPayment userPayment) {
+        Integer id = IdGenerator.generate();
+        userPaymentMapper.insertUserPayment(userPayment);
+        return userpaymentPaymentidGet(id);
     }
 }

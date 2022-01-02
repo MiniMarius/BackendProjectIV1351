@@ -8,6 +8,7 @@ import se.kth.iv1351.dao.RentalInstrumentMapper;
 import se.kth.iv1351.model.RentalInstrumentData;
 import se.kth.iv1351.openapi.RentalinstrumentApiDelegate;
 import se.kth.iv1351.openapi.model.RentalInstrument;
+import se.kth.iv1351.util.IdGenerator;
 
 @AllArgsConstructor
 @Service
@@ -23,5 +24,12 @@ public class RentalInstrumentDelegator implements RentalinstrumentApiDelegate {
         rentalInstrument.setDescription(rentalInstrumentData.getDescription());
         rentalInstrument.setSerialNumber(rentalInstrumentData.getSerialNumber());
         return new ResponseEntity<RentalInstrument>(rentalInstrument, HttpStatus.OK);
+    }
+
+    @Override
+    public ResponseEntity<RentalInstrument> rentalinstrumentPost(RentalInstrument rentalInstrument) {
+        Integer id = IdGenerator.generate();
+        rentalInstrumentMapper.insertRentalInstrument(rentalInstrument);
+        return rentalinstrumentRentalidGet(id);
     }
 }

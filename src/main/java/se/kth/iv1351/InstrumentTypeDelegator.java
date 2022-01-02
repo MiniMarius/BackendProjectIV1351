@@ -10,6 +10,7 @@ import se.kth.iv1351.model.InstrumentTypeData;
 import se.kth.iv1351.openapi.InstrumenttypeApiDelegate;
 import se.kth.iv1351.openapi.model.Booking;
 import se.kth.iv1351.openapi.model.InstrumentType;
+import se.kth.iv1351.util.IdGenerator;
 
 @AllArgsConstructor
 @Service
@@ -23,5 +24,12 @@ public class InstrumentTypeDelegator implements InstrumenttypeApiDelegate {
         instrumentType.setId(instrumentTypeData.getId());
         instrumentType.setType(instrumentTypeData.getType());
         return new ResponseEntity<InstrumentType>(instrumentType, HttpStatus.OK);
+    }
+
+    @Override
+    public ResponseEntity<InstrumentType> instrumenttypePost(InstrumentType instrumentType) {
+        Integer id = IdGenerator.generate();
+        instrumentTypeMapper.insertInstrumentType(instrumentType);
+        return instrumenttypeInstrumentidGet(id);
     }
 }

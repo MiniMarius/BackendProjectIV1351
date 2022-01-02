@@ -8,6 +8,7 @@ import se.kth.iv1351.dao.SiblingMapper;
 import se.kth.iv1351.model.SiblingData;
 import se.kth.iv1351.openapi.SiblingApiDelegate;
 import se.kth.iv1351.openapi.model.Sibling;
+import se.kth.iv1351.util.IdGenerator;
 
 @AllArgsConstructor
 @Service
@@ -21,5 +22,12 @@ public class SiblingDelegator implements SiblingApiDelegate {
         sibling.setStudentIdOne(siblingData.getStudentIdOne());
         sibling.setStudentIdTwo(siblingData.getStudentIdTwo());
         return new ResponseEntity<Sibling>(sibling, HttpStatus.OK);
+    }
+
+    @Override
+    public ResponseEntity<Sibling> siblingPost(Sibling sibling) {
+        Integer id = IdGenerator.generate();
+        siblingMapper.insertSibling(sibling);
+        return siblingSiblingidGet(id);
     }
 }

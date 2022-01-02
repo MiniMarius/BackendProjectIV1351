@@ -8,6 +8,7 @@ import se.kth.iv1351.dao.LessonMapper;
 import se.kth.iv1351.model.LessonData;
 import se.kth.iv1351.openapi.LessonApiDelegate;
 import se.kth.iv1351.openapi.model.Lesson;
+import se.kth.iv1351.util.IdGenerator;
 
 @AllArgsConstructor
 @Service
@@ -27,5 +28,12 @@ public class LessonDelegator implements LessonApiDelegate {
         lesson.setMaxParticipants(lessonData.getMaxParticipants());
         lesson.setType(lessonData.getType());
         return new ResponseEntity<Lesson>(lesson, HttpStatus.OK);
+    }
+
+    @Override
+    public ResponseEntity<Lesson> lessonPost(Lesson lesson) {
+        Integer id = IdGenerator.generate();
+        lessonMapper.insertLesson(lesson);
+        return lessonLessonidGet(id);
     }
 }
