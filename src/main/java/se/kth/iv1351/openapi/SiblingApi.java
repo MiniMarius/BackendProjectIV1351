@@ -17,7 +17,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-02T12:42:42.850804+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-02T14:10:17.421652+02:00[Europe/Mariehamn]")
 @Validated
 @Api(value = "sibling", description = "the sibling API")
 public interface SiblingApi {
@@ -25,6 +25,27 @@ public interface SiblingApi {
     default SiblingApiDelegate getDelegate() {
         return new SiblingApiDelegate() {};
     }
+
+    /**
+     * POST /sibling
+     * Lets a user post a new sibling
+     *
+     * @param sibling  (required)
+     * @return Successfully created a new sibling (status code 200)
+     *         or Invalid request (status code 400)
+     */
+    @ApiOperation(value = "", nickname = "siblingPost", notes = "Lets a user post a new sibling", tags={  })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 200, message = "Successfully created a new sibling"),
+        @ApiResponse(code = 400, message = "Invalid request") })
+    @PostMapping(
+        value = "/sibling",
+        consumes = { "application/json" }
+    )
+    default ResponseEntity<Void> siblingPost(@ApiParam(value = "" ,required=true )  @Valid @RequestBody Sibling sibling) {
+        return getDelegate().siblingPost(sibling);
+    }
+
 
     /**
      * GET /sibling/{siblingid}

@@ -16,11 +16,25 @@ import java.util.Optional;
  * A delegate to be called by the {@link SiblingApiController}}.
  * Implement this interface with a {@link org.springframework.stereotype.Service} annotated class.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-02T12:42:42.850804+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-02T14:10:17.421652+02:00[Europe/Mariehamn]")
 public interface SiblingApiDelegate {
 
     default Optional<NativeWebRequest> getRequest() {
         return Optional.empty();
+    }
+
+    /**
+     * POST /sibling
+     * Lets a user post a new sibling
+     *
+     * @param sibling  (required)
+     * @return Successfully created a new sibling (status code 200)
+     *         or Invalid request (status code 400)
+     * @see SiblingApi#siblingPost
+     */
+    default ResponseEntity<Void> siblingPost(Sibling sibling) {
+        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+
     }
 
     /**

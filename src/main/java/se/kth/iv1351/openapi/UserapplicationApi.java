@@ -17,7 +17,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-02T12:42:42.850804+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-02T14:10:17.421652+02:00[Europe/Mariehamn]")
 @Validated
 @Api(value = "userapplication", description = "the userapplication API")
 public interface UserapplicationApi {
@@ -42,6 +42,27 @@ public interface UserapplicationApi {
     )
     default ResponseEntity<UserApplication> userapplicationApplicationidGet(@ApiParam(value = "",required=true) @PathVariable("applicationid") Integer applicationid) {
         return getDelegate().userapplicationApplicationidGet(applicationid);
+    }
+
+
+    /**
+     * POST /userapplication
+     * Lets a user post a new user application
+     *
+     * @param userApplication  (required)
+     * @return Successfully created a new user application (status code 200)
+     *         or Invalid request (status code 400)
+     */
+    @ApiOperation(value = "", nickname = "userapplicationPost", notes = "Lets a user post a new user application", tags={  })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 200, message = "Successfully created a new user application"),
+        @ApiResponse(code = 400, message = "Invalid request") })
+    @PostMapping(
+        value = "/userapplication",
+        consumes = { "application/json" }
+    )
+    default ResponseEntity<Void> userapplicationPost(@ApiParam(value = "" ,required=true )  @Valid @RequestBody UserApplication userApplication) {
+        return getDelegate().userapplicationPost(userApplication);
     }
 
 }

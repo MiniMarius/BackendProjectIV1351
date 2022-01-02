@@ -16,11 +16,25 @@ import java.util.Optional;
  * A delegate to be called by the {@link RentalinstrumentApiController}}.
  * Implement this interface with a {@link org.springframework.stereotype.Service} annotated class.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-02T12:42:42.850804+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-02T14:10:17.421652+02:00[Europe/Mariehamn]")
 public interface RentalinstrumentApiDelegate {
 
     default Optional<NativeWebRequest> getRequest() {
         return Optional.empty();
+    }
+
+    /**
+     * POST /rentalinstrument
+     * Lets a user post a new rental instrument
+     *
+     * @param rentalInstrument  (required)
+     * @return Successfully created a new rental instrument (status code 200)
+     *         or Invalid request (status code 400)
+     * @see RentalinstrumentApi#rentalinstrumentPost
+     */
+    default ResponseEntity<Void> rentalinstrumentPost(RentalInstrument rentalInstrument) {
+        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+
     }
 
     /**

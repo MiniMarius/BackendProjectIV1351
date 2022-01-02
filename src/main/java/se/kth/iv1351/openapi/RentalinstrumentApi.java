@@ -17,7 +17,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-02T12:42:42.850804+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-02T14:10:17.421652+02:00[Europe/Mariehamn]")
 @Validated
 @Api(value = "rentalinstrument", description = "the rentalinstrument API")
 public interface RentalinstrumentApi {
@@ -25,6 +25,27 @@ public interface RentalinstrumentApi {
     default RentalinstrumentApiDelegate getDelegate() {
         return new RentalinstrumentApiDelegate() {};
     }
+
+    /**
+     * POST /rentalinstrument
+     * Lets a user post a new rental instrument
+     *
+     * @param rentalInstrument  (required)
+     * @return Successfully created a new rental instrument (status code 200)
+     *         or Invalid request (status code 400)
+     */
+    @ApiOperation(value = "", nickname = "rentalinstrumentPost", notes = "Lets a user post a new rental instrument", tags={  })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 200, message = "Successfully created a new rental instrument"),
+        @ApiResponse(code = 400, message = "Invalid request") })
+    @PostMapping(
+        value = "/rentalinstrument",
+        consumes = { "application/json" }
+    )
+    default ResponseEntity<Void> rentalinstrumentPost(@ApiParam(value = "" ,required=true )  @Valid @RequestBody RentalInstrument rentalInstrument) {
+        return getDelegate().rentalinstrumentPost(rentalInstrument);
+    }
+
 
     /**
      * GET /rentalinstrument/{rentalid}

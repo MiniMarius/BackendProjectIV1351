@@ -17,7 +17,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-02T12:42:42.850804+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-02T14:10:17.421652+02:00[Europe/Mariehamn]")
 @Validated
 @Api(value = "lease", description = "the lease API")
 public interface LeaseApi {
@@ -42,6 +42,27 @@ public interface LeaseApi {
     )
     default ResponseEntity<Lease> leaseLeaseidGet(@ApiParam(value = "",required=true) @PathVariable("leaseid") Integer leaseid) {
         return getDelegate().leaseLeaseidGet(leaseid);
+    }
+
+
+    /**
+     * POST /lease
+     * Lets a user post a new lease
+     *
+     * @param lease  (required)
+     * @return Successfully created a new lease (status code 200)
+     *         or Invalid request (status code 400)
+     */
+    @ApiOperation(value = "", nickname = "leasePost", notes = "Lets a user post a new lease", tags={  })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 200, message = "Successfully created a new lease"),
+        @ApiResponse(code = 400, message = "Invalid request") })
+    @PostMapping(
+        value = "/lease",
+        consumes = { "application/json" }
+    )
+    default ResponseEntity<Void> leasePost(@ApiParam(value = "" ,required=true )  @Valid @RequestBody Lease lease) {
+        return getDelegate().leasePost(lease);
     }
 
 }

@@ -17,7 +17,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-02T12:42:42.850804+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-02T14:10:17.421652+02:00[Europe/Mariehamn]")
 @Validated
 @Api(value = "userpayment", description = "the userpayment API")
 public interface UserpaymentApi {
@@ -42,6 +42,27 @@ public interface UserpaymentApi {
     )
     default ResponseEntity<UserPayment> userpaymentPaymentidGet(@ApiParam(value = "",required=true) @PathVariable("paymentid") Integer paymentid) {
         return getDelegate().userpaymentPaymentidGet(paymentid);
+    }
+
+
+    /**
+     * POST /userpayment
+     * Lets a user post a new user payment
+     *
+     * @param userPayment  (required)
+     * @return Successfully created a new user payment (status code 200)
+     *         or Invalid request (status code 400)
+     */
+    @ApiOperation(value = "", nickname = "userpaymentPost", notes = "Lets a user post a new user payment", tags={  })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 200, message = "Successfully created a new user payment"),
+        @ApiResponse(code = 400, message = "Invalid request") })
+    @PostMapping(
+        value = "/userpayment",
+        consumes = { "application/json" }
+    )
+    default ResponseEntity<Void> userpaymentPost(@ApiParam(value = "" ,required=true )  @Valid @RequestBody UserPayment userPayment) {
+        return getDelegate().userpaymentPost(userPayment);
     }
 
 }

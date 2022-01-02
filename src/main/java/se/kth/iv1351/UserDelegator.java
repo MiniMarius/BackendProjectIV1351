@@ -26,7 +26,7 @@ public class UserDelegator implements UserApiDelegate {
 
     @Override
     public ResponseEntity<Void> userPost(User user) {
-        userMapper.insertUser();
-        return UserApiDelegate.super.userPost(user);
+        userMapper.insertUser(user);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }

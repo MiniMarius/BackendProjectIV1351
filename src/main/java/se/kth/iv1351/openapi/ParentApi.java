@@ -17,7 +17,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-02T12:42:42.850804+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-02T14:10:17.421652+02:00[Europe/Mariehamn]")
 @Validated
 @Api(value = "parent", description = "the parent API")
 public interface ParentApi {
@@ -42,6 +42,27 @@ public interface ParentApi {
     )
     default ResponseEntity<Parent> parentParentidGet(@ApiParam(value = "",required=true) @PathVariable("parentid") Integer parentid) {
         return getDelegate().parentParentidGet(parentid);
+    }
+
+
+    /**
+     * POST /parent
+     * Lets a user post a new parent
+     *
+     * @param parent  (required)
+     * @return Successfully created a new parent (status code 200)
+     *         or Invalid request (status code 400)
+     */
+    @ApiOperation(value = "", nickname = "parentPost", notes = "Lets a user post a new parent", tags={  })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 200, message = "Successfully created a new parent"),
+        @ApiResponse(code = 400, message = "Invalid request") })
+    @PostMapping(
+        value = "/parent",
+        consumes = { "application/json" }
+    )
+    default ResponseEntity<Void> parentPost(@ApiParam(value = "" ,required=true )  @Valid @RequestBody Parent parent) {
+        return getDelegate().parentPost(parent);
     }
 
 }

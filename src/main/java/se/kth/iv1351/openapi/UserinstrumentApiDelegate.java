@@ -16,7 +16,7 @@ import java.util.Optional;
  * A delegate to be called by the {@link UserinstrumentApiController}}.
  * Implement this interface with a {@link org.springframework.stereotype.Service} annotated class.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-02T12:42:42.850804+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-02T14:10:17.421652+02:00[Europe/Mariehamn]")
 public interface UserinstrumentApiDelegate {
 
     default Optional<NativeWebRequest> getRequest() {
@@ -41,6 +41,20 @@ public interface UserinstrumentApiDelegate {
                 }
             }
         });
+        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+
+    }
+
+    /**
+     * POST /userinstrument
+     * Lets a user post a new user instrument
+     *
+     * @param userInstrument  (required)
+     * @return Successfully created a new user instrument (status code 200)
+     *         or Invalid request (status code 400)
+     * @see UserinstrumentApi#userinstrumentPost
+     */
+    default ResponseEntity<Void> userinstrumentPost(UserInstrument userInstrument) {
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
 
     }

@@ -16,7 +16,7 @@ import java.util.Optional;
  * A delegate to be called by the {@link UserapplicationApiController}}.
  * Implement this interface with a {@link org.springframework.stereotype.Service} annotated class.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-02T12:42:42.850804+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-02T14:10:17.421652+02:00[Europe/Mariehamn]")
 public interface UserapplicationApiDelegate {
 
     default Optional<NativeWebRequest> getRequest() {
@@ -41,6 +41,20 @@ public interface UserapplicationApiDelegate {
                 }
             }
         });
+        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+
+    }
+
+    /**
+     * POST /userapplication
+     * Lets a user post a new user application
+     *
+     * @param userApplication  (required)
+     * @return Successfully created a new user application (status code 200)
+     *         or Invalid request (status code 400)
+     * @see UserapplicationApi#userapplicationPost
+     */
+    default ResponseEntity<Void> userapplicationPost(UserApplication userApplication) {
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
 
     }
