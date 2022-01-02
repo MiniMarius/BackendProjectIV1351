@@ -5,5 +5,5 @@ import se.kth.iv1351.model.LeaseData;
 
 @Mapper
 public interface LeaseMapper {
-    LeaseData selectLease();
+    LeaseData selectLease(Integer leaseid);
 }

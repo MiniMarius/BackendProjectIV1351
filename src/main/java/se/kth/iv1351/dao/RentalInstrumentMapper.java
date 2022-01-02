@@ -5,5 +5,5 @@ import se.kth.iv1351.model.RentalInstrumentData;
 
 @Mapper
 public interface RentalInstrumentMapper {
-    RentalInstrumentData selectRentalInstrument();
+    RentalInstrumentData selectRentalInstrument(Integer rentalid);
 }

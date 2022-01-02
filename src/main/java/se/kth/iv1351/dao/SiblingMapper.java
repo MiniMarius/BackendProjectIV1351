@@ -5,5 +5,5 @@ import se.kth.iv1351.model.SiblingData;
 
 @Mapper
 public interface SiblingMapper {
-    SiblingData selectSibling();
+    SiblingData selectSibling(Integer siblingid);
 }

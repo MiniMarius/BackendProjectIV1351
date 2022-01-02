@@ -5,5 +5,5 @@ import se.kth.iv1351.model.UserPaymentData;
 
 @Mapper
 public interface UserPaymentMapper {
-    UserPaymentData selectUserPayment();
+    UserPaymentData selectUserPayment(Integer paymentid);
 }

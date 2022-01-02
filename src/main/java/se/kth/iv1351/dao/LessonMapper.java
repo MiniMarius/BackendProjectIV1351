@@ -5,5 +5,5 @@ import se.kth.iv1351.model.LessonData;
 
 @Mapper
 public interface LessonMapper {
-    LessonData selectLesson();
+    LessonData selectLesson(Integer lessonid);
 }

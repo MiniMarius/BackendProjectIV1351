@@ -5,5 +5,5 @@ import se.kth.iv1351.model.UserApplicationData;
 
 @Mapper
 public interface UserApplicationMapper {
-    UserApplicationData selectUserApplication();
+    UserApplicationData selectUserApplication(Integer applicationid);
 }

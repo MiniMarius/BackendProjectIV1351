@@ -5,5 +5,5 @@ import se.kth.iv1351.model.UserInstrumentData;
 
 @Mapper
 public interface UserInstrumentMapper {
-    UserInstrumentData selectUserInstrument();
+    UserInstrumentData selectUserInstrument(Integer instrumentid);
 }

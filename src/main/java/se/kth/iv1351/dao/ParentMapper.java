@@ -5,5 +5,5 @@ import se.kth.iv1351.model.ParentData;
 
 @Mapper
 public interface ParentMapper {
-    ParentData selectParent();
+    ParentData selectParent(Integer parentid);
 }

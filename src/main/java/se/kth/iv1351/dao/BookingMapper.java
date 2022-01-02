@@ -5,5 +5,5 @@ import se.kth.iv1351.model.BookingData;
 
 @Mapper
 public interface BookingMapper {
-    BookingData selectBooking();
+    BookingData selectBooking(Integer bookingid);
 }
