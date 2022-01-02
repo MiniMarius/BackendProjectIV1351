@@ -16,7 +16,7 @@ import java.util.Optional;
  * A delegate to be called by the {@link InstrumenttypeApiController}}.
  * Implement this interface with a {@link org.springframework.stereotype.Service} annotated class.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-02T15:31:39.797165+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-02T16:10:02.180128+02:00[Europe/Mariehamn]")
 public interface InstrumenttypeApiDelegate {
 
     default Optional<NativeWebRequest> getRequest() {
@@ -54,7 +54,16 @@ public interface InstrumenttypeApiDelegate {
      *         or Invalid request (status code 400)
      * @see InstrumenttypeApi#instrumenttypePost
      */
-    default ResponseEntity<Void> instrumenttypePost(InstrumentType instrumentType) {
+    default ResponseEntity<InstrumentType> instrumenttypePost(InstrumentType instrumentType) {
+        getRequest().ifPresent(request -> {
+            for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
+                if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
+                    String exampleString = "{ \"id\" : 0, \"type\" : \"type\" }";
+                    ApiUtil.setExampleResponse(request, "application/json", exampleString);
+                    break;
+                }
+            }
+        });
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
 
     }

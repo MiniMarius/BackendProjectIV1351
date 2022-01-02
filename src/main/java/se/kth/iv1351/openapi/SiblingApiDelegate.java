@@ -16,7 +16,7 @@ import java.util.Optional;
  * A delegate to be called by the {@link SiblingApiController}}.
  * Implement this interface with a {@link org.springframework.stereotype.Service} annotated class.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-02T15:31:39.797165+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-02T16:10:02.180128+02:00[Europe/Mariehamn]")
 public interface SiblingApiDelegate {
 
     default Optional<NativeWebRequest> getRequest() {
@@ -32,7 +32,16 @@ public interface SiblingApiDelegate {
      *         or Invalid request (status code 400)
      * @see SiblingApi#siblingPost
      */
-    default ResponseEntity<Void> siblingPost(Sibling sibling) {
+    default ResponseEntity<Sibling> siblingPost(Sibling sibling) {
+        getRequest().ifPresent(request -> {
+            for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
+                if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
+                    String exampleString = "{ \"studentIdTwo\" : 6, \"studentIdOne\" : 0 }";
+                    ApiUtil.setExampleResponse(request, "application/json", exampleString);
+                    break;
+                }
+            }
+        });
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
 
     }

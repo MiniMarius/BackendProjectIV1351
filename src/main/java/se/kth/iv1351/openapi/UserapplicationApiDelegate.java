@@ -16,7 +16,7 @@ import java.util.Optional;
  * A delegate to be called by the {@link UserapplicationApiController}}.
  * Implement this interface with a {@link org.springframework.stereotype.Service} annotated class.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-02T15:31:39.797165+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-02T16:10:02.180128+02:00[Europe/Mariehamn]")
 public interface UserapplicationApiDelegate {
 
     default Optional<NativeWebRequest> getRequest() {
@@ -54,7 +54,16 @@ public interface UserapplicationApiDelegate {
      *         or Invalid request (status code 400)
      * @see UserapplicationApi#userapplicationPost
      */
-    default ResponseEntity<Void> userapplicationPost(UserApplication userApplication) {
+    default ResponseEntity<UserApplication> userapplicationPost(UserApplication userApplication) {
+        getRequest().ifPresent(request -> {
+            for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
+                if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
+                    String exampleString = "{ \"letter\" : \"letter\", \"instrumentTypeId\" : 6, \"id\" : 0, \"userId\" : 1 }";
+                    ApiUtil.setExampleResponse(request, "application/json", exampleString);
+                    break;
+                }
+            }
+        });
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
 
     }

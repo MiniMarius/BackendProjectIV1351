@@ -16,7 +16,7 @@ import java.util.Optional;
  * A delegate to be called by the {@link ParentApiController}}.
  * Implement this interface with a {@link org.springframework.stereotype.Service} annotated class.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-02T15:31:39.797165+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-02T16:10:02.180128+02:00[Europe/Mariehamn]")
 public interface ParentApiDelegate {
 
     default Optional<NativeWebRequest> getRequest() {
@@ -54,7 +54,16 @@ public interface ParentApiDelegate {
      *         or Invalid request (status code 400)
      * @see ParentApi#parentPost
      */
-    default ResponseEntity<Void> parentPost(Parent parent) {
+    default ResponseEntity<Parent> parentPost(Parent parent) {
+        getRequest().ifPresent(request -> {
+            for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
+                if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
+                    String exampleString = "{ \"studentId\" : 0, \"parentId\" : 6 }";
+                    ApiUtil.setExampleResponse(request, "application/json", exampleString);
+                    break;
+                }
+            }
+        });
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
 
     }

@@ -17,7 +17,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-02T15:31:39.797165+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-02T16:10:02.180128+02:00[Europe/Mariehamn]")
 @Validated
 @Api(value = "userinstrument", description = "the userinstrument API")
 public interface UserinstrumentApi {
@@ -53,15 +53,16 @@ public interface UserinstrumentApi {
      * @return Successfully created a new user instrument (status code 200)
      *         or Invalid request (status code 400)
      */
-    @ApiOperation(value = "", nickname = "userinstrumentPost", notes = "Lets a user post a new user instrument", tags={  })
+    @ApiOperation(value = "", nickname = "userinstrumentPost", notes = "Lets a user post a new user instrument", response = UserInstrument.class, tags={  })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "Successfully created a new user instrument"),
+        @ApiResponse(code = 200, message = "Successfully created a new user instrument", response = UserInstrument.class),
         @ApiResponse(code = 400, message = "Invalid request") })
     @PostMapping(
         value = "/userinstrument",
+        produces = { "application/json" },
         consumes = { "application/json" }
     )
-    default ResponseEntity<Void> userinstrumentPost(@ApiParam(value = "" ,required=true )  @Valid @RequestBody UserInstrument userInstrument) {
+    default ResponseEntity<UserInstrument> userinstrumentPost(@ApiParam(value = "" ,required=true )  @Valid @RequestBody UserInstrument userInstrument) {
         return getDelegate().userinstrumentPost(userInstrument);
     }
 

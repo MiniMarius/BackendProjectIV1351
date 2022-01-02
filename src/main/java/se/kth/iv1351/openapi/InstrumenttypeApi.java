@@ -17,7 +17,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-02T15:31:39.797165+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-02T16:10:02.180128+02:00[Europe/Mariehamn]")
 @Validated
 @Api(value = "instrumenttype", description = "the instrumenttype API")
 public interface InstrumenttypeApi {
@@ -53,15 +53,16 @@ public interface InstrumenttypeApi {
      * @return Successfully created a new instrument type (status code 200)
      *         or Invalid request (status code 400)
      */
-    @ApiOperation(value = "", nickname = "instrumenttypePost", notes = "Lets a user post a new instrument type", tags={  })
+    @ApiOperation(value = "", nickname = "instrumenttypePost", notes = "Lets a user post a new instrument type", response = InstrumentType.class, tags={  })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "Successfully created a new instrument type"),
+        @ApiResponse(code = 200, message = "Successfully created a new instrument type", response = InstrumentType.class),
         @ApiResponse(code = 400, message = "Invalid request") })
     @PostMapping(
         value = "/instrumenttype",
+        produces = { "application/json" },
         consumes = { "application/json" }
     )
-    default ResponseEntity<Void> instrumenttypePost(@ApiParam(value = "" ,required=true )  @Valid @RequestBody InstrumentType instrumentType) {
+    default ResponseEntity<InstrumentType> instrumenttypePost(@ApiParam(value = "" ,required=true )  @Valid @RequestBody InstrumentType instrumentType) {
         return getDelegate().instrumenttypePost(instrumentType);
     }
 
