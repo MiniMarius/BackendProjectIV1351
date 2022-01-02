@@ -21,6 +21,10 @@ public class UserDelegator implements UserApiDelegate {
         user.setId(userData.getId());
         user.setName(userData.getName());
         user.setAge(userData.getAge());
+        user.setPersonNumber(userData.getPersonNumber());
+        user.setEmail(userData.getEmail());
+        user.setAddress(userData.getAddress());
+        user.setPhoneNumber(userData.getPhoneNumber());
         return new ResponseEntity<User>(user, HttpStatus.OK);
     }
 

@@ -12,22 +12,28 @@ import javax.validation.constraints.*;
 /**
  * User
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-02T14:10:17.421652+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-02T14:27:28.397731+02:00[Europe/Mariehamn]")
 public class User   {
   @JsonProperty("id")
   private Integer id;
 
-  @JsonProperty("name")
-  private String name;
-
   @JsonProperty("personNumber")
   private String personNumber;
+
+  @JsonProperty("name")
+  private String name;
 
   @JsonProperty("age")
   private Integer age;
 
+  @JsonProperty("address")
+  private String address;
+
   @JsonProperty("email")
   private String email;
+
+  @JsonProperty("phoneNumber")
+  private String phoneNumber;
 
   public User id(Integer id) {
     this.id = id;
@@ -47,26 +53,6 @@ public class User   {
 
   public void setId(Integer id) {
     this.id = id;
-  }
-
-  public User name(String name) {
-    this.name = name;
-    return this;
-  }
-
-  /**
-   * Get name
-   * @return name
-  */
-  @ApiModelProperty(value = "")
-
-
-  public String getName() {
-    return name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
   }
 
   public User personNumber(String personNumber) {
@@ -89,6 +75,26 @@ public class User   {
     this.personNumber = personNumber;
   }
 
+  public User name(String name) {
+    this.name = name;
+    return this;
+  }
+
+  /**
+   * Get name
+   * @return name
+  */
+  @ApiModelProperty(value = "")
+
+
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
   public User age(Integer age) {
     this.age = age;
     return this;
@@ -107,6 +113,26 @@ public class User   {
 
   public void setAge(Integer age) {
     this.age = age;
+  }
+
+  public User address(String address) {
+    this.address = address;
+    return this;
+  }
+
+  /**
+   * Get address
+   * @return address
+  */
+  @ApiModelProperty(value = "")
+
+
+  public String getAddress() {
+    return address;
+  }
+
+  public void setAddress(String address) {
+    this.address = address;
   }
 
   public User email(String email) {
@@ -129,6 +155,26 @@ public class User   {
     this.email = email;
   }
 
+  public User phoneNumber(String phoneNumber) {
+    this.phoneNumber = phoneNumber;
+    return this;
+  }
+
+  /**
+   * Get phoneNumber
+   * @return phoneNumber
+  */
+  @ApiModelProperty(value = "")
+
+
+  public String getPhoneNumber() {
+    return phoneNumber;
+  }
+
+  public void setPhoneNumber(String phoneNumber) {
+    this.phoneNumber = phoneNumber;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -140,15 +186,17 @@ public class User   {
     }
     User user = (User) o;
     return Objects.equals(this.id, user.id) &&
-        Objects.equals(this.name, user.name) &&
         Objects.equals(this.personNumber, user.personNumber) &&
+        Objects.equals(this.name, user.name) &&
         Objects.equals(this.age, user.age) &&
-        Objects.equals(this.email, user.email);
+        Objects.equals(this.address, user.address) &&
+        Objects.equals(this.email, user.email) &&
+        Objects.equals(this.phoneNumber, user.phoneNumber);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, personNumber, age, email);
+    return Objects.hash(id, personNumber, name, age, address, email, phoneNumber);
   }
 
   @Override
@@ -157,10 +205,12 @@ public class User   {
     sb.append("class User {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    personNumber: ").append(toIndentedString(personNumber)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    age: ").append(toIndentedString(age)).append("\n");
+    sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
+    sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -4,7 +4,7 @@
     <select id="selectUser" parameterType="java.lang.Integer" resultType="se.kth.iv1351.model.UserData">
         SELECT * FROM USERS WHERE id= #{userid};
     </select>
-    <insert id="insertUser">
+    <insert id="insertUser" parameterType="se.kth.iv1351.openapi.model.User">
         INSERT INTO USERS (id, person_number, name, age, address, email, phone_number)
         VALUES (#{id}, #{personNumber}, #{name}, #{age}, #{address} , #{email}, #{phoneNumber});
     </insert>
