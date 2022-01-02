@@ -54,6 +54,22 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Booking"
+  /booking:
+    post:
+      description: Lets a user post a new booking
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Booking"
+
+      responses:
+        '200':
+          description: Successfully created a new booking
+
+        '400':
+          description: Invalid request
   /instrumenttype/{instrumentid}:
     get:
       description: Returns a instrument type
@@ -70,6 +86,22 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/InstrumentType"
+  /instrumenttype:
+    post:
+      description: Lets a user post a new instrument type
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/InstrumentType"
+
+      responses:
+        '200':
+          description: Successfully created a new instrument type
+
+        '400':
+          description: Invalid request
   /lease/{leaseid}:
     get:
       description: Returns a lease
@@ -86,6 +118,22 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Lease"
+  /lease:
+    post:
+      description: Lets a user post a new lease
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Lease"
+
+      responses:
+        '200':
+          description: Successfully created a new lease
+
+        '400':
+          description: Invalid request
   /lesson/{lessonid}:
     get:
       description: Returns a lesson
@@ -102,6 +150,22 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Lesson"
+  /lesson:
+    post:
+      description: Lets a user post a new lesson
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Lesson"
+
+      responses:
+        '200':
+          description: Successfully created a new lesson
+
+        '400':
+          description: Invalid request
   /parent/{parentid}:
     get:
       description: Returns a parent
@@ -118,6 +182,22 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Parent"
+  /parent:
+    post:
+      description: Lets a user post a new parent
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Parent"
+
+      responses:
+        '200':
+          description: Successfully created a new parent
+
+        '400':
+          description: Invalid request
   /rentalinstrument/{rentalid}:
     get:
       description: Returns a rental instrument
@@ -134,6 +214,22 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/RentalInstrument"
+  /rentalinstrument:
+    post:
+      description: Lets a user post a new rental instrument
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/RentalInstrument"
+
+      responses:
+        '200':
+          description: Successfully created a new rental instrument
+
+        '400':
+          description: Invalid request
   /sibling/{siblingid}:
     get:
       description: Returns a sibling
@@ -150,6 +246,22 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Sibling"
+  /sibling:
+    post:
+      description: Lets a user post a new sibling
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Sibling"
+
+      responses:
+        '200':
+          description: Successfully created a new sibling
+
+        '400':
+          description: Invalid request
   /userapplication/{applicationid}:
     get:
       description: Returns a user application
@@ -166,6 +278,22 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/UserApplication"
+  /userapplication:
+    post:
+      description: Lets a user post a new user application
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UserApplication"
+
+      responses:
+        '200':
+          description: Successfully created a new user application
+
+        '400':
+          description: Invalid request
   /userinstrument/{instrumentid}:
     get:
       description: Returns a user instrument
@@ -182,6 +310,22 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/UserInstrument"
+  /userinstrument:
+    post:
+      description: Lets a user post a new user instrument
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UserInstrument"
+
+      responses:
+        '200':
+          description: Successfully created a new user instrument
+
+        '400':
+          description: Invalid request
   /userpayment/{paymentid}:
     get:
       description: Returns a user payment
@@ -198,6 +342,22 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/UserPayment"
+  /userpayment:
+    post:
+      description: Lets a user post a new user payment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UserPayment"
+
+      responses:
+        '200':
+          description: Successfully created a new user payment
+
+        '400':
+          description: Invalid request
 
 
 components:
