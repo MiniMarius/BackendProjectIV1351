@@ -8,6 +8,7 @@ import se.kth.iv1351.dao.BookingMapper;
 import se.kth.iv1351.model.BookingData;
 import se.kth.iv1351.openapi.BookingApiDelegate;
 import se.kth.iv1351.openapi.model.Booking;
+import se.kth.iv1351.util.IdGenerator;
 
 @AllArgsConstructor
 @Service
@@ -25,5 +26,13 @@ public class BookingDelegator implements BookingApiDelegate {
         booking.setStudentId(bookingData.getStudentId());
         booking.setLessonId(bookingData.getLessonId());
         return new ResponseEntity<Booking>(booking, HttpStatus.OK);
+    }
+
+    @Override
+    public ResponseEntity<Booking> bookingPost(Booking booking) {
+        Integer id = IdGenerator.generate();
+        booking.setId(id);
+        bookingMapper.insertBooking(booking);
+        return bookingBookingidGet(id);
     }
 }

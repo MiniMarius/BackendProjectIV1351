@@ -4,4 +4,8 @@
     <select id="selectBooking" parameterType="java.lang.Integer" resultType="se.kth.iv1351.model.BookingData">
         SELECT * FROM BOOKINGS WHERE id= #{bookingid}
     </select>
+    <insert id="insertBooking" parameterType="se.kth.iv1351.openapi.model.Booking">
+        INSERT INTO BOOKINGS (id, start_time, end_time, lesson_id, student_id, instructor_id)
+        VALUES (#{id}, #{startTime}, #{endTime}, #{lessonId}, #{studentId} , #{instructorId});
+    </insert>
 </mapper>
