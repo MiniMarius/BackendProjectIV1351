@@ -2,6 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="se.kth.iv1351.dao.BookingMapper">
     <select id="selectBooking" parameterType="java.lang.Integer" resultType="se.kth.iv1351.model.BookingData">
-        SELECT * FROM BOOKINGS WHERE id= #{bookingid};
+        SELECT * FROM BOOKINGS WHERE id= #{bookingid}
     </select>
 </mapper>

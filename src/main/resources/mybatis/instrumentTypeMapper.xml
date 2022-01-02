@@ -2,6 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="se.kth.iv1351.dao.InstrumentTypeMapper">
     <select id="selectInstrumentType" parameterType="java.lang.Integer" resultType="se.kth.iv1351.model.InstrumentTypeData">
-        SELECT * FROM INSTRUMENT_TYPE WHERE id= #{instrumentid};
+        SELECT * FROM INSTRUMENT_TYPES WHERE id= #{instrumentid};
     </select>
 </mapper>
