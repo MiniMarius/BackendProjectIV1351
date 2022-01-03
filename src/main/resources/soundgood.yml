@@ -22,6 +22,18 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/User"
+    delete:
+      description: Deletes a user
+      parameters:
+        - name: userid
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful delete
+
   /user:
     post:
       description: Lets a user post a new user
@@ -59,6 +71,17 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Booking"
+    delete:
+      description: Deletes a booking
+      parameters:
+        - name: bookingid
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful delete
   /booking:
     post:
       description: Lets a user post a new booking
@@ -95,6 +118,17 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/InstrumentType"
+    delete:
+      description: Deletes a instrument type
+      parameters:
+        - name: instrumentid
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful delete
   /instrumenttype:
     post:
       description: Lets a user post a new instrument type
@@ -131,6 +165,17 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Lease"
+    delete:
+      description: Deletes a lease
+      parameters:
+        - name: leaseid
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful delete
   /lease:
     post:
       description: Lets a user post a new lease
@@ -167,6 +212,17 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Lesson"
+    delete:
+      description: Deletes a lesson
+      parameters:
+        - name: lessonid
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful delete
   /lesson:
     post:
       description: Lets a user post a new lesson
@@ -203,6 +259,17 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Parent"
+    delete:
+      description: Deletes a parent
+      parameters:
+        - name: parentid
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful delete
   /parent:
     post:
       description: Lets a user post a new parent
@@ -239,6 +306,17 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/RentalInstrument"
+    delete:
+      description: Deletes a rental instrument
+      parameters:
+        - name: rentalid
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful delete
   /rentalinstrument:
     post:
       description: Lets a user post a new rental instrument
@@ -275,6 +353,17 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Sibling"
+    delete:
+      description: Deletes a sibling
+      parameters:
+        - name: siblingid
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful delete
   /sibling:
     post:
       description: Lets a user post a new sibling
@@ -311,6 +400,17 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/UserApplication"
+    delete:
+      description: Deletes a user application
+      parameters:
+        - name: applicationid
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful delete
   /userapplication:
     post:
       description: Lets a user post a new user application
@@ -347,6 +447,17 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/UserInstrument"
+    delete:
+      description: Deletes a user instrument
+      parameters:
+        - name: instrumentid
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful delete
   /userinstrument:
     post:
       description: Lets a user post a new user instrument
@@ -383,6 +494,17 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/UserPayment"
+    delete:
+      description: Deletes a user payment
+      parameters:
+        - name: paymentid
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful delete
   /userpayment:
     post:
       description: Lets a user post a new user payment
