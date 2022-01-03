@@ -30,6 +30,7 @@ public class LeaseDelegator implements LeaseApiDelegate {
     @Override
     public ResponseEntity<Lease> leasePost(Lease lease) {
         Integer id = IdGenerator.generate();
+        lease.setId(id);
         leaseMapper.insertLease(lease);
         return leaseLeaseidGet(id);
     }

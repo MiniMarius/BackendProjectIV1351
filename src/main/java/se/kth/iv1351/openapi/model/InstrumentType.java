@@ -12,7 +12,7 @@ import javax.validation.constraints.*;
 /**
  * InstrumentType
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T09:36:47.388902+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T10:39:04.369983+02:00[Europe/Mariehamn]")
 public class InstrumentType   {
   @JsonProperty("id")
   private Integer id;

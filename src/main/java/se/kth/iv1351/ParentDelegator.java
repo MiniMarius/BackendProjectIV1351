@@ -26,8 +26,7 @@ public class ParentDelegator implements ParentApiDelegate {
 
     @Override
     public ResponseEntity<Parent> parentPost(Parent parent) {
-        Integer id = IdGenerator.generate();
         parentMapper.insertParent(parent);
-        return parentParentidGet(id);
+        return parentParentidGet(parent.getParentId()+parent.getStudentId());
     }
 }

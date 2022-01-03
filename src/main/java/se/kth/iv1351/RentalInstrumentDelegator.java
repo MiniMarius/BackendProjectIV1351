@@ -29,6 +29,7 @@ public class RentalInstrumentDelegator implements RentalinstrumentApiDelegate {
     @Override
     public ResponseEntity<RentalInstrument> rentalinstrumentPost(RentalInstrument rentalInstrument) {
         Integer id = IdGenerator.generate();
+        rentalInstrument.setId(id);
         rentalInstrumentMapper.insertRentalInstrument(rentalInstrument);
         return rentalinstrumentRentalidGet(id);
     }

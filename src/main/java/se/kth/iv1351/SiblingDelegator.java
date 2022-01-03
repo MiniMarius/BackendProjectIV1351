@@ -26,8 +26,7 @@ public class SiblingDelegator implements SiblingApiDelegate {
 
     @Override
     public ResponseEntity<Sibling> siblingPost(Sibling sibling) {
-        Integer id = IdGenerator.generate();
         siblingMapper.insertSibling(sibling);
-        return siblingSiblingidGet(id);
+        return siblingSiblingidGet(sibling.getStudentIdOne() + sibling.getStudentIdTwo());
     }
 }

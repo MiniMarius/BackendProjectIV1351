@@ -30,6 +30,7 @@ public class UserPaymentDelegator implements UserpaymentApiDelegate {
     @Override
     public ResponseEntity<UserPayment> userpaymentPost(UserPayment userPayment) {
         Integer id = IdGenerator.generate();
+        userPayment.setId(id);
         userPaymentMapper.insertUserPayment(userPayment);
         return userpaymentPaymentidGet(id);
     }

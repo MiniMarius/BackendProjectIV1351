@@ -33,6 +33,7 @@ public class LessonDelegator implements LessonApiDelegate {
     @Override
     public ResponseEntity<Lesson> lessonPost(Lesson lesson) {
         Integer id = IdGenerator.generate();
+        lesson.setId(id);
         lessonMapper.insertLesson(lesson);
         return lessonLessonidGet(id);
     }

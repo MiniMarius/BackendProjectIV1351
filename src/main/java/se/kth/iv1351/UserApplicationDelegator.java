@@ -29,6 +29,7 @@ public class UserApplicationDelegator implements UserapplicationApiDelegate {
     @Override
     public ResponseEntity<UserApplication> userapplicationPost(UserApplication userApplication) {
         Integer id = IdGenerator.generate();
+        userApplication.setId(id);
         userApplicationMapper.insertUserApplication(userApplication);
         return userapplicationApplicationidGet(id);
     }

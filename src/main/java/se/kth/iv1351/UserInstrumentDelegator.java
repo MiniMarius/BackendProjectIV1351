@@ -26,8 +26,7 @@ public class UserInstrumentDelegator implements UserinstrumentApiDelegate {
 
     @Override
     public ResponseEntity<UserInstrument> userinstrumentPost(UserInstrument userInstrument) {
-        Integer id = IdGenerator.generate();
         userInstrumentMapper.insertUserInstrument(userInstrument);
-        return userinstrumentInstrumentidGet(id);
+        return userinstrumentInstrumentidGet(userInstrument.getUserId());
     }
 }

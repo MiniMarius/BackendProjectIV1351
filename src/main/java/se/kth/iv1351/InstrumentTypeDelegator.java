@@ -29,6 +29,7 @@ public class InstrumentTypeDelegator implements InstrumenttypeApiDelegate {
     @Override
     public ResponseEntity<InstrumentType> instrumenttypePost(InstrumentType instrumentType) {
         Integer id = IdGenerator.generate();
+        instrumentType.setId(id);
         instrumentTypeMapper.insertInstrumentType(instrumentType);
         return instrumenttypeInstrumentidGet(id);
     }
