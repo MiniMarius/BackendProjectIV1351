@@ -8,4 +8,7 @@
         INSERT INTO LESSONS (id, name, description, min_participants, max_participants, type, genre)
         VALUES (#{id}, #{name}, #{description}, #{minParticipants}, #{maxParticipants}, #{type}, #{genre});
     </insert>
+    <delete id="deleteLesson">
+        delete from LESSONS where id = #{id}
+    </delete>
 </mapper>

@@ -8,4 +8,7 @@
         INSERT INTO LEASES (id, start_time, end_time, rental_instrument_id, student_id)
         VALUES (#{id}, #{startTime}, #{endTime}, #{rentalInstrumentId}, #{studentId});
     </insert>
+    <delete id="deleteLease">
+        delete from LEASES where id = #{id}
+    </delete>
 </mapper>

@@ -8,4 +8,7 @@
         INSERT INTO USER_PAYMENTS (id, type, amount, currency, user_id)
         VALUES (#{id}, #{type}, #{amount}, #{currency}, #{userid});
     </insert>
+    <delete id="deleteUserPayment">
+        delete from USER_PAYMENTS where id = #{id}
+    </delete>
 </mapper>

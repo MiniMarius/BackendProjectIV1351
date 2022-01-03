@@ -8,4 +8,7 @@
         INSERT INTO INSTRUMENT_TYPES (id, type)
         VALUES (#{id}, #{type});
     </insert>
+    <delete id="deleteInstrumentType">
+        delete from INSTRUMENT_TYPES where id = #{id}
+    </delete>
 </mapper>

@@ -8,5 +8,8 @@
         INSERT INTO SIBLINGS (student_id, student_id2)
         VALUES (#{studentIdOne}, #{studentIdTwo});
     </insert>
+    <delete id="deleteSibling">
+        delete from SIBLINGS where student_id = #{id}
+    </delete>
 
 </mapper>

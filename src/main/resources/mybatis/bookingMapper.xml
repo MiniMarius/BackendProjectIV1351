@@ -8,4 +8,7 @@
         INSERT INTO BOOKINGS (id, start_time, end_time, lesson_id, student_id, instructor_id)
         VALUES (#{id}, #{startTime}, #{endTime}, #{lessonId}, #{studentId} , #{instructorId});
     </insert>
+    <delete id="deleteBooking">
+        delete from BOOKINGS where id = #{id}
+    </delete>
 </mapper>

@@ -8,4 +8,7 @@
         INSERT INTO PARENTS (student_id, parent_id)
         VALUES (#{studentId}, #{parentId});
     </insert>
+    <delete id="deleteParent">
+        delete from PARENTS where parent_id = #{id}
+    </delete>
 </mapper>

@@ -8,4 +8,7 @@
         INSERT INTO APPLICATIONS (id, letter, instrument_type_id, user_id)
         VALUES (#{id}, #{letter}, #{instrumentTypeId}, #{userId});
     </insert>
+    <delete id="deleteUserApplication">
+        delete from APPLICATIONS where id = #{id}
+    </delete>
 </mapper>

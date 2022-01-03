@@ -8,4 +8,7 @@
         INSERT INTO RENTAL_INSTRUMENTS (id, description, serial_number, instrument_type_id)
         VALUES (#{id}, #{description}, #{serialNumber}, #{instrumentTypeId});
     </insert>
+    <delete id="deleteRentalInstrument">
+        delete from RENTAL_INSTRUMENTS where id = #{id}
+    </delete>
 </mapper>
