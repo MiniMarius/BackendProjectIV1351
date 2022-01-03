@@ -40,6 +40,7 @@ public class LessonDelegator implements LessonApiDelegate {
 
     @Override
     public ResponseEntity<Void> lessonLessonidDelete(Integer lessonid) {
+        lessonMapper.deleteLesson(lessonid);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }

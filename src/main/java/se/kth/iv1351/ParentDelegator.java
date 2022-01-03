@@ -32,6 +32,7 @@ public class ParentDelegator implements ParentApiDelegate {
 
     @Override
     public ResponseEntity<Void> parentParentidDelete(Integer parentid) {
+        parentMapper.deleteParent(parentid);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }

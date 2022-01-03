@@ -36,6 +36,7 @@ public class InstrumentTypeDelegator implements InstrumenttypeApiDelegate {
 
     @Override
     public ResponseEntity<Void> instrumenttypeInstrumentidDelete(Integer instrumentid) {
+        instrumentTypeMapper.deleteInstrumentType(instrumentid);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }

@@ -36,6 +36,7 @@ public class UserApplicationDelegator implements UserapplicationApiDelegate {
 
     @Override
     public ResponseEntity<Void> userapplicationApplicationidDelete(Integer applicationid) {
+        userApplicationMapper.deleteUserApplication(applicationid);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }

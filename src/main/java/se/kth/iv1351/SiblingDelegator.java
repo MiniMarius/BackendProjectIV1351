@@ -32,6 +32,7 @@ public class SiblingDelegator implements SiblingApiDelegate {
 
     @Override
     public ResponseEntity<Void> siblingSiblingidDelete(Integer siblingid) {
+        siblingMapper.deleteSibling(siblingid);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }

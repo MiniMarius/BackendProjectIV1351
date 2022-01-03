@@ -37,6 +37,7 @@ public class UserPaymentDelegator implements UserpaymentApiDelegate {
 
     @Override
     public ResponseEntity<Void> userpaymentPaymentidDelete(Integer paymentid) {
+        userPaymentMapper.deleteUserPayment(paymentid);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }
