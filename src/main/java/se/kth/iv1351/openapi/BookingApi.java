@@ -17,7 +17,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T11:45:31.530365+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T13:27:50.627258+02:00[Europe/Mariehamn]")
 @Validated
 @Api(value = "booking", description = "the booking API")
 public interface BookingApi {
@@ -25,6 +25,24 @@ public interface BookingApi {
     default BookingApiDelegate getDelegate() {
         return new BookingApiDelegate() {};
     }
+
+    /**
+     * DELETE /booking/{bookingid}
+     * Deletes a booking
+     *
+     * @param bookingid  (required)
+     * @return Successful delete (status code 200)
+     */
+    @ApiOperation(value = "", nickname = "bookingBookingidDelete", notes = "Deletes a booking", tags={  })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 200, message = "Successful delete") })
+    @DeleteMapping(
+        value = "/booking/{bookingid}"
+    )
+    default ResponseEntity<Void> bookingBookingidDelete(@ApiParam(value = "",required=true) @PathVariable("bookingid") Integer bookingid) {
+        return getDelegate().bookingBookingidDelete(bookingid);
+    }
+
 
     /**
      * GET /booking/{bookingid}

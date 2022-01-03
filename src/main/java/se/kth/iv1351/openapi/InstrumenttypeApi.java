@@ -17,7 +17,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T11:45:31.530365+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T13:27:50.627258+02:00[Europe/Mariehamn]")
 @Validated
 @Api(value = "instrumenttype", description = "the instrumenttype API")
 public interface InstrumenttypeApi {
@@ -25,6 +25,24 @@ public interface InstrumenttypeApi {
     default InstrumenttypeApiDelegate getDelegate() {
         return new InstrumenttypeApiDelegate() {};
     }
+
+    /**
+     * DELETE /instrumenttype/{instrumentid}
+     * Deletes a instrument type
+     *
+     * @param instrumentid  (required)
+     * @return Successful delete (status code 200)
+     */
+    @ApiOperation(value = "", nickname = "instrumenttypeInstrumentidDelete", notes = "Deletes a instrument type", tags={  })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 200, message = "Successful delete") })
+    @DeleteMapping(
+        value = "/instrumenttype/{instrumentid}"
+    )
+    default ResponseEntity<Void> instrumenttypeInstrumentidDelete(@ApiParam(value = "",required=true) @PathVariable("instrumentid") Integer instrumentid) {
+        return getDelegate().instrumenttypeInstrumentidDelete(instrumentid);
+    }
+
 
     /**
      * GET /instrumenttype/{instrumentid}

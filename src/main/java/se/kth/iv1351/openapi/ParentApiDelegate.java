@@ -16,11 +16,24 @@ import java.util.Optional;
  * A delegate to be called by the {@link ParentApiController}}.
  * Implement this interface with a {@link org.springframework.stereotype.Service} annotated class.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T11:45:31.530365+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T13:27:50.627258+02:00[Europe/Mariehamn]")
 public interface ParentApiDelegate {
 
     default Optional<NativeWebRequest> getRequest() {
         return Optional.empty();
+    }
+
+    /**
+     * DELETE /parent/{parentid}
+     * Deletes a parent
+     *
+     * @param parentid  (required)
+     * @return Successful delete (status code 200)
+     * @see ParentApi#parentParentidDelete
+     */
+    default ResponseEntity<Void> parentParentidDelete(Integer parentid) {
+        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+
     }
 
     /**

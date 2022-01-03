@@ -17,7 +17,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T11:45:31.530365+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T13:27:50.627258+02:00[Europe/Mariehamn]")
 @Validated
 @Api(value = "lesson", description = "the lesson API")
 public interface LessonApi {
@@ -25,6 +25,24 @@ public interface LessonApi {
     default LessonApiDelegate getDelegate() {
         return new LessonApiDelegate() {};
     }
+
+    /**
+     * DELETE /lesson/{lessonid}
+     * Deletes a lesson
+     *
+     * @param lessonid  (required)
+     * @return Successful delete (status code 200)
+     */
+    @ApiOperation(value = "", nickname = "lessonLessonidDelete", notes = "Deletes a lesson", tags={  })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 200, message = "Successful delete") })
+    @DeleteMapping(
+        value = "/lesson/{lessonid}"
+    )
+    default ResponseEntity<Void> lessonLessonidDelete(@ApiParam(value = "",required=true) @PathVariable("lessonid") Integer lessonid) {
+        return getDelegate().lessonLessonidDelete(lessonid);
+    }
+
 
     /**
      * GET /lesson/{lessonid}

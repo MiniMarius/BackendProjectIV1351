@@ -33,4 +33,9 @@ public class UserApplicationDelegator implements UserapplicationApiDelegate {
         userApplicationMapper.insertUserApplication(userApplication);
         return userapplicationApplicationidGet(id);
     }
+
+    @Override
+    public ResponseEntity<Void> userapplicationApplicationidDelete(Integer applicationid) {
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 }

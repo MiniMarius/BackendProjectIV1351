@@ -34,4 +34,9 @@ public class LeaseDelegator implements LeaseApiDelegate {
         leaseMapper.insertLease(lease);
         return leaseLeaseidGet(id);
     }
+
+    @Override
+    public ResponseEntity<Void> leaseLeaseidDelete(Integer leaseid) {
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 }

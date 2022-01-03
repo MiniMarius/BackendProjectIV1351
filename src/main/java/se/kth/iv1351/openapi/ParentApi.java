@@ -17,7 +17,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T11:45:31.530365+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T13:27:50.627258+02:00[Europe/Mariehamn]")
 @Validated
 @Api(value = "parent", description = "the parent API")
 public interface ParentApi {
@@ -25,6 +25,24 @@ public interface ParentApi {
     default ParentApiDelegate getDelegate() {
         return new ParentApiDelegate() {};
     }
+
+    /**
+     * DELETE /parent/{parentid}
+     * Deletes a parent
+     *
+     * @param parentid  (required)
+     * @return Successful delete (status code 200)
+     */
+    @ApiOperation(value = "", nickname = "parentParentidDelete", notes = "Deletes a parent", tags={  })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 200, message = "Successful delete") })
+    @DeleteMapping(
+        value = "/parent/{parentid}"
+    )
+    default ResponseEntity<Void> parentParentidDelete(@ApiParam(value = "",required=true) @PathVariable("parentid") Integer parentid) {
+        return getDelegate().parentParentidDelete(parentid);
+    }
+
 
     /**
      * GET /parent/{parentid}

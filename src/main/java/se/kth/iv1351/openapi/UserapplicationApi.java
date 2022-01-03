@@ -17,7 +17,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T11:45:31.530365+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T13:27:50.627258+02:00[Europe/Mariehamn]")
 @Validated
 @Api(value = "userapplication", description = "the userapplication API")
 public interface UserapplicationApi {
@@ -25,6 +25,24 @@ public interface UserapplicationApi {
     default UserapplicationApiDelegate getDelegate() {
         return new UserapplicationApiDelegate() {};
     }
+
+    /**
+     * DELETE /userapplication/{applicationid}
+     * Deletes a user application
+     *
+     * @param applicationid  (required)
+     * @return Successful delete (status code 200)
+     */
+    @ApiOperation(value = "", nickname = "userapplicationApplicationidDelete", notes = "Deletes a user application", tags={  })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 200, message = "Successful delete") })
+    @DeleteMapping(
+        value = "/userapplication/{applicationid}"
+    )
+    default ResponseEntity<Void> userapplicationApplicationidDelete(@ApiParam(value = "",required=true) @PathVariable("applicationid") Integer applicationid) {
+        return getDelegate().userapplicationApplicationidDelete(applicationid);
+    }
+
 
     /**
      * GET /userapplication/{applicationid}

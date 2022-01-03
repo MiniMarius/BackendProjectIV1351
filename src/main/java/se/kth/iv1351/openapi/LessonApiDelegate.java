@@ -16,11 +16,24 @@ import java.util.Optional;
  * A delegate to be called by the {@link LessonApiController}}.
  * Implement this interface with a {@link org.springframework.stereotype.Service} annotated class.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T11:45:31.530365+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T13:27:50.627258+02:00[Europe/Mariehamn]")
 public interface LessonApiDelegate {
 
     default Optional<NativeWebRequest> getRequest() {
         return Optional.empty();
+    }
+
+    /**
+     * DELETE /lesson/{lessonid}
+     * Deletes a lesson
+     *
+     * @param lessonid  (required)
+     * @return Successful delete (status code 200)
+     * @see LessonApi#lessonLessonidDelete
+     */
+    default ResponseEntity<Void> lessonLessonidDelete(Integer lessonid) {
+        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+
     }
 
     /**

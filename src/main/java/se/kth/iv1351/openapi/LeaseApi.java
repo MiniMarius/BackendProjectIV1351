@@ -17,7 +17,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T11:45:31.530365+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T13:27:50.627258+02:00[Europe/Mariehamn]")
 @Validated
 @Api(value = "lease", description = "the lease API")
 public interface LeaseApi {
@@ -25,6 +25,24 @@ public interface LeaseApi {
     default LeaseApiDelegate getDelegate() {
         return new LeaseApiDelegate() {};
     }
+
+    /**
+     * DELETE /lease/{leaseid}
+     * Deletes a lease
+     *
+     * @param leaseid  (required)
+     * @return Successful delete (status code 200)
+     */
+    @ApiOperation(value = "", nickname = "leaseLeaseidDelete", notes = "Deletes a lease", tags={  })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 200, message = "Successful delete") })
+    @DeleteMapping(
+        value = "/lease/{leaseid}"
+    )
+    default ResponseEntity<Void> leaseLeaseidDelete(@ApiParam(value = "",required=true) @PathVariable("leaseid") Integer leaseid) {
+        return getDelegate().leaseLeaseidDelete(leaseid);
+    }
+
 
     /**
      * GET /lease/{leaseid}

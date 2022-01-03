@@ -17,7 +17,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T11:45:31.530365+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T13:27:50.627258+02:00[Europe/Mariehamn]")
 @Validated
 @Api(value = "sibling", description = "the sibling API")
 public interface SiblingApi {
@@ -45,6 +45,24 @@ public interface SiblingApi {
     )
     default ResponseEntity<Sibling> siblingPost(@ApiParam(value = "" ,required=true )  @Valid @RequestBody Sibling sibling) {
         return getDelegate().siblingPost(sibling);
+    }
+
+
+    /**
+     * DELETE /sibling/{siblingid}
+     * Deletes a sibling
+     *
+     * @param siblingid  (required)
+     * @return Successful delete (status code 200)
+     */
+    @ApiOperation(value = "", nickname = "siblingSiblingidDelete", notes = "Deletes a sibling", tags={  })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 200, message = "Successful delete") })
+    @DeleteMapping(
+        value = "/sibling/{siblingid}"
+    )
+    default ResponseEntity<Void> siblingSiblingidDelete(@ApiParam(value = "",required=true) @PathVariable("siblingid") Integer siblingid) {
+        return getDelegate().siblingSiblingidDelete(siblingid);
     }
 
 

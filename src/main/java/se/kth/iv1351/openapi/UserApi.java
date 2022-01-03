@@ -17,7 +17,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T11:45:31.530365+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T13:27:50.627258+02:00[Europe/Mariehamn]")
 @Validated
 @Api(value = "user", description = "the user API")
 public interface UserApi {
@@ -45,6 +45,24 @@ public interface UserApi {
     )
     default ResponseEntity<User> userPost(@ApiParam(value = "" ,required=true )  @Valid @RequestBody User user) {
         return getDelegate().userPost(user);
+    }
+
+
+    /**
+     * DELETE /user/{userid}
+     * Deletes a user
+     *
+     * @param userid  (required)
+     * @return Successful delete (status code 200)
+     */
+    @ApiOperation(value = "", nickname = "userUseridDelete", notes = "Deletes a user", tags={  })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 200, message = "Successful delete") })
+    @DeleteMapping(
+        value = "/user/{userid}"
+    )
+    default ResponseEntity<Void> userUseridDelete(@ApiParam(value = "",required=true) @PathVariable("userid") Integer userid) {
+        return getDelegate().userUseridDelete(userid);
     }
 
 

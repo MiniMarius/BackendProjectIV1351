@@ -16,11 +16,24 @@ import java.util.Optional;
  * A delegate to be called by the {@link BookingApiController}}.
  * Implement this interface with a {@link org.springframework.stereotype.Service} annotated class.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T11:45:31.530365+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T13:27:50.627258+02:00[Europe/Mariehamn]")
 public interface BookingApiDelegate {
 
     default Optional<NativeWebRequest> getRequest() {
         return Optional.empty();
+    }
+
+    /**
+     * DELETE /booking/{bookingid}
+     * Deletes a booking
+     *
+     * @param bookingid  (required)
+     * @return Successful delete (status code 200)
+     * @see BookingApi#bookingBookingidDelete
+     */
+    default ResponseEntity<Void> bookingBookingidDelete(Integer bookingid) {
+        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+
     }
 
     /**

@@ -16,11 +16,24 @@ import java.util.Optional;
  * A delegate to be called by the {@link UserinstrumentApiController}}.
  * Implement this interface with a {@link org.springframework.stereotype.Service} annotated class.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T11:45:31.530365+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T13:27:50.627258+02:00[Europe/Mariehamn]")
 public interface UserinstrumentApiDelegate {
 
     default Optional<NativeWebRequest> getRequest() {
         return Optional.empty();
+    }
+
+    /**
+     * DELETE /userinstrument/{instrumentid}
+     * Deletes a user instrument
+     *
+     * @param instrumentid  (required)
+     * @return Successful delete (status code 200)
+     * @see UserinstrumentApi#userinstrumentInstrumentidDelete
+     */
+    default ResponseEntity<Void> userinstrumentInstrumentidDelete(Integer instrumentid) {
+        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+
     }
 
     /**

@@ -33,4 +33,9 @@ public class RentalInstrumentDelegator implements RentalinstrumentApiDelegate {
         rentalInstrumentMapper.insertRentalInstrument(rentalInstrument);
         return rentalinstrumentRentalidGet(id);
     }
+
+    @Override
+    public ResponseEntity<Void> rentalinstrumentRentalidDelete(Integer rentalid) {
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 }

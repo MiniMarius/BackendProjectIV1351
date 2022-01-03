@@ -16,11 +16,24 @@ import java.util.Optional;
  * A delegate to be called by the {@link UserpaymentApiController}}.
  * Implement this interface with a {@link org.springframework.stereotype.Service} annotated class.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T11:45:31.530365+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T13:27:50.627258+02:00[Europe/Mariehamn]")
 public interface UserpaymentApiDelegate {
 
     default Optional<NativeWebRequest> getRequest() {
         return Optional.empty();
+    }
+
+    /**
+     * DELETE /userpayment/{paymentid}
+     * Deletes a user payment
+     *
+     * @param paymentid  (required)
+     * @return Successful delete (status code 200)
+     * @see UserpaymentApi#userpaymentPaymentidDelete
+     */
+    default ResponseEntity<Void> userpaymentPaymentidDelete(Integer paymentid) {
+        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+
     }
 
     /**

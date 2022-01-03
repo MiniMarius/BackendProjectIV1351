@@ -36,4 +36,9 @@ public class UserDelegator implements UserApiDelegate {
         userMapper.insertUser(user);
         return userUseridGet(id);
     }
+
+    @Override
+    public ResponseEntity<Void> userUseridDelete(Integer userid) {
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 }

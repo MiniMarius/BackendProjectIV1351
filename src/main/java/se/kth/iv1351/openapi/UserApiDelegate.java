@@ -16,7 +16,7 @@ import java.util.Optional;
  * A delegate to be called by the {@link UserApiController}}.
  * Implement this interface with a {@link org.springframework.stereotype.Service} annotated class.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T11:45:31.530365+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T13:27:50.627258+02:00[Europe/Mariehamn]")
 public interface UserApiDelegate {
 
     default Optional<NativeWebRequest> getRequest() {
@@ -42,6 +42,19 @@ public interface UserApiDelegate {
                 }
             }
         });
+        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+
+    }
+
+    /**
+     * DELETE /user/{userid}
+     * Deletes a user
+     *
+     * @param userid  (required)
+     * @return Successful delete (status code 200)
+     * @see UserApi#userUseridDelete
+     */
+    default ResponseEntity<Void> userUseridDelete(Integer userid) {
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
 
     }

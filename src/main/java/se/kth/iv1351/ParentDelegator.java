@@ -29,4 +29,9 @@ public class ParentDelegator implements ParentApiDelegate {
         parentMapper.insertParent(parent);
         return parentParentidGet(parent.getParentId()+parent.getStudentId());
     }
+
+    @Override
+    public ResponseEntity<Void> parentParentidDelete(Integer parentid) {
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 }

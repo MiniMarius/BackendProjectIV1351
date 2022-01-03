@@ -29,4 +29,9 @@ public class SiblingDelegator implements SiblingApiDelegate {
         siblingMapper.insertSibling(sibling);
         return siblingSiblingidGet(sibling.getStudentIdOne() + sibling.getStudentIdTwo());
     }
+
+    @Override
+    public ResponseEntity<Void> siblingSiblingidDelete(Integer siblingid) {
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 }

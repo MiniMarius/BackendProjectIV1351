@@ -16,7 +16,7 @@ import java.util.Optional;
  * A delegate to be called by the {@link SiblingApiController}}.
  * Implement this interface with a {@link org.springframework.stereotype.Service} annotated class.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T11:45:31.530365+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T13:27:50.627258+02:00[Europe/Mariehamn]")
 public interface SiblingApiDelegate {
 
     default Optional<NativeWebRequest> getRequest() {
@@ -42,6 +42,19 @@ public interface SiblingApiDelegate {
                 }
             }
         });
+        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+
+    }
+
+    /**
+     * DELETE /sibling/{siblingid}
+     * Deletes a sibling
+     *
+     * @param siblingid  (required)
+     * @return Successful delete (status code 200)
+     * @see SiblingApi#siblingSiblingidDelete
+     */
+    default ResponseEntity<Void> siblingSiblingidDelete(Integer siblingid) {
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
 
     }

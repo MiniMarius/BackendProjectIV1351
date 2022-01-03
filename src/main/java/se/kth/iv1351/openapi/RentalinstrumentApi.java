@@ -17,7 +17,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T11:45:31.530365+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T13:27:50.627258+02:00[Europe/Mariehamn]")
 @Validated
 @Api(value = "rentalinstrument", description = "the rentalinstrument API")
 public interface RentalinstrumentApi {
@@ -45,6 +45,24 @@ public interface RentalinstrumentApi {
     )
     default ResponseEntity<RentalInstrument> rentalinstrumentPost(@ApiParam(value = "" ,required=true )  @Valid @RequestBody RentalInstrument rentalInstrument) {
         return getDelegate().rentalinstrumentPost(rentalInstrument);
+    }
+
+
+    /**
+     * DELETE /rentalinstrument/{rentalid}
+     * Deletes a rental instrument
+     *
+     * @param rentalid  (required)
+     * @return Successful delete (status code 200)
+     */
+    @ApiOperation(value = "", nickname = "rentalinstrumentRentalidDelete", notes = "Deletes a rental instrument", tags={  })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 200, message = "Successful delete") })
+    @DeleteMapping(
+        value = "/rentalinstrument/{rentalid}"
+    )
+    default ResponseEntity<Void> rentalinstrumentRentalidDelete(@ApiParam(value = "",required=true) @PathVariable("rentalid") Integer rentalid) {
+        return getDelegate().rentalinstrumentRentalidDelete(rentalid);
     }
 
 

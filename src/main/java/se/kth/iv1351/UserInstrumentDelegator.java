@@ -29,4 +29,9 @@ public class UserInstrumentDelegator implements UserinstrumentApiDelegate {
         userInstrumentMapper.insertUserInstrument(userInstrument);
         return userinstrumentInstrumentidGet(userInstrument.getUserId());
     }
+
+    @Override
+    public ResponseEntity<Void> userinstrumentInstrumentidDelete(Integer instrumentid) {
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 }
