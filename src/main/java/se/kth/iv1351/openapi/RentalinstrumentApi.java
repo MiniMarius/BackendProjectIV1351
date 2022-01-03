@@ -17,7 +17,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T13:51:34.529189+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T14:33:16.996938+02:00[Europe/Mariehamn]")
 @Validated
 @Api(value = "rentalinstrument", description = "the rentalinstrument API")
 public interface RentalinstrumentApi {
@@ -82,6 +82,25 @@ public interface RentalinstrumentApi {
     )
     default ResponseEntity<RentalInstrument> rentalinstrumentRentalidGet(@ApiParam(value = "",required=true) @PathVariable("rentalid") Integer rentalid) {
         return getDelegate().rentalinstrumentRentalidGet(rentalid);
+    }
+
+
+    /**
+     * PUT /rentalinstrument/{rentalid}
+     * updates a rental instrument
+     *
+     * @param rentalid  (required)
+     * @return Successful response (status code 200)
+     */
+    @ApiOperation(value = "", nickname = "rentalinstrumentRentalidPut", notes = "updates a rental instrument", response = RentalInstrument.class, tags={  })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 200, message = "Successful response", response = RentalInstrument.class) })
+    @PutMapping(
+        value = "/rentalinstrument/{rentalid}",
+        produces = { "application/json" }
+    )
+    default ResponseEntity<RentalInstrument> rentalinstrumentRentalidPut(@ApiParam(value = "",required=true) @PathVariable("rentalid") Integer rentalid) {
+        return getDelegate().rentalinstrumentRentalidPut(rentalid);
     }
 
 }

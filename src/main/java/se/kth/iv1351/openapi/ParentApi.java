@@ -17,7 +17,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T13:51:34.529189+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T14:33:16.996938+02:00[Europe/Mariehamn]")
 @Validated
 @Api(value = "parent", description = "the parent API")
 public interface ParentApi {
@@ -60,6 +60,25 @@ public interface ParentApi {
     )
     default ResponseEntity<Parent> parentParentidGet(@ApiParam(value = "",required=true) @PathVariable("parentid") Integer parentid) {
         return getDelegate().parentParentidGet(parentid);
+    }
+
+
+    /**
+     * PUT /parent/{parentid}
+     * Updates a parent
+     *
+     * @param parentid  (required)
+     * @return Successful response (status code 200)
+     */
+    @ApiOperation(value = "", nickname = "parentParentidPut", notes = "Updates a parent", response = Parent.class, tags={  })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 200, message = "Successful response", response = Parent.class) })
+    @PutMapping(
+        value = "/parent/{parentid}",
+        produces = { "application/json" }
+    )
+    default ResponseEntity<Parent> parentParentidPut(@ApiParam(value = "",required=true) @PathVariable("parentid") Integer parentid) {
+        return getDelegate().parentParentidPut(parentid);
     }
 
 

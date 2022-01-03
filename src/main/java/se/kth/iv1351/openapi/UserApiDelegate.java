@@ -16,7 +16,7 @@ import java.util.Optional;
  * A delegate to be called by the {@link UserApiController}}.
  * Implement this interface with a {@link org.springframework.stereotype.Service} annotated class.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T13:51:34.529189+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T14:33:16.996938+02:00[Europe/Mariehamn]")
 public interface UserApiDelegate {
 
     default Optional<NativeWebRequest> getRequest() {
@@ -68,6 +68,28 @@ public interface UserApiDelegate {
      * @see UserApi#userUseridGet
      */
     default ResponseEntity<User> userUseridGet(Integer userid) {
+        getRequest().ifPresent(request -> {
+            for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
+                if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
+                    String exampleString = "{ \"address\" : \"address\", \"phoneNumber\" : \"phoneNumber\", \"name\" : \"name\", \"id\" : 0, \"personNumber\" : \"personNumber\", \"age\" : 6, \"email\" : \"email\" }";
+                    ApiUtil.setExampleResponse(request, "application/json", exampleString);
+                    break;
+                }
+            }
+        });
+        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+
+    }
+
+    /**
+     * PUT /user/{userid}
+     * updates a user
+     *
+     * @param userid  (required)
+     * @return Successful response (status code 200)
+     * @see UserApi#userUseridPut
+     */
+    default ResponseEntity<User> userUseridPut(Integer userid) {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {

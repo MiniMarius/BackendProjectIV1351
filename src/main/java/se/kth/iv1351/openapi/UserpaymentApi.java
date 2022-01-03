@@ -17,7 +17,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T13:51:34.529189+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T14:33:16.996938+02:00[Europe/Mariehamn]")
 @Validated
 @Api(value = "userpayment", description = "the userpayment API")
 public interface UserpaymentApi {
@@ -60,6 +60,25 @@ public interface UserpaymentApi {
     )
     default ResponseEntity<UserPayment> userpaymentPaymentidGet(@ApiParam(value = "",required=true) @PathVariable("paymentid") Integer paymentid) {
         return getDelegate().userpaymentPaymentidGet(paymentid);
+    }
+
+
+    /**
+     * PUT /userpayment/{paymentid}
+     * Updates a user payment
+     *
+     * @param paymentid  (required)
+     * @return Successful response (status code 200)
+     */
+    @ApiOperation(value = "", nickname = "userpaymentPaymentidPut", notes = "Updates a user payment", response = UserPayment.class, tags={  })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 200, message = "Successful response", response = UserPayment.class) })
+    @PutMapping(
+        value = "/userpayment/{paymentid}",
+        produces = { "application/json" }
+    )
+    default ResponseEntity<UserPayment> userpaymentPaymentidPut(@ApiParam(value = "",required=true) @PathVariable("paymentid") Integer paymentid) {
+        return getDelegate().userpaymentPaymentidPut(paymentid);
     }
 
 

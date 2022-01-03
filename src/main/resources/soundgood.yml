@@ -30,6 +30,12 @@ paths:
           required: true
           schema:
             type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/User"
       responses:
         '200':
           description: Successful response
@@ -94,6 +100,12 @@ paths:
           required: true
           schema:
             type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Booking"
       responses:
         '200':
           description: Successful response
@@ -156,6 +168,12 @@ paths:
           required: true
           schema:
             type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/InstrumentType"
       responses:
         '200':
           description: Successful response
@@ -218,6 +236,12 @@ paths:
           required: true
           schema:
             type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Lease"
       responses:
         '200':
           description: Successful response
@@ -280,6 +304,12 @@ paths:
           required: true
           schema:
             type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Lesson"
       responses:
         '200':
           description: Successful response
@@ -342,6 +372,12 @@ paths:
           required: true
           schema:
             type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Parent"
       responses:
         '200':
           description: Successful response
@@ -404,6 +440,12 @@ paths:
           required: true
           schema:
             type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/RentalInstrument"
       responses:
         '200':
           description: Successful response
@@ -466,6 +508,12 @@ paths:
           required: true
           schema:
             type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Sibling"
       responses:
         '200':
           description: Successful response
@@ -528,6 +576,12 @@ paths:
           required: true
           schema:
             type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UserApplication"
       responses:
         '200':
           description: Successful response
@@ -590,6 +644,12 @@ paths:
           required: true
           schema:
             type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UserInstrument"
       responses:
         '200':
           description: Successful response
@@ -652,6 +712,12 @@ paths:
           required: true
           schema:
             type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UserPayment"
       responses:
         '200':
           description: Successful response

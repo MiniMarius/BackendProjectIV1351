@@ -16,7 +16,7 @@ import java.util.Optional;
  * A delegate to be called by the {@link InstrumenttypeApiController}}.
  * Implement this interface with a {@link org.springframework.stereotype.Service} annotated class.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T13:51:34.529189+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T14:33:16.996938+02:00[Europe/Mariehamn]")
 public interface InstrumenttypeApiDelegate {
 
     default Optional<NativeWebRequest> getRequest() {
@@ -45,6 +45,28 @@ public interface InstrumenttypeApiDelegate {
      * @see InstrumenttypeApi#instrumenttypeInstrumentidGet
      */
     default ResponseEntity<InstrumentType> instrumenttypeInstrumentidGet(Integer instrumentid) {
+        getRequest().ifPresent(request -> {
+            for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
+                if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
+                    String exampleString = "{ \"id\" : 0, \"type\" : \"type\" }";
+                    ApiUtil.setExampleResponse(request, "application/json", exampleString);
+                    break;
+                }
+            }
+        });
+        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+
+    }
+
+    /**
+     * PUT /instrumenttype/{instrumentid}
+     * Updates a instrument type
+     *
+     * @param instrumentid  (required)
+     * @return Successful response (status code 200)
+     * @see InstrumenttypeApi#instrumenttypeInstrumentidPut
+     */
+    default ResponseEntity<InstrumentType> instrumenttypeInstrumentidPut(Integer instrumentid) {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {

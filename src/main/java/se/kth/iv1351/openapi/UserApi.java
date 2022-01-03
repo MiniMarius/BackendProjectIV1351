@@ -17,7 +17,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T13:51:34.529189+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T14:33:16.996938+02:00[Europe/Mariehamn]")
 @Validated
 @Api(value = "user", description = "the user API")
 public interface UserApi {
@@ -82,6 +82,25 @@ public interface UserApi {
     )
     default ResponseEntity<User> userUseridGet(@ApiParam(value = "",required=true) @PathVariable("userid") Integer userid) {
         return getDelegate().userUseridGet(userid);
+    }
+
+
+    /**
+     * PUT /user/{userid}
+     * updates a user
+     *
+     * @param userid  (required)
+     * @return Successful response (status code 200)
+     */
+    @ApiOperation(value = "", nickname = "userUseridPut", notes = "updates a user", response = User.class, tags={  })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 200, message = "Successful response", response = User.class) })
+    @PutMapping(
+        value = "/user/{userid}",
+        produces = { "application/json" }
+    )
+    default ResponseEntity<User> userUseridPut(@ApiParam(value = "",required=true) @PathVariable("userid") Integer userid) {
+        return getDelegate().userUseridPut(userid);
     }
 
 }

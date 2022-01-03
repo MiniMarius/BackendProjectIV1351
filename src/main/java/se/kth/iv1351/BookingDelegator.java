@@ -41,4 +41,9 @@ public class BookingDelegator implements BookingApiDelegate {
         bookingMapper.deleteBooking(bookingid);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+    @Override
+    public ResponseEntity<Booking> bookingBookingidPut(Integer bookingid) {
+        return BookingApiDelegate.super.bookingBookingidPut(bookingid);
+    }
 }

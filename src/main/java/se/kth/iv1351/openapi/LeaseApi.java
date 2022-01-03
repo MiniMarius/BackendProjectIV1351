@@ -17,7 +17,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T13:51:34.529189+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T14:33:16.996938+02:00[Europe/Mariehamn]")
 @Validated
 @Api(value = "lease", description = "the lease API")
 public interface LeaseApi {
@@ -60,6 +60,25 @@ public interface LeaseApi {
     )
     default ResponseEntity<Lease> leaseLeaseidGet(@ApiParam(value = "",required=true) @PathVariable("leaseid") Integer leaseid) {
         return getDelegate().leaseLeaseidGet(leaseid);
+    }
+
+
+    /**
+     * PUT /lease/{leaseid}
+     * updates a lease
+     *
+     * @param leaseid  (required)
+     * @return Successful response (status code 200)
+     */
+    @ApiOperation(value = "", nickname = "leaseLeaseidPut", notes = "updates a lease", response = Lease.class, tags={  })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 200, message = "Successful response", response = Lease.class) })
+    @PutMapping(
+        value = "/lease/{leaseid}",
+        produces = { "application/json" }
+    )
+    default ResponseEntity<Lease> leaseLeaseidPut(@ApiParam(value = "",required=true) @PathVariable("leaseid") Integer leaseid) {
+        return getDelegate().leaseLeaseidPut(leaseid);
     }
 
 

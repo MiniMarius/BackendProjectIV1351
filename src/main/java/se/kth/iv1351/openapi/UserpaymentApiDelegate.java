@@ -16,7 +16,7 @@ import java.util.Optional;
  * A delegate to be called by the {@link UserpaymentApiController}}.
  * Implement this interface with a {@link org.springframework.stereotype.Service} annotated class.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T13:51:34.529189+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T14:33:16.996938+02:00[Europe/Mariehamn]")
 public interface UserpaymentApiDelegate {
 
     default Optional<NativeWebRequest> getRequest() {
@@ -45,6 +45,28 @@ public interface UserpaymentApiDelegate {
      * @see UserpaymentApi#userpaymentPaymentidGet
      */
     default ResponseEntity<UserPayment> userpaymentPaymentidGet(Integer paymentid) {
+        getRequest().ifPresent(request -> {
+            for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
+                if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
+                    String exampleString = "{ \"amount\" : 6, \"currency\" : \"currency\", \"id\" : 0, \"type\" : \"type\", \"userid\" : 1 }";
+                    ApiUtil.setExampleResponse(request, "application/json", exampleString);
+                    break;
+                }
+            }
+        });
+        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+
+    }
+
+    /**
+     * PUT /userpayment/{paymentid}
+     * Updates a user payment
+     *
+     * @param paymentid  (required)
+     * @return Successful response (status code 200)
+     * @see UserpaymentApi#userpaymentPaymentidPut
+     */
+    default ResponseEntity<UserPayment> userpaymentPaymentidPut(Integer paymentid) {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {

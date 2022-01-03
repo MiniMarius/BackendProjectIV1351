@@ -17,7 +17,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T13:51:34.529189+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T14:33:16.996938+02:00[Europe/Mariehamn]")
 @Validated
 @Api(value = "sibling", description = "the sibling API")
 public interface SiblingApi {
@@ -82,6 +82,25 @@ public interface SiblingApi {
     )
     default ResponseEntity<Sibling> siblingSiblingidGet(@ApiParam(value = "",required=true) @PathVariable("siblingid") Integer siblingid) {
         return getDelegate().siblingSiblingidGet(siblingid);
+    }
+
+
+    /**
+     * PUT /sibling/{siblingid}
+     * Updates a sibling
+     *
+     * @param siblingid  (required)
+     * @return Successful response (status code 200)
+     */
+    @ApiOperation(value = "", nickname = "siblingSiblingidPut", notes = "Updates a sibling", response = Sibling.class, tags={  })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 200, message = "Successful response", response = Sibling.class) })
+    @PutMapping(
+        value = "/sibling/{siblingid}",
+        produces = { "application/json" }
+    )
+    default ResponseEntity<Sibling> siblingSiblingidPut(@ApiParam(value = "",required=true) @PathVariable("siblingid") Integer siblingid) {
+        return getDelegate().siblingSiblingidPut(siblingid);
     }
 
 }

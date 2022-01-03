@@ -17,7 +17,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T13:51:34.529189+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T14:33:16.996938+02:00[Europe/Mariehamn]")
 @Validated
 @Api(value = "booking", description = "the booking API")
 public interface BookingApi {
@@ -60,6 +60,25 @@ public interface BookingApi {
     )
     default ResponseEntity<Booking> bookingBookingidGet(@ApiParam(value = "",required=true) @PathVariable("bookingid") Integer bookingid) {
         return getDelegate().bookingBookingidGet(bookingid);
+    }
+
+
+    /**
+     * PUT /booking/{bookingid}
+     * Updates a booking
+     *
+     * @param bookingid  (required)
+     * @return Successful response (status code 200)
+     */
+    @ApiOperation(value = "", nickname = "bookingBookingidPut", notes = "Updates a booking", response = Booking.class, tags={  })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 200, message = "Successful response", response = Booking.class) })
+    @PutMapping(
+        value = "/booking/{bookingid}",
+        produces = { "application/json" }
+    )
+    default ResponseEntity<Booking> bookingBookingidPut(@ApiParam(value = "",required=true) @PathVariable("bookingid") Integer bookingid) {
+        return getDelegate().bookingBookingidPut(bookingid);
     }
 
 

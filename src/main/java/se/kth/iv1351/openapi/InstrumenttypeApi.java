@@ -17,7 +17,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T13:51:34.529189+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T14:33:16.996938+02:00[Europe/Mariehamn]")
 @Validated
 @Api(value = "instrumenttype", description = "the instrumenttype API")
 public interface InstrumenttypeApi {
@@ -60,6 +60,25 @@ public interface InstrumenttypeApi {
     )
     default ResponseEntity<InstrumentType> instrumenttypeInstrumentidGet(@ApiParam(value = "",required=true) @PathVariable("instrumentid") Integer instrumentid) {
         return getDelegate().instrumenttypeInstrumentidGet(instrumentid);
+    }
+
+
+    /**
+     * PUT /instrumenttype/{instrumentid}
+     * Updates a instrument type
+     *
+     * @param instrumentid  (required)
+     * @return Successful response (status code 200)
+     */
+    @ApiOperation(value = "", nickname = "instrumenttypeInstrumentidPut", notes = "Updates a instrument type", response = InstrumentType.class, tags={  })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 200, message = "Successful response", response = InstrumentType.class) })
+    @PutMapping(
+        value = "/instrumenttype/{instrumentid}",
+        produces = { "application/json" }
+    )
+    default ResponseEntity<InstrumentType> instrumenttypeInstrumentidPut(@ApiParam(value = "",required=true) @PathVariable("instrumentid") Integer instrumentid) {
+        return getDelegate().instrumenttypeInstrumentidPut(instrumentid);
     }
 
 

@@ -16,7 +16,7 @@ import java.util.Optional;
  * A delegate to be called by the {@link LeaseApiController}}.
  * Implement this interface with a {@link org.springframework.stereotype.Service} annotated class.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T13:51:34.529189+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T14:33:16.996938+02:00[Europe/Mariehamn]")
 public interface LeaseApiDelegate {
 
     default Optional<NativeWebRequest> getRequest() {
@@ -45,6 +45,28 @@ public interface LeaseApiDelegate {
      * @see LeaseApi#leaseLeaseidGet
      */
     default ResponseEntity<Lease> leaseLeaseidGet(Integer leaseid) {
+        getRequest().ifPresent(request -> {
+            for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
+                if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
+                    String exampleString = "{ \"studentId\" : 1, \"rentalInstrumentId\" : 6, \"startTime\" : \"startTime\", \"id\" : 0, \"endTime\" : \"endTime\" }";
+                    ApiUtil.setExampleResponse(request, "application/json", exampleString);
+                    break;
+                }
+            }
+        });
+        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+
+    }
+
+    /**
+     * PUT /lease/{leaseid}
+     * updates a lease
+     *
+     * @param leaseid  (required)
+     * @return Successful response (status code 200)
+     * @see LeaseApi#leaseLeaseidPut
+     */
+    default ResponseEntity<Lease> leaseLeaseidPut(Integer leaseid) {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {

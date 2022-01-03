@@ -16,7 +16,7 @@ import java.util.Optional;
  * A delegate to be called by the {@link ParentApiController}}.
  * Implement this interface with a {@link org.springframework.stereotype.Service} annotated class.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T13:51:34.529189+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T14:33:16.996938+02:00[Europe/Mariehamn]")
 public interface ParentApiDelegate {
 
     default Optional<NativeWebRequest> getRequest() {
@@ -45,6 +45,28 @@ public interface ParentApiDelegate {
      * @see ParentApi#parentParentidGet
      */
     default ResponseEntity<Parent> parentParentidGet(Integer parentid) {
+        getRequest().ifPresent(request -> {
+            for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
+                if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
+                    String exampleString = "{ \"studentId\" : 0, \"parentId\" : 6 }";
+                    ApiUtil.setExampleResponse(request, "application/json", exampleString);
+                    break;
+                }
+            }
+        });
+        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+
+    }
+
+    /**
+     * PUT /parent/{parentid}
+     * Updates a parent
+     *
+     * @param parentid  (required)
+     * @return Successful response (status code 200)
+     * @see ParentApi#parentParentidPut
+     */
+    default ResponseEntity<Parent> parentParentidPut(Integer parentid) {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
