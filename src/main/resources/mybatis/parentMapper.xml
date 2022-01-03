@@ -2,10 +2,10 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="se.kth.iv1351.dao.ParentMapper">
     <select id="selectParent" parameterType="java.lang.Integer" resultType="se.kth.iv1351.model.ParentData">
-        SELECT * FROM BOOKINGS WHERE id= #{parentid};
+        SELECT * FROM PARENTS WHERE id= #{parentid};
     </select>
     <insert id="insertParent" parameterType="se.kth.iv1351.openapi.model.Parent">
-        INSERT INTO BOOKINGS (student_id, parent_id)
+        INSERT INTO PARENTS (student_id, parent_id)
         VALUES (#{studentId}, #{parentId});
     </insert>
 </mapper>

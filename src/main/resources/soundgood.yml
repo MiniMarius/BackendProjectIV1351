@@ -517,7 +517,7 @@ components:
     UserInstrument:
       type: object
       properties:
-        id:
+        userId:
           type: integer
         instrumentTypeId:
           type: integer

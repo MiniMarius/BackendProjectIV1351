@@ -5,7 +5,7 @@
         SELECT * FROM LESSONS WHERE id= #{lessonid};
     </select>
     <insert id="insertLesson" parameterType="se.kth.iv1351.openapi.model.Lesson">
-        INSERT INTO BOOKINGS (id, start_time, end_time, rental_instrument_id, student_id)
+        INSERT INTO LESSONS (id, start_time, end_time, rental_instrument_id, student_id)
         VALUES (#{id}, #{startTime}, #{endTime}, #{rentalInstrumentId}, #{studentId});
     </insert>
 </mapper>

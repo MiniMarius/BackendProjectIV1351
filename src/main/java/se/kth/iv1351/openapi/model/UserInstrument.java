@@ -12,32 +12,32 @@ import javax.validation.constraints.*;
 /**
  * UserInstrument
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-02T17:40:04.139260+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T09:29:07.750934+02:00[Europe/Mariehamn]")
 public class UserInstrument   {
-  @JsonProperty("id")
-  private Integer id;
+  @JsonProperty("userId")
+  private Integer userId;
 
   @JsonProperty("instrumentTypeId")
   private Integer instrumentTypeId;
 
-  public UserInstrument id(Integer id) {
-    this.id = id;
+  public UserInstrument userId(Integer userId) {
+    this.userId = userId;
     return this;
   }
 
   /**
-   * Get id
-   * @return id
+   * Get userId
+   * @return userId
   */
   @ApiModelProperty(value = "")
 
 
-  public Integer getId() {
-    return id;
+  public Integer getUserId() {
+    return userId;
   }
 
-  public void setId(Integer id) {
-    this.id = id;
+  public void setUserId(Integer userId) {
+    this.userId = userId;
   }
 
   public UserInstrument instrumentTypeId(Integer instrumentTypeId) {
@@ -70,13 +70,13 @@ public class UserInstrument   {
       return false;
     }
     UserInstrument userInstrument = (UserInstrument) o;
-    return Objects.equals(this.id, userInstrument.id) &&
+    return Objects.equals(this.userId, userInstrument.userId) &&
         Objects.equals(this.instrumentTypeId, userInstrument.instrumentTypeId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, instrumentTypeId);
+    return Objects.hash(userId, instrumentTypeId);
   }
 
   @Override
@@ -84,7 +84,7 @@ public class UserInstrument   {
     StringBuilder sb = new StringBuilder();
     sb.append("class UserInstrument {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("    instrumentTypeId: ").append(toIndentedString(instrumentTypeId)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -5,7 +5,7 @@
         SELECT * FROM SIBLINGS WHERE id= #{siblingid};
     </select>
     <insert id="insertSibling" parameterType="se.kth.iv1351.openapi.model.Sibling">
-        INSERT INTO BOOKINGS (student_id, student_id2)
+        INSERT INTO SIBLINGS (student_id, student_id2)
         VALUES (#{studentIdOne}, #{studentIdTwo});
     </insert>
 

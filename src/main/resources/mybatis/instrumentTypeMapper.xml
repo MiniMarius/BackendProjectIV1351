@@ -5,7 +5,7 @@
         SELECT * FROM INSTRUMENT_TYPES WHERE id= #{instrumentid};
     </select>
     <insert id="insertInstrumentType" parameterType="se.kth.iv1351.openapi.model.InstrumentType">
-        INSERT INTO BOOKINGS (id, type)
+        INSERT INTO INSTRUMENT_TYPES (id, type)
         VALUES (#{id}, #{type});
     </insert>
 </mapper>

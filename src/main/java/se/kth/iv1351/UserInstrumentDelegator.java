@@ -20,7 +20,7 @@ public class UserInstrumentDelegator implements UserinstrumentApiDelegate {
         UserInstrumentData userInstrumentData = userInstrumentMapper.selectUserInstrument(instrumentid);
         UserInstrument userInstrument = new UserInstrument();
         userInstrument.setInstrumentTypeId(userInstrumentData.getInstrumentTypeId());
-        userInstrument.setId(userInstrumentData.getUserid());
+        userInstrument.setUserId(userInstrumentData.getUserid());
         return new ResponseEntity<UserInstrument>(userInstrument, HttpStatus.OK);
     }
 
