@@ -3,7 +3,7 @@ package se.kth.iv1351.openapi;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.Optional;
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T09:29:07.750934+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T09:36:47.388902+02:00[Europe/Mariehamn]")
 @Controller
 @RequestMapping("${openapi.sample.base-path:}")
 public class ParentApiController implements ParentApi {
