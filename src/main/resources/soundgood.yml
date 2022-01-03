@@ -1,8 +1,8 @@
 openapi: 3.0.0
 info:
   version: 1.0.0
-  title: Sample API
-  description: A sample API to illustrate OpenAPI concepts
+  title: Soundgood API
+  description: A API used for soundgood music school
 servers:
   - url: https://soundgood.music/
 paths:
