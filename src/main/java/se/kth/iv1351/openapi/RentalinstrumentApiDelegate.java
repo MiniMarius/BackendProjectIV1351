@@ -16,7 +16,7 @@ import java.util.Optional;
  * A delegate to be called by the {@link RentalinstrumentApiController}}.
  * Implement this interface with a {@link org.springframework.stereotype.Service} annotated class.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T10:57:46.872364+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T11:45:31.530365+02:00[Europe/Mariehamn]")
 public interface RentalinstrumentApiDelegate {
 
     default Optional<NativeWebRequest> getRequest() {
