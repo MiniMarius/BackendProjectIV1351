@@ -8,4 +8,5 @@ import se.kth.iv1351.openapi.model.RentalInstrument;
 public interface RentalInstrumentMapper {
     RentalInstrumentData selectRentalInstrument(Integer rentalid);
     void insertRentalInstrument(RentalInstrument rentalInstrument);
+    void deleteRentalInstrument(Integer rentalid);
 }

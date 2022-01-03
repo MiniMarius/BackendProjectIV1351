@@ -8,4 +8,5 @@ import se.kth.iv1351.openapi.model.Lesson;
 public interface LessonMapper {
     LessonData selectLesson(Integer lessonid);
     void insertLesson(Lesson lesson);
+    void deleteLesson(Integer lessonid);
 }

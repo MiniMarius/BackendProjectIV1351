@@ -8,4 +8,5 @@ import se.kth.iv1351.openapi.model.Parent;
 public interface ParentMapper {
     ParentData selectParent(Integer parentid);
     void insertParent(Parent parent);
+    void deleteParent(Integer parentid);
 }

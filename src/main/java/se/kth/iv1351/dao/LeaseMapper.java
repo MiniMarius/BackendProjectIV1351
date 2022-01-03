@@ -8,4 +8,5 @@ import se.kth.iv1351.openapi.model.Lease;
 public interface LeaseMapper {
     LeaseData selectLease(Integer leaseid);
     void insertLease(Lease lease);
+    void deleteLease(Integer leaseid);
 }

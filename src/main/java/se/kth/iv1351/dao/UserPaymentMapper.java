@@ -8,4 +8,5 @@ import se.kth.iv1351.openapi.model.UserPayment;
 public interface UserPaymentMapper {
     UserPaymentData selectUserPayment(Integer paymentid);
     void insertUserPayment(UserPayment userPayment);
+    void deleteUserPayment(Integer paymentid);
 }

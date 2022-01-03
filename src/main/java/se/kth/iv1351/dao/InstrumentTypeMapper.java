@@ -8,4 +8,5 @@ import se.kth.iv1351.openapi.model.InstrumentType;
 public interface InstrumentTypeMapper {
     InstrumentTypeData selectInstrumentType(Integer instrumentid);
     void insertInstrumentType(InstrumentType instrumentType);
+    void deleteInstrumentType(Integer instrumentid);
 }

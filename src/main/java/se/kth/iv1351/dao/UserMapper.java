@@ -8,4 +8,5 @@ import se.kth.iv1351.openapi.model.User;
 public interface UserMapper {
     UserData selectUser(Integer userid);
     void insertUser(User user);
+    void deleteUser(Integer userid);
 }

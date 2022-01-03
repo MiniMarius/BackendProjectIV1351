@@ -8,4 +8,5 @@ import se.kth.iv1351.openapi.model.Sibling;
 public interface SiblingMapper {
     SiblingData selectSibling(Integer siblingid);
     void insertSibling(Sibling sibling);
+    void deleteSibling(Integer siblingid);
 }

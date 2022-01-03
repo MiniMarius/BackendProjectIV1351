@@ -8,4 +8,5 @@ import se.kth.iv1351.openapi.model.UserApplication;
 public interface UserApplicationMapper {
     UserApplicationData selectUserApplication(Integer applicationid);
     void insertUserApplication(UserApplication userApplication);
+    void deleteUserApplication(Integer applicationid);
 }

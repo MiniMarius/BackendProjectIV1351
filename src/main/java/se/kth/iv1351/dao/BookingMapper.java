@@ -8,4 +8,5 @@ import se.kth.iv1351.openapi.model.Booking;
 public interface BookingMapper {
     BookingData selectBooking(Integer bookingid);
     void insertBooking(Booking booking);
+    void deleteBooking(Integer bookingid);
 }

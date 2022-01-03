@@ -8,4 +8,5 @@ import se.kth.iv1351.openapi.model.UserInstrument;
 public interface UserInstrumentMapper {
     UserInstrumentData selectUserInstrument(Integer instrumentid);
     void insertUserInstrument(UserInstrument userInstrument);
+    void deleteUserInstrument(Integer instrumentid);
 }
