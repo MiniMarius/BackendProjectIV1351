@@ -22,6 +22,21 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/User"
+    put:
+      description: updates a user
+      parameters:
+        - name: userid
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
     delete:
       description: Deletes a user
       parameters:
@@ -58,6 +73,21 @@ paths:
   /booking/{bookingid}:
     get:
       description: Returns a booking
+      parameters:
+        - name: bookingid
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Booking"
+    put:
+      description: Updates a booking
       parameters:
         - name: bookingid
           in: path
@@ -118,6 +148,21 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/InstrumentType"
+    put:
+      description: Updates a instrument type
+      parameters:
+        - name: instrumentid
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InstrumentType"
     delete:
       description: Deletes a instrument type
       parameters:
@@ -152,6 +197,21 @@ paths:
   /lease/{leaseid}:
     get:
       description: Returns a lease
+      parameters:
+        - name: leaseid
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Lease"
+    put:
+      description: updates a lease
       parameters:
         - name: leaseid
           in: path
@@ -212,6 +272,21 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Lesson"
+    put:
+      description: updates a lesson
+      parameters:
+        - name: lessonid
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Lesson"
     delete:
       description: Deletes a lesson
       parameters:
@@ -246,6 +321,21 @@ paths:
   /parent/{parentid}:
     get:
       description: Returns a parent
+      parameters:
+        - name: parentid
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Parent"
+    put:
+      description: Updates a parent
       parameters:
         - name: parentid
           in: path
@@ -306,6 +396,21 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/RentalInstrument"
+    put:
+      description: updates a rental instrument
+      parameters:
+        - name: rentalid
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RentalInstrument"
     delete:
       description: Deletes a rental instrument
       parameters:
@@ -340,6 +445,21 @@ paths:
   /sibling/{siblingid}:
     get:
       description: Returns a sibling
+      parameters:
+        - name: siblingid
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Sibling"
+    put:
+      description: Updates a sibling
       parameters:
         - name: siblingid
           in: path
@@ -400,6 +520,21 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/UserApplication"
+    put:
+      description: Updates a user application
+      parameters:
+        - name: applicationid
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UserApplication"
     delete:
       description: Deletes a user application
       parameters:
@@ -447,6 +582,21 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/UserInstrument"
+    put:
+      description: Updates a user instrument
+      parameters:
+        - name: instrumentid
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UserInstrument"
     delete:
       description: Deletes a user instrument
       parameters:
@@ -481,6 +631,21 @@ paths:
   /userpayment/{paymentid}:
     get:
       description: Returns a user payment
+      parameters:
+        - name: paymentid
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UserPayment"
+    put:
+      description: Updates a user payment
       parameters:
         - name: paymentid
           in: path
