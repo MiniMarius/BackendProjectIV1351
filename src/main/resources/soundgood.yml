@@ -736,7 +736,7 @@ paths:
       responses:
         '200':
           description: Successful delete
-  /userpayment:
+  /studentpayment:
     post:
       description: Lets a user post a new user payment
       requestBody:
@@ -756,6 +756,38 @@ paths:
 
         '400':
           description: Invalid request
+  /instructorpayment:
+    post:
+      description: Lets a user post a new user payment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UserPayment"
+
+      responses:
+        '200':
+          description: Successfully created a new user payment
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UserPayment"
+
+        '400':
+          description: Invalid request
+  /ensemblesnextweek:
+    get:
+      description: Returns a report of ensembles next week etc, more analytical data.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Lesson"
 
 
 components:
@@ -879,13 +911,10 @@ components:
     UserPayment:
       type: object
       properties:
-        id:
-          type: integer
-        type:
-          type: string
-        amount:
-          type: integer
-        currency:
-          type: string
         userid:
           type: integer
+        startTime:
+          type: string
+        endTime:
+          type: string
+

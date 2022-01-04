@@ -12,102 +12,16 @@ import javax.validation.constraints.*;
 /**
  * UserPayment
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-04T09:29:48.826888+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-04T15:52:37.143243+02:00[Europe/Mariehamn]")
 public class UserPayment   {
-  @JsonProperty("id")
-  private Integer id;
-
-  @JsonProperty("type")
-  private String type;
-
-  @JsonProperty("amount")
-  private Integer amount;
-
-  @JsonProperty("currency")
-  private String currency;
-
   @JsonProperty("userid")
   private Integer userid;
 
-  public UserPayment id(Integer id) {
-    this.id = id;
-    return this;
-  }
+  @JsonProperty("startTime")
+  private String startTime;
 
-  /**
-   * Get id
-   * @return id
-  */
-  @ApiModelProperty(value = "")
-
-
-  public Integer getId() {
-    return id;
-  }
-
-  public void setId(Integer id) {
-    this.id = id;
-  }
-
-  public UserPayment type(String type) {
-    this.type = type;
-    return this;
-  }
-
-  /**
-   * Get type
-   * @return type
-  */
-  @ApiModelProperty(value = "")
-
-
-  public String getType() {
-    return type;
-  }
-
-  public void setType(String type) {
-    this.type = type;
-  }
-
-  public UserPayment amount(Integer amount) {
-    this.amount = amount;
-    return this;
-  }
-
-  /**
-   * Get amount
-   * @return amount
-  */
-  @ApiModelProperty(value = "")
-
-
-  public Integer getAmount() {
-    return amount;
-  }
-
-  public void setAmount(Integer amount) {
-    this.amount = amount;
-  }
-
-  public UserPayment currency(String currency) {
-    this.currency = currency;
-    return this;
-  }
-
-  /**
-   * Get currency
-   * @return currency
-  */
-  @ApiModelProperty(value = "")
-
-
-  public String getCurrency() {
-    return currency;
-  }
-
-  public void setCurrency(String currency) {
-    this.currency = currency;
-  }
+  @JsonProperty("endTime")
+  private String endTime;
 
   public UserPayment userid(Integer userid) {
     this.userid = userid;
@@ -129,6 +43,46 @@ public class UserPayment   {
     this.userid = userid;
   }
 
+  public UserPayment startTime(String startTime) {
+    this.startTime = startTime;
+    return this;
+  }
+
+  /**
+   * Get startTime
+   * @return startTime
+  */
+  @ApiModelProperty(value = "")
+
+
+  public String getStartTime() {
+    return startTime;
+  }
+
+  public void setStartTime(String startTime) {
+    this.startTime = startTime;
+  }
+
+  public UserPayment endTime(String endTime) {
+    this.endTime = endTime;
+    return this;
+  }
+
+  /**
+   * Get endTime
+   * @return endTime
+  */
+  @ApiModelProperty(value = "")
+
+
+  public String getEndTime() {
+    return endTime;
+  }
+
+  public void setEndTime(String endTime) {
+    this.endTime = endTime;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -139,16 +93,14 @@ public class UserPayment   {
       return false;
     }
     UserPayment userPayment = (UserPayment) o;
-    return Objects.equals(this.id, userPayment.id) &&
-        Objects.equals(this.type, userPayment.type) &&
-        Objects.equals(this.amount, userPayment.amount) &&
-        Objects.equals(this.currency, userPayment.currency) &&
-        Objects.equals(this.userid, userPayment.userid);
+    return Objects.equals(this.userid, userPayment.userid) &&
+        Objects.equals(this.startTime, userPayment.startTime) &&
+        Objects.equals(this.endTime, userPayment.endTime);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, type, amount, currency, userid);
+    return Objects.hash(userid, startTime, endTime);
   }
 
   @Override
@@ -156,11 +108,9 @@ public class UserPayment   {
     StringBuilder sb = new StringBuilder();
     sb.append("class UserPayment {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
-    sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
     sb.append("    userid: ").append(toIndentedString(userid)).append("\n");
+    sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
+    sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
     sb.append("}");
     return sb.toString();
   }

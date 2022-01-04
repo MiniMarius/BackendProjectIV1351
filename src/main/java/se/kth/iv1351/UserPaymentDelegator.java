@@ -19,20 +19,8 @@ public class UserPaymentDelegator implements UserpaymentApiDelegate {
     public ResponseEntity<UserPayment> userpaymentPaymentidGet(Integer paymentid) {
         UserPaymentData userPaymentData = userPaymentMapper.selectUserPayment(paymentid);
         UserPayment userPayment = new UserPayment();
-        userPayment.setId(userPaymentData.getId());
         userPayment.setUserid(userPaymentData.getUserid());
-        userPayment.setAmount(userPaymentData.getAmount());
-        userPayment.setCurrency(userPaymentData.getCurrency());
-        userPayment.setType(userPaymentData.getType());
         return new ResponseEntity<UserPayment>(userPayment, HttpStatus.OK);
-    }
-
-    @Override
-    public ResponseEntity<UserPayment> userpaymentPost(UserPayment userPayment) {
-        Integer id = IdGenerator.generate();
-        userPayment.setId(id);
-        userPaymentMapper.insertUserPayment(userPayment);
-        return userpaymentPaymentidGet(id);
     }
 
     @Override
@@ -43,7 +31,6 @@ public class UserPaymentDelegator implements UserpaymentApiDelegate {
 
     @Override
     public ResponseEntity<UserPayment> userpaymentPaymentidPut(Integer paymentid, UserPayment userPayment) {
-       userPayment.setId(paymentid);
        userPaymentMapper.updateUserPayment(userPayment);
        return userpaymentPaymentidGet(paymentid);
     }

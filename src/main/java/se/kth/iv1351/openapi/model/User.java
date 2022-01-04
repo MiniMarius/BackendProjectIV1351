@@ -12,7 +12,7 @@ import javax.validation.constraints.*;
 /**
  * User
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-04T09:29:48.826888+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-04T15:52:37.143243+02:00[Europe/Mariehamn]")
 public class User   {
   @JsonProperty("id")
   private Integer id;
@@ -34,6 +34,9 @@ public class User   {
 
   @JsonProperty("phoneNumber")
   private String phoneNumber;
+
+  @JsonProperty("role")
+  private String role;
 
   public User id(Integer id) {
     this.id = id;
@@ -175,6 +178,26 @@ public class User   {
     this.phoneNumber = phoneNumber;
   }
 
+  public User role(String role) {
+    this.role = role;
+    return this;
+  }
+
+  /**
+   * Get role
+   * @return role
+  */
+  @ApiModelProperty(value = "")
+
+
+  public String getRole() {
+    return role;
+  }
+
+  public void setRole(String role) {
+    this.role = role;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -191,12 +214,13 @@ public class User   {
         Objects.equals(this.age, user.age) &&
         Objects.equals(this.address, user.address) &&
         Objects.equals(this.email, user.email) &&
-        Objects.equals(this.phoneNumber, user.phoneNumber);
+        Objects.equals(this.phoneNumber, user.phoneNumber) &&
+        Objects.equals(this.role, user.role);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, personNumber, name, age, address, email, phoneNumber);
+    return Objects.hash(id, personNumber, name, age, address, email, phoneNumber, role);
   }
 
   @Override
@@ -211,6 +235,7 @@ public class User   {
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
+    sb.append("    role: ").append(toIndentedString(role)).append("\n");
     sb.append("}");
     return sb.toString();
   }
