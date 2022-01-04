@@ -13,7 +13,7 @@
         start_time = #{startTime},
         end_time = #{endTime},
         lesson_id = #{lessonId},
-        student_id = #{studentId}
+        student_id = #{studentId},
         instructor_id = #{instructorId}
         WHERE id = #{id}
     </update>

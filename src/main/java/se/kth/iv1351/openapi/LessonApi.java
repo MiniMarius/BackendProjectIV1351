@@ -17,7 +17,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T14:33:16.996938+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-04T09:29:48.826888+02:00[Europe/Mariehamn]")
 @Validated
 @Api(value = "lesson", description = "the lesson API")
 public interface LessonApi {
@@ -68,6 +68,7 @@ public interface LessonApi {
      * updates a lesson
      *
      * @param lessonid  (required)
+     * @param lesson  (required)
      * @return Successful response (status code 200)
      */
     @ApiOperation(value = "", nickname = "lessonLessonidPut", notes = "updates a lesson", response = Lesson.class, tags={  })
@@ -75,10 +76,11 @@ public interface LessonApi {
         @ApiResponse(code = 200, message = "Successful response", response = Lesson.class) })
     @PutMapping(
         value = "/lesson/{lessonid}",
-        produces = { "application/json" }
+        produces = { "application/json" },
+        consumes = { "application/json" }
     )
-    default ResponseEntity<Lesson> lessonLessonidPut(@ApiParam(value = "",required=true) @PathVariable("lessonid") Integer lessonid) {
-        return getDelegate().lessonLessonidPut(lessonid);
+    default ResponseEntity<Lesson> lessonLessonidPut(@ApiParam(value = "",required=true) @PathVariable("lessonid") Integer lessonid,@ApiParam(value = "" ,required=true )  @Valid @RequestBody Lesson lesson) {
+        return getDelegate().lessonLessonidPut(lessonid, lesson);
     }
 
 

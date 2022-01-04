@@ -16,7 +16,7 @@ import java.util.Optional;
  * A delegate to be called by the {@link BookingApiController}}.
  * Implement this interface with a {@link org.springframework.stereotype.Service} annotated class.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T14:33:16.996938+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-04T09:29:48.826888+02:00[Europe/Mariehamn]")
 public interface BookingApiDelegate {
 
     default Optional<NativeWebRequest> getRequest() {
@@ -63,10 +63,12 @@ public interface BookingApiDelegate {
      * Updates a booking
      *
      * @param bookingid  (required)
+     * @param booking  (required)
      * @return Successful response (status code 200)
      * @see BookingApi#bookingBookingidPut
      */
-    default ResponseEntity<Booking> bookingBookingidPut(Integer bookingid) {
+    default ResponseEntity<Booking> bookingBookingidPut(Integer bookingid,
+        Booking booking) {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {

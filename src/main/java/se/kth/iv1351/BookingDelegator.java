@@ -43,7 +43,9 @@ public class BookingDelegator implements BookingApiDelegate {
     }
 
     @Override
-    public ResponseEntity<Booking> bookingBookingidPut(Integer bookingid) {
-        return BookingApiDelegate.super.bookingBookingidPut(bookingid);
+    public ResponseEntity<Booking> bookingBookingidPut(Integer bookingid, Booking booking) {
+        booking.setId(bookingid);
+        bookingMapper.updateBooking(booking);
+        return bookingBookingidGet(bookingid);
     }
 }

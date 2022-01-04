@@ -16,7 +16,7 @@ import java.util.Optional;
  * A delegate to be called by the {@link LeaseApiController}}.
  * Implement this interface with a {@link org.springframework.stereotype.Service} annotated class.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T14:33:16.996938+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-04T09:29:48.826888+02:00[Europe/Mariehamn]")
 public interface LeaseApiDelegate {
 
     default Optional<NativeWebRequest> getRequest() {
@@ -63,10 +63,12 @@ public interface LeaseApiDelegate {
      * updates a lease
      *
      * @param leaseid  (required)
+     * @param lease  (required)
      * @return Successful response (status code 200)
      * @see LeaseApi#leaseLeaseidPut
      */
-    default ResponseEntity<Lease> leaseLeaseidPut(Integer leaseid) {
+    default ResponseEntity<Lease> leaseLeaseidPut(Integer leaseid,
+        Lease lease) {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {

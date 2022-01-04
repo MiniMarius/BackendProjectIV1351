@@ -16,7 +16,7 @@ import java.util.Optional;
  * A delegate to be called by the {@link RentalinstrumentApiController}}.
  * Implement this interface with a {@link org.springframework.stereotype.Service} annotated class.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T14:33:16.996938+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-04T09:29:48.826888+02:00[Europe/Mariehamn]")
 public interface RentalinstrumentApiDelegate {
 
     default Optional<NativeWebRequest> getRequest() {
@@ -86,10 +86,12 @@ public interface RentalinstrumentApiDelegate {
      * updates a rental instrument
      *
      * @param rentalid  (required)
+     * @param rentalInstrument  (required)
      * @return Successful response (status code 200)
      * @see RentalinstrumentApi#rentalinstrumentRentalidPut
      */
-    default ResponseEntity<RentalInstrument> rentalinstrumentRentalidPut(Integer rentalid) {
+    default ResponseEntity<RentalInstrument> rentalinstrumentRentalidPut(Integer rentalid,
+        RentalInstrument rentalInstrument) {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {

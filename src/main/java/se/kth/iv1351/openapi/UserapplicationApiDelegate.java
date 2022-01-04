@@ -16,7 +16,7 @@ import java.util.Optional;
  * A delegate to be called by the {@link UserapplicationApiController}}.
  * Implement this interface with a {@link org.springframework.stereotype.Service} annotated class.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T14:33:16.996938+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-04T09:29:48.826888+02:00[Europe/Mariehamn]")
 public interface UserapplicationApiDelegate {
 
     default Optional<NativeWebRequest> getRequest() {
@@ -63,10 +63,12 @@ public interface UserapplicationApiDelegate {
      * Updates a user application
      *
      * @param applicationid  (required)
+     * @param userApplication  (required)
      * @return Successful response (status code 200)
      * @see UserapplicationApi#userapplicationApplicationidPut
      */
-    default ResponseEntity<UserApplication> userapplicationApplicationidPut(Integer applicationid) {
+    default ResponseEntity<UserApplication> userapplicationApplicationidPut(Integer applicationid,
+        UserApplication userApplication) {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {

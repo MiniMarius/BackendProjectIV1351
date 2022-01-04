@@ -16,7 +16,7 @@ import java.util.Optional;
  * A delegate to be called by the {@link UserinstrumentApiController}}.
  * Implement this interface with a {@link org.springframework.stereotype.Service} annotated class.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-03T14:33:16.996938+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-04T09:29:48.826888+02:00[Europe/Mariehamn]")
 public interface UserinstrumentApiDelegate {
 
     default Optional<NativeWebRequest> getRequest() {
@@ -63,10 +63,12 @@ public interface UserinstrumentApiDelegate {
      * Updates a user instrument
      *
      * @param instrumentid  (required)
+     * @param userInstrument  (required)
      * @return Successful response (status code 200)
      * @see UserinstrumentApi#userinstrumentInstrumentidPut
      */
-    default ResponseEntity<UserInstrument> userinstrumentInstrumentidPut(Integer instrumentid) {
+    default ResponseEntity<UserInstrument> userinstrumentInstrumentidPut(Integer instrumentid,
+        UserInstrument userInstrument) {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {

@@ -9,5 +9,5 @@ public interface BookingMapper {
     BookingData selectBooking(Integer bookingid);
     void insertBooking(Booking booking);
     void deleteBooking(Integer bookingid);
-    void updateBooking(Integer bookingid);
+    void updateBooking(Booking booking);
 }
