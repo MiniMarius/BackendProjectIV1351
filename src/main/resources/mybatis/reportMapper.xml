@@ -2,6 +2,21 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="se.kth.iv1351.dao.ReportMapper">
     <select id="getEnsembleReport">
-
+        SELECT
+            LESSONS.ID
+            , LESSONS.MAX_PARTICIPANTS - COUNT(DISTINCT BOOKINGS.ID) seats_left
+        FROM
+            LESSONS
+        JOIN
+            BOOKINGS
+        ON LESSONS.ID = BOOKINGS.LESSON_ID
+        WHERE
+            LESSONS.TYPE = 'ensemble'
+        AND TO_DATE(BOOKINGS.START_TIME) BETWEEN CURRENT_DATE AND CURRENT_DATE + INTERVAL '7 DAY'
+        GROUP BY
+            LESSONS.ID
+        ORDER BY
+            LESSONS.GENRE
+            , extract(dow from TO_DATE(BOOKINGS.START_TIME))
     </select>
 </mapper>
