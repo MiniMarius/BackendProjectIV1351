@@ -6,7 +6,7 @@ CREATE TABLE users (
  address VARCHAR(500),
  email VARCHAR(500),
  phone_number VARCHAR(500),
- user_role VARCHAR(500)
+ role VARCHAR(500)
 );
 
 ALTER TABLE users ADD CONSTRAINT PK_users PRIMARY KEY (id);
