@@ -87,40 +87,82 @@ INSERT INTO RENTAL_INSTRUMENTS (id, description, serial_number, instrument_type_
 VALUES (6, "sounds bad but looks good", "861251", 5);
 
 INSERT INTO LEASES (id, start_time, end_time, rental_instrument_id, student_id)
-VALUES (#{id}, #{startTime}, #{endTime}, #{rentalInstrumentId}, #{studentId});
+VALUES (1, "01.01.2022", "01.06.2022", 2, 1);
+
+INSERT INTO LEASES (id, start_time, end_time, rental_instrument_id, student_id)
+VALUES (2, "01.01.2022", "01.11.2022", 3, 2);
 
 INSERT INTO LESSONS (id, name, description, min_participants, max_participants, type, genre)
-VALUES (1, "group guitar", "learn how to read notes", 5, 15, "guitar", null);
+VALUES (1, "group guitar", "learn how to read notes", 5, 15, "Guitar", null);
 
 INSERT INTO LESSONS (id, name, description, min_participants, max_participants, type, genre)
-VALUES (2, "private lesson guitar", "learn how to play first instrument", 1, 1, "guitar", null);
+VALUES (2, "private lesson guitar", "learn how to play first instrument", 1, 1, "Guitar", null);
 
 INSERT INTO LESSONS (id, name, description, min_participants, max_participants, type, genre)
-VALUES (3, "rock ensemble", "Lets learn how to rock n roll", 10, 30, null, "rock");
+VALUES (3, "rock ensemble", "Lets learn how to rock n roll", 5, 30, null, "rock");
 
 INSERT INTO LESSONS (id, name, description, min_participants, max_participants, type, genre)
-VALUES (4, "beautiful sounds", "Lets learn how to play harmonic music", 2, 15, "flute", null);
+VALUES (4, "beautiful sounds", "Lets learn how to play harmonic music", 2, 15, "Guitar", null);
 
 INSERT INTO APPLICATIONS (id, letter, instrument_type_id, user_id)
-VALUES (#{id}, #{letter}, #{instrumentTypeId}, #{userId});
+VALUES (1, "Hello i want to play the guitar im very good", 1, 1);
 
 INSERT INTO USER_INSTRUMENT_TYPES (user_id, instrument_type_id)
-VALUES (#{userId}, #{instrumentTypeId});
+VALUES (1, 1);
 
-INSERT INTO USER_PAYMENTS (id, type, amount, currency, user_id)
-VALUES (#{id}, #{type}, #{amount}, #{currency}, #{userid});
+INSERT INTO USER_INSTRUMENT_TYPES (user_id, instrument_type_id)
+VALUES (2, 1);
+
+INSERT INTO USER_INSTRUMENT_TYPES (user_id, instrument_type_id)
+VALUES (3, 1);
+
+INSERT INTO USER_INSTRUMENT_TYPES (user_id, instrument_type_id)
+VALUES (4, 1);
+
+INSERT INTO USER_INSTRUMENT_TYPES (user_id, instrument_type_id)
+VALUES (5,1 );
+
+INSERT INTO USER_INSTRUMENT_TYPES (user_id, instrument_type_id)
+VALUES (6, 1);
+
+INSERT INTO USER_INSTRUMENT_TYPES (user_id, instrument_type_id)
+VALUES (7, 1);
+
+INSERT INTO USER_INSTRUMENT_TYPES (user_id, instrument_type_id)
+VALUES (7, 2);
+
+INSERT INTO USER_INSTRUMENT_TYPES (user_id, instrument_type_id)
+VALUES (7, 3);
+
+INSERT INTO USER_INSTRUMENT_TYPES (user_id, instrument_type_id)
+VALUES (7, 4);
+
+INSERT INTO USER_INSTRUMENT_TYPES (user_id, instrument_type_id)
+VALUES (8, 1);
+
+INSERT INTO USER_INSTRUMENT_TYPES (user_id, instrument_type_id)
+VALUES (8, 6);
+
+INSERT INTO USER_INSTRUMENT_TYPES (user_id, instrument_type_id)
+VALUES (8, 4);
+
+INSERT INTO USER_INSTRUMENT_TYPES (user_id, instrument_type_id)
+VALUES (9, 1);
+
+INSERT INTO USER_INSTRUMENT_TYPES (user_id, instrument_type_id)
+VALUES (10, 1);
 
 INSERT INTO BOOKINGS (id, start_time, end_time, lesson_id, student_id, instructor_id)
 VALUES (1, "13:00", "14:00", 2, 1 , 8);
 
 INSERT INTO BOOKINGS (id, start_time, end_time, lesson_id, student_id, instructor_id)
-VALUES (1, "13:00", "14:00", 2, 1 , 8);
+VALUES (1, "13:00", "14:00", 4, 2 , 7);
 
 INSERT INTO BOOKINGS (id, start_time, end_time, lesson_id, student_id, instructor_id)
-VALUES (1, "13:00", "14:00", 2, 1 , 8);
+VALUES (1, "13:00", "14:00", 4, 3 , 7);
 
 INSERT INTO BOOKINGS (id, start_time, end_time, lesson_id, student_id, instructor_id)
-VALUES (1, "13:00", "14:00", 2, 1 , 8);
+VALUES (1, "13:00", "14:00", 4, 4 , 7);
 
 INSERT INTO PARENTS (student_id, parent_id)
 VALUES (1, 14);
@@ -145,3 +187,6 @@ VALUES (7, 17);
 
 INSERT INTO SIBLINGS (student_id, student_id2)
 VALUES (3, 4);
+
+INSERT INTO USER_PAYMENTS (id, type, amount, currency, user_id)
+VALUES (1, "rental payment", 1000, "SEK", 1);
