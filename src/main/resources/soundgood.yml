@@ -777,6 +777,8 @@ components:
           type: string
         phoneNumber:
           type: string
+        role:
+          type: string
     Booking:
       type: object
       properties:

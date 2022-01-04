@@ -5,8 +5,8 @@
         SELECT * FROM USERS WHERE id= #{userid};
     </select>
     <insert id="insertUser" parameterType="se.kth.iv1351.openapi.model.User">
-        INSERT INTO USERS (id, person_number, name, age, address, email, phone_number)
-        VALUES (#{id}, #{personNumber}, #{name}, #{age}, #{address} , #{email}, #{phoneNumber});
+        INSERT INTO USERS (id, person_number, name, age, address, email, phone_number, role)
+        VALUES (#{id}, #{personNumber}, #{name}, #{age}, #{address} , #{email}, #{phoneNumber}, #{role});
     </insert>
     <update id="updateUser" parameterType="se.kth.iv1351.openapi.model.User">
         UPDATE USERS SET
@@ -16,7 +16,8 @@
         age = #{age},
         address = #{address},
         email = #{email},
-        phone_number = #{phoneNumber}
+        phone_number = #{phoneNumber},
+        role = #{role}
         WHERE id = #{id}
     </update>
     <delete id="deleteUser">
