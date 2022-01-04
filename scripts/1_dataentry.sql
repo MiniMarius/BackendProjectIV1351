@@ -153,16 +153,16 @@ INSERT INTO USER_INSTRUMENT_TYPES (user_id, instrument_type_id)
 VALUES (10, 1);
 
 INSERT INTO BOOKINGS (id, start_time, end_time, lesson_id, student_id, instructor_id)
-VALUES (1, '13:00', '14:00', 2, 1 , 8);
+VALUES (1, '2022-01-03T13:00', '2022-01-03T16:00', 2, 1 , 8);
 
 INSERT INTO BOOKINGS (id, start_time, end_time, lesson_id, student_id, instructor_id)
-VALUES (2, '13:00', '14:00', 4, 2 , 7);
+VALUES (2, '2022-01-04T13:00', '2022-01-04T16:00', 4, 2 , 7);
 
 INSERT INTO BOOKINGS (id, start_time, end_time, lesson_id, student_id, instructor_id)
-VALUES (3, '13:00', '14:00', 4, 3 , 7);
+VALUES (3, '2022-01-06T13:00', '2022-01-04T16:00', 4, 3 , 7);
 
 INSERT INTO BOOKINGS (id, start_time, end_time, lesson_id, student_id, instructor_id)
-VALUES (41, '13:00', '14:00', 4, 4 , 7);
+VALUES (41, '2022-01-06T16:00', '2020-01-06T19:00', 4, 4 , 7);
 
 INSERT INTO PARENTS (student_id, parent_id)
 VALUES (1, 14);

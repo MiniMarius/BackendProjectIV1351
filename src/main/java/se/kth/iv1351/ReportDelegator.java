@@ -18,8 +18,7 @@ public class ReportDelegator implements EnsemblesnextweekApiDelegate {
     ReportMapper reportMapper;
     @Override
     public ResponseEntity<List<Lesson>> ensemblesnextweekGet() {
-        ArrayList<LessonData> reportData = reportMapper.getEnsembleReport();
-        ArrayList<Lesson> lessonList = new ArrayList<>();
-        return new ResponseEntity<List<Lesson>>(lessonList, HttpStatus.OK);
+        ArrayList<Lesson> reportData = reportMapper.getEnsembleReport();
+        return new ResponseEntity<List<Lesson>>(reportData, HttpStatus.OK);
     }
 }
