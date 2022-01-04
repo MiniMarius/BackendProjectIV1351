@@ -162,7 +162,7 @@ INSERT INTO BOOKINGS (id, start_time, end_time, lesson_id, student_id, instructo
 VALUES (3, '13:00', '14:00', 4, 3 , 7);
 
 INSERT INTO BOOKINGS (id, start_time, end_time, lesson_id, student_id, instructor_id)
-VALUES 41, '13:00', '14:00', 4, 4 , 7);
+VALUES (41, '13:00', '14:00', 4, 4 , 7);
 
 INSERT INTO PARENTS (student_id, parent_id)
 VALUES (1, 14);
