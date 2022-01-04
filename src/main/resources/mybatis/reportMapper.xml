@@ -4,6 +4,8 @@
     <select id="getEnsembleReport">
         SELECT
             LESSONS.ID
+            , LESSONS.GENRE
+            , CAST(BOOKINGS.START_TIME AS DATE)
             , LESSONS.MAX_PARTICIPANTS - COUNT(DISTINCT BOOKINGS.ID) seats_left
         FROM
             LESSONS
@@ -12,11 +14,13 @@
         ON LESSONS.ID = BOOKINGS.LESSON_ID
         WHERE
             LESSONS.TYPE = 'ensemble'
-        AND TO_DATE(BOOKINGS.START_TIME) BETWEEN CURRENT_DATE AND CURRENT_DATE + INTERVAL '7 DAY'
+        AND CAST(BOOKINGS.START_TIME AS DATE) BETWEEN CURRENT_DATE AND CURRENT_DATE + INTERVAL '7 DAY'
         GROUP BY
             LESSONS.ID
+            , LESSONS.GENRE
+            , CAST(BOOKINGS.START_TIME AS DATE)
         ORDER BY
             LESSONS.GENRE
-            , extract(dow from TO_DATE(BOOKINGS.START_TIME))
+            , CAST(BOOKINGS.START_TIME AS DATE);
     </select>
 </mapper>
