@@ -8,6 +8,14 @@
         INSERT INTO APPLICATIONS (id, letter, instrument_type_id, user_id)
         VALUES (#{id}, #{letter}, #{instrumentTypeId}, #{userId});
     </insert>
+    <update id="updateUserApplication" parameterType="se.kth.iv1351.openapi.model.UserApplication">
+        UPDATE APPLICATIONS SET
+        id = #{id},
+        letter = #{letter},
+        instrument_type_id = #{instrumentTypeId},
+        user_id = #{userId}
+        WHERE id = #{id}
+    </update>
     <delete id="deleteUserApplication">
         delete from APPLICATIONS where id = #{id}
     </delete>

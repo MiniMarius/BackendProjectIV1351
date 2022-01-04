@@ -8,6 +8,17 @@
         INSERT INTO LESSONS (id, name, description, min_participants, max_participants, type, genre)
         VALUES (#{id}, #{name}, #{description}, #{minParticipants}, #{maxParticipants}, #{type}, #{genre});
     </insert>
+    <update id="updateLesson" parameterType="se.kth.iv1351.openapi.model.Lesson">
+        UPDATE LESSONS SET
+        id = #{id},
+        name = #{name},
+        description = #{description},
+        min_participants = #{minParticipants},
+        max_participants = #{maxParticipants},
+        type = #{type},
+        genre = #{genre}
+        WHERE id = #{id}
+    </update>
     <delete id="deleteLesson">
         delete from LESSONS where id = #{id}
     </delete>

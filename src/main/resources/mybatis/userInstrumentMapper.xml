@@ -8,6 +8,12 @@
         INSERT INTO USER_INSTRUMENT_TYPES (user_id, instrument_type_id)
         VALUES (#{userId}, #{instrumentTypeId});
     </insert>
+    <update id="updateUserInstrument" parameterType="se.kth.iv1351.openapi.model.UserInstrument">
+        UPDATE USER_INSTRUMENT_TYPES SET
+        user_id = #{userId},
+        instrument_type_id = #{instrumentTypeId}
+        WHERE user_id = #{userId}
+    </update>
     <delete id="deleteUserInstrument">
         delete from USER_INSTRUMENT_TYPES where user_id = #{id}
     </delete>

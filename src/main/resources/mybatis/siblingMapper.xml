@@ -8,6 +8,12 @@
         INSERT INTO SIBLINGS (student_id, student_id2)
         VALUES (#{studentIdOne}, #{studentIdTwo});
     </insert>
+    <update id="updateSibling" parameterType="se.kth.iv1351.openapi.model.Sibling">
+        UPDATE SIBLINGS SET
+        student_id = #{studentIdOne},
+        student_id2 = #{studentIdTwo}
+        WHERE student_id = #{studentIdOne}
+    </update>
     <delete id="deleteSibling">
         delete from SIBLINGS where student_id = #{id}
     </delete>

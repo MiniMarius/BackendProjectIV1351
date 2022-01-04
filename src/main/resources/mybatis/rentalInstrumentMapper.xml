@@ -8,6 +8,14 @@
         INSERT INTO RENTAL_INSTRUMENTS (id, description, serial_number, instrument_type_id)
         VALUES (#{id}, #{description}, #{serialNumber}, #{instrumentTypeId});
     </insert>
+    <update id="updateRentalInstrument" parameterType="se.kth.iv1351.openapi.model.RentalInstrument">
+        UPDATE RENTAL_INSTRUMENTS SET
+        id = #{id},
+        description = #{description},
+        serial_number = #{serialNumber},
+        instrument_type_id = #{instrumentTypeId}
+        WHERE id = #{id}
+    </update>
     <delete id="deleteRentalInstrument">
         delete from RENTAL_INSTRUMENTS where id = #{id}
     </delete>

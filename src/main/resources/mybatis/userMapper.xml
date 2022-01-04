@@ -8,6 +8,17 @@
         INSERT INTO USERS (id, person_number, name, age, address, email, phone_number)
         VALUES (#{id}, #{personNumber}, #{name}, #{age}, #{address} , #{email}, #{phoneNumber});
     </insert>
+    <update id="updateUser" parameterType="se.kth.iv1351.openapi.model.User">
+        UPDATE USERS SET
+        id = #{id},
+        person_number = #{personNumber},
+        name = #{name},
+        age = #{age},
+        address = #{address},
+        email = #{email},
+        phone_number = #{phoneNumber}
+        WHERE id = #{id}
+    </update>
     <delete id="deleteUser">
         delete from USERS where id = #{id}
     </delete>

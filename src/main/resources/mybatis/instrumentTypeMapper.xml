@@ -8,6 +8,12 @@
         INSERT INTO INSTRUMENT_TYPES (id, type)
         VALUES (#{id}, #{type});
     </insert>
+    <update id="updateInstrumentType" parameterType="se.kth.iv1351.openapi.model.InstrumentType">
+        UPDATE INSTRUMENT_TYPES SET
+        id = #{id},
+        type = #{type}
+        WHERE id = {id}
+    </update>
     <delete id="deleteInstrumentType">
         delete from INSTRUMENT_TYPES where id = #{id}
     </delete>

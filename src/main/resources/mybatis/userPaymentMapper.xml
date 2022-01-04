@@ -8,6 +8,15 @@
         INSERT INTO USER_PAYMENTS (id, type, amount, currency, user_id)
         VALUES (#{id}, #{type}, #{amount}, #{currency}, #{userid});
     </insert>
+    <update id="updateUserPayment" parameterType="se.kth.iv1351.openapi.model.UserPayment">
+        UPDATE USER_PAYMENTS SET
+        id = #{id},
+        type = #{type},
+        amount = #{amount},
+        currency = #{currency},
+        user_id = #{userid}
+        WHERE id = #{id}
+    </update>
     <delete id="deleteUserPayment">
         delete from USER_PAYMENTS where id = #{id}
     </delete>

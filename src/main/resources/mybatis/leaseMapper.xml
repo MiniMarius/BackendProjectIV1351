@@ -8,6 +8,15 @@
         INSERT INTO LEASES (id, start_time, end_time, rental_instrument_id, student_id)
         VALUES (#{id}, #{startTime}, #{endTime}, #{rentalInstrumentId}, #{studentId});
     </insert>
+    <update id="updateLease" parameterType="se.kth.iv1351.openapi.model.Lease">
+        UPDATE LEASES SET
+        id = #{id},
+        start_time = #{startTime},
+        end_time = #{endTime},
+        rental_instrument_id = #{rentalInstrumentId},
+        student_id = {studentId}
+        WHERE id = {id}
+    </update>
     <delete id="deleteLease">
         delete from LEASES where id = #{id}
     </delete>

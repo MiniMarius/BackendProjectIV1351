@@ -8,6 +8,12 @@
         INSERT INTO PARENTS (student_id, parent_id)
         VALUES (#{studentId}, #{parentId});
     </insert>
+    <update id="updateParent" parameterType="se.kth.iv1351.openapi.model.Parent">
+        UPDATE PARENTS SET
+        student_id = #{studentId},
+        parent_id = #{parentId}
+        WHERE student_id = #{studentId}
+    </update>
     <delete id="deleteParent">
         delete from PARENTS where parent_id = #{id}
     </delete>
