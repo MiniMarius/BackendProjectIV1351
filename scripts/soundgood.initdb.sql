@@ -1,4 +1,4 @@
-CREATE TYPE role AS ENUM ('Student', 'Instructor');
+CREATE TYPE role AS ENUM ('Student', 'Instructor', 'Parent');
 CREATE TABLE users (
  id INT NOT NULL,
  person_number VARCHAR(500),

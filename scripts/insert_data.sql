@@ -27,7 +27,7 @@ INSERT INTO RENTAL_INSTRUMENTS (id, description, serial_number, instrument_type_
 VALUES (#{id}, #{description}, #{serialNumber}, #{instrumentTypeId});
 
 INSERT INTO SIBLINGS (student_id, student_id2)
-VALUES (#{studentIdOne}, #{studentIdTwo});
+VALUES (3, 4);
 
 INSERT INTO APPLICATIONS (id, letter, instrument_type_id, user_id)
 VALUES (#{id}, #{letter}, #{instrumentTypeId}, #{userId});
@@ -36,34 +36,55 @@ INSERT INTO USER_INSTRUMENT_TYPES (user_id, instrument_type_id)
 VALUES (#{userId}, #{instrumentTypeId});
 
 INSERT INTO USERS (id, person_number, name, age, address, email, phone_number, role)
-VALUES (1, "19990416", "Kelly Francis", 22, "Fredsgatan 2" , "abc123@live.se", "07105215");
+VALUES (1, "20100416", "Kelly Francis", 12, "Fredsgatan 2" , "abc123@live.se", "07105215", "Student");
 
 INSERT INTO USERS (id, person_number, name, age, address, email, phone_number, role)
-VALUES (2, "19960512", "Kyle Kent", 25, "Abbagatan 1", "kyle123@google.com", "19025152");
+VALUES (2, "20120512", "Kyle Kent", 10, "Abbagatan 1", "KentPappa@hej.se", "19025152", "Student");
 
 INSERT INTO USERS (id, person_number, name, age, address, email, phone_number, role)
-VALUES (3, "20010306", "Frans Fagerlund", 20, "Bertagatan 4" , "Fransff@google.com", "19021401");
+VALUES (3, "20130306", "Frans Fagerlund", 9, "Bertagatan 4" , "Fransmamma@live.se", "19021401", "Student");
 
 INSERT INTO USERS (id, person_number, name, age, address, email, phone_number, role)
-VALUES (4, "20041010", "Filip Flint", 16, "Carl wilhelmsvägen 5" , "flintfilip@live.se", "01593511");
+VALUES (4, "20141010", "Filip Fagerlund", 8, "Carl wilhelmsvägen 5" , "flintsebbe@live.se", "01593511", "Student");
 
 INSERT INTO USERS (id, person_number, name, age, address, email, phone_number, role)
-VALUES (5, "19990712", "Palle Porjas", 22, "Digiloogatan 10" , "Pallepratar@hotmail.com", "9012515");
+VALUES (5, "20120712", "Palle Porjas", 10, "Digiloogatan 10" , "Pallespappapratar@hotmail.com", "9012515", "Student");
 
 INSERT INTO USERS (id, person_number, name, age, address, email, phone_number, role)
-VALUES (6, "19950611", "Henrik Amdahl", 26, "Eriksdahlsgatan 2" , "Amdahlbossen@google.com", "10295190");
+VALUES (6, "20090611", "Henrik Amdahl", 13, "Eriksdahlsgatan 2" , "Henriksmamma@google.com", "10295190", "Student");
 
 INSERT INTO USERS (id, person_number, name, age, address, email, phone_number, role)
-VALUES (7, "19991010", "Iris Vantanen", 22, "Flintavägen 99" , "Irisvantanen@live.se", "9129141");
+VALUES (7, "19991010", "Iris Vantanen", 22, "Flintavägen 99" , "Irisvantanen@live.se", "9129141", "Instructor");
 
 INSERT INTO USERS (id, person_number, name, age, address, email, phone_number, role)
-VALUES (8, "19891212", "Adam Adamsson", 32, "Gjoerhelmsgatan 44" , "Adamadamadam123@hotmail.com", "129091025");
+VALUES (8, "19891212", "Adam Adamsson", 32, "Gjoerhelmsgatan 44" , "Adamadamadam123@hotmail.com", "129091025", "Instructor");
 
 INSERT INTO USERS (id, person_number, name, age, address, email, phone_number, role)
-VALUES (9, "20000101", "Erik Kolros", 22, "Hopplagatan 66" , "Kolerik@google.com", "9012095109");
+VALUES (9, "20000101", "Erik Kolros", 22, "Hopplagatan 66" , "Kolerik@google.com", "9012095109", "Instructor");
 
 INSERT INTO USERS (id, person_number, name, age, address, email, phone_number, role)
-VALUES (10, "20030303", "Rasmus Eriksson", 17, "Ingalundalunden 20" , "Erikssonrasmus@live.se", "071259124");
+VALUES (10, "20030303", "Rasmus Eriksson", 17, "Ingalundalunden 20" , "ErikssonElise@live.se", "071259124", "Student");
+
+INSERT INTO USERS (id, person_number, name, age, address, email, phone_number, role)
+VALUES (11, "10231023", "Katarina Eriksson", "50", "Tjabbatjenagatan 2", "ErikssonKatarina@google.com", "12031031", "Parent")
+
+INSERT INTO USERS (id, person_number, name, age, address, email, phone_number, role)
+VALUES (12, "0121322", "Johan Lindström", 55, "Hingstgatan 22", "bord123@live.se", "012312313", "Parent")
+
+INSERT INTO USERS (id, person_number, name, age, address, email, phone_number, role)
+VALUES (13, "12305124", "Kristoffer Haninge", 62, "Gammelgatan 44", "gammal@hej.se", "03914124", "Parent")
+
+INSERT INTO USERS (id, person_number, name, age, address, email, phone_number, role)
+VALUES (14, "13123", "Zacharias Konungsson", 39, "Kungsgatan 44", "Kungen@live.se", "0123131", "Parent")
+
+INSERT INTO USERS (id, person_number, name, age, address, email, phone_number, role)
+VALUES (15, "124151", "Ingela Småholm", 43, "Småholmsgatan 2", "smaholma@google.com", "0213124", "Parent")
+
+INSERT INTO USERS (id, person_number, name, age, address, email, phone_number, role)
+VALUES (16, "126151", "Bror Brorsson", 33, "Brodersgatan 22", "Brorbrosson@live.se", "02414124", "Parent")
+
+INSERT INTO USERS (id, person_number, name, age, address, email, phone_number, role)
+VALUES (17, "112514", "Friz Freschsson", 54, "Gatansgatan 88", "Fresch@live.se", "90151512", "Parent")
 
 INSERT INTO USER_PAYMENTS (id, type, amount, currency, user_id)
 VALUES (#{id}, #{type}, #{amount}, #{currency}, #{userid});
