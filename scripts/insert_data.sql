@@ -1,40 +1,4 @@
 
-INSERT INTO BOOKINGS (id, start_time, end_time, lesson_id, student_id, instructor_id)
-VALUES (1, "13:00", "14:00", 2, #{studentId} , #{instructorId});
-
-INSERT INTO INSTRUMENT_TYPES (id, type)
-VALUES (#{id}, #{type});
-
-INSERT INTO LEASES (id, start_time, end_time, rental_instrument_id, student_id)
-VALUES (#{id}, #{startTime}, #{endTime}, #{rentalInstrumentId}, #{studentId});
-
-INSERT INTO LESSONS (id, name, description, min_participants, max_participants, type, genre)
-VALUES (1, "group guitar", "learn how to read notes", 5, 15, "guitar", null);
-
-INSERT INTO LESSONS (id, name, description, min_participants, max_participants, type, genre)
-VALUES (2, "private lesson guitar", "learn how to play first instrument", 1, 1, "guitar", null);
-
-INSERT INTO LESSONS (id, name, description, min_participants, max_participants, type, genre)
-VALUES (3, "rock ensemble", "Lets learn how to rock n roll", 10, 30, null, "rock");
-
-INSERT INTO LESSONS (id, name, description, min_participants, max_participants, type, genre)
-VALUES (4, "beautiful sounds", "Lets learn how to play harmonic music", 2, 15, "flute", null);
-
-INSERT INTO PARENTS (student_id, parent_id)
-VALUES (#{studentId}, #{parentId});
-
-INSERT INTO RENTAL_INSTRUMENTS (id, description, serial_number, instrument_type_id)
-VALUES (#{id}, #{description}, #{serialNumber}, #{instrumentTypeId});
-
-INSERT INTO SIBLINGS (student_id, student_id2)
-VALUES (3, 4);
-
-INSERT INTO APPLICATIONS (id, letter, instrument_type_id, user_id)
-VALUES (#{id}, #{letter}, #{instrumentTypeId}, #{userId});
-
-INSERT INTO USER_INSTRUMENT_TYPES (user_id, instrument_type_id)
-VALUES (#{userId}, #{instrumentTypeId});
-
 INSERT INTO USERS (id, person_number, name, age, address, email, phone_number, role)
 VALUES (1, "20100416", "Kelly Francis", 12, "Fredsgatan 2" , "abc123@live.se", "07105215", "Student");
 
@@ -86,5 +50,98 @@ VALUES (16, "126151", "Bror Brorsson", 33, "Brodersgatan 22", "Brorbrosson@live.
 INSERT INTO USERS (id, person_number, name, age, address, email, phone_number, role)
 VALUES (17, "112514", "Friz Freschsson", 54, "Gatansgatan 88", "Fresch@live.se", "90151512", "Parent")
 
+INSERT INTO INSTRUMENT_TYPES (id, type)
+VALUES (1, "Guitar");
+
+INSERT INTO INSTRUMENT_TYPES (id, type)
+VALUES (2, "Violin");
+
+INSERT INTO INSTRUMENT_TYPES (id, type)
+VALUES (3, "Bass");
+
+INSERT INTO INSTRUMENT_TYPES (id, type)
+VALUES (4, "Flute");
+
+INSERT INTO INSTRUMENT_TYPES (id, type)
+VALUES (5, "Harmonica");
+
+INSERT INTO INSTRUMENT_TYPES (id, type)
+VALUES (6, "Drums");
+
+INSERT INTO RENTAL_INSTRUMENTS (id, description, serial_number, instrument_type_id)
+VALUES (1, "Poor shape, beaten", "123123019", 1);
+
+INSERT INTO RENTAL_INSTRUMENTS (id, description, serial_number, instrument_type_id)
+VALUES (2, "Poor shape, very bad crack", "215125", 4);
+
+INSERT INTO RENTAL_INSTRUMENTS (id, description, serial_number, instrument_type_id)
+VALUES (3, "ok shape, used condition", "721615", 3);
+
+INSERT INTO RENTAL_INSTRUMENTS (id, description, serial_number, instrument_type_id)
+VALUES (4, "perfect shape", "1261614", 2);
+
+INSERT INTO RENTAL_INSTRUMENTS (id, description, serial_number, instrument_type_id)
+VALUES (5, "ok shape, small paint scuffs", "716215400", 6);
+
+INSERT INTO RENTAL_INSTRUMENTS (id, description, serial_number, instrument_type_id)
+VALUES (6, "sounds bad but looks good", "861251", 5);
+
+INSERT INTO LEASES (id, start_time, end_time, rental_instrument_id, student_id)
+VALUES (#{id}, #{startTime}, #{endTime}, #{rentalInstrumentId}, #{studentId});
+
+INSERT INTO LESSONS (id, name, description, min_participants, max_participants, type, genre)
+VALUES (1, "group guitar", "learn how to read notes", 5, 15, "guitar", null);
+
+INSERT INTO LESSONS (id, name, description, min_participants, max_participants, type, genre)
+VALUES (2, "private lesson guitar", "learn how to play first instrument", 1, 1, "guitar", null);
+
+INSERT INTO LESSONS (id, name, description, min_participants, max_participants, type, genre)
+VALUES (3, "rock ensemble", "Lets learn how to rock n roll", 10, 30, null, "rock");
+
+INSERT INTO LESSONS (id, name, description, min_participants, max_participants, type, genre)
+VALUES (4, "beautiful sounds", "Lets learn how to play harmonic music", 2, 15, "flute", null);
+
+INSERT INTO APPLICATIONS (id, letter, instrument_type_id, user_id)
+VALUES (#{id}, #{letter}, #{instrumentTypeId}, #{userId});
+
+INSERT INTO USER_INSTRUMENT_TYPES (user_id, instrument_type_id)
+VALUES (#{userId}, #{instrumentTypeId});
+
 INSERT INTO USER_PAYMENTS (id, type, amount, currency, user_id)
 VALUES (#{id}, #{type}, #{amount}, #{currency}, #{userid});
+
+INSERT INTO BOOKINGS (id, start_time, end_time, lesson_id, student_id, instructor_id)
+VALUES (1, "13:00", "14:00", 2, 1 , 8);
+
+INSERT INTO BOOKINGS (id, start_time, end_time, lesson_id, student_id, instructor_id)
+VALUES (1, "13:00", "14:00", 2, 1 , 8);
+
+INSERT INTO BOOKINGS (id, start_time, end_time, lesson_id, student_id, instructor_id)
+VALUES (1, "13:00", "14:00", 2, 1 , 8);
+
+INSERT INTO BOOKINGS (id, start_time, end_time, lesson_id, student_id, instructor_id)
+VALUES (1, "13:00", "14:00", 2, 1 , 8);
+
+INSERT INTO PARENTS (student_id, parent_id)
+VALUES (1, 14);
+
+INSERT INTO PARENTS (student_id, parent_id)
+VALUES (2, 11);
+
+INSERT INTO PARENTS (student_id, parent_id)
+VALUES (3, 12);
+
+INSERT INTO PARENTS (student_id, parent_id)
+VALUES (4, 13);
+
+INSERT INTO PARENTS (student_id, parent_id)
+VALUES (5, 15);
+
+INSERT INTO PARENTS (student_id, parent_id)
+VALUES (6, 16);
+
+INSERT INTO PARENTS (student_id, parent_id)
+VALUES (7, 17);
+
+INSERT INTO SIBLINGS (student_id, student_id2)
+VALUES (3, 4);
