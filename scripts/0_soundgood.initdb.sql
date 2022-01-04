@@ -1,4 +1,3 @@
-CREATE TYPE role AS ENUM ('Student', 'Instructor', 'Parent');
 CREATE TABLE users (
  id INT NOT NULL,
  person_number VARCHAR(500),
@@ -7,7 +6,7 @@ CREATE TABLE users (
  address VARCHAR(500),
  email VARCHAR(500),
  phone_number VARCHAR(500),
- user_role role
+ user_role VARCHAR(500)
 );
 
 ALTER TABLE users ADD CONSTRAINT PK_users PRIMARY KEY (id);
