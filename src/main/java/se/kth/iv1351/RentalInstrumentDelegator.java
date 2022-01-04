@@ -39,4 +39,11 @@ public class RentalInstrumentDelegator implements RentalinstrumentApiDelegate {
         rentalInstrumentMapper.deleteRentalInstrument(rentalid);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+    @Override
+    public ResponseEntity<RentalInstrument> rentalinstrumentRentalidPut(Integer rentalid, RentalInstrument rentalInstrument) {
+        rentalInstrument.setId(rentalid);
+        rentalInstrumentMapper.updateRentalInstrument(rentalInstrument);
+        return rentalinstrumentRentalidGet(rentalid);
+    }
 }

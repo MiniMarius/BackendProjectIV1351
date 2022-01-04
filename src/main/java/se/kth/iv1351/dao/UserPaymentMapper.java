@@ -9,4 +9,5 @@ public interface UserPaymentMapper {
     UserPaymentData selectUserPayment(Integer paymentid);
     void insertUserPayment(UserPayment userPayment);
     void deleteUserPayment(Integer paymentid);
+    void updateUserPayment(UserPayment userPayment);
 }

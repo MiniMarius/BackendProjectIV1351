@@ -40,4 +40,11 @@ public class LeaseDelegator implements LeaseApiDelegate {
         leaseMapper.deleteLease(leaseid);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+    @Override
+    public ResponseEntity<Lease> leaseLeaseidPut(Integer leaseid, Lease lease) {
+        lease.setId(leaseid);
+        leaseMapper.updateLease(lease);
+        return leaseLeaseidGet(leaseid);
+    }
 }

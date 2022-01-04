@@ -9,4 +9,5 @@ public interface InstrumentTypeMapper {
     InstrumentTypeData selectInstrumentType(Integer instrumentid);
     void insertInstrumentType(InstrumentType instrumentType);
     void deleteInstrumentType(Integer instrumentid);
+    void updateInstrumentType(InstrumentType instrumentType);
 }

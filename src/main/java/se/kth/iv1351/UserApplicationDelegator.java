@@ -39,4 +39,11 @@ public class UserApplicationDelegator implements UserapplicationApiDelegate {
         userApplicationMapper.deleteUserApplication(applicationid);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+    @Override
+    public ResponseEntity<UserApplication> userapplicationApplicationidPut(Integer applicationid, UserApplication userApplication) {
+        userApplication.setId(applicationid);
+        userApplicationMapper.updateUserApplication(userApplication);
+        return userapplicationApplicationidGet(applicationid);
+    }
 }

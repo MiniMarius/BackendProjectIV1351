@@ -9,4 +9,5 @@ public interface SiblingMapper {
     SiblingData selectSibling(Integer siblingid);
     void insertSibling(Sibling sibling);
     void deleteSibling(Integer siblingid);
+    void updateSibling(Sibling sibling);
 }

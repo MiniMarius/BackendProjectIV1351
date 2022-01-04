@@ -35,4 +35,11 @@ public class SiblingDelegator implements SiblingApiDelegate {
         siblingMapper.deleteSibling(siblingid);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+    @Override
+    public ResponseEntity<Sibling> siblingSiblingidPut(Integer siblingid, Sibling sibling) {
+        sibling.setStudentIdOne(siblingid);
+        siblingMapper.updateSibling(sibling);
+        return siblingSiblingidGet(siblingid);
+    }
 }

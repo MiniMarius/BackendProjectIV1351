@@ -43,4 +43,11 @@ public class LessonDelegator implements LessonApiDelegate {
         lessonMapper.deleteLesson(lessonid);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+    @Override
+    public ResponseEntity<Lesson> lessonLessonidPut(Integer lessonid, Lesson lesson) {
+        lesson.setId(lessonid);
+        lessonMapper.updateLesson(lesson);
+        return lessonLessonidGet(lessonid);
+    }
 }

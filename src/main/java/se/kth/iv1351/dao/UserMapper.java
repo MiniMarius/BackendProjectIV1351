@@ -9,4 +9,5 @@ public interface UserMapper {
     UserData selectUser(Integer userid);
     void insertUser(User user);
     void deleteUser(Integer userid);
+    void updateUser(User user);
 }

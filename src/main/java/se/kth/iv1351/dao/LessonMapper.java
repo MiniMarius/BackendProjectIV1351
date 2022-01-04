@@ -9,4 +9,5 @@ public interface LessonMapper {
     LessonData selectLesson(Integer lessonid);
     void insertLesson(Lesson lesson);
     void deleteLesson(Integer lessonid);
+    void updateLesson(Lesson lesson);
 }

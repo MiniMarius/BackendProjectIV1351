@@ -42,4 +42,11 @@ public class UserDelegator implements UserApiDelegate {
         userMapper.deleteUser(userid);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+    @Override
+    public ResponseEntity<User> userUseridPut(Integer userid, User user) {
+        user.setId(userid);
+        userMapper.updateUser(user);
+        return userUseridGet(userid);
+    }
 }

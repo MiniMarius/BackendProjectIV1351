@@ -35,4 +35,11 @@ public class ParentDelegator implements ParentApiDelegate {
         parentMapper.deleteParent(parentid);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+    @Override
+    public ResponseEntity<Parent> parentParentidPut(Integer parentid, Parent parent) {
+        parent.setParentId(parentid);
+        parentMapper.updateParent(parent);
+        return parentParentidGet(parentid);
+    }
 }

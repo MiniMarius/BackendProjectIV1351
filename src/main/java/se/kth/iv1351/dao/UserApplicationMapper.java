@@ -9,4 +9,5 @@ public interface UserApplicationMapper {
     UserApplicationData selectUserApplication(Integer applicationid);
     void insertUserApplication(UserApplication userApplication);
     void deleteUserApplication(Integer applicationid);
+    void updateUserApplication(UserApplication userApplication);
 }

@@ -40,4 +40,11 @@ public class UserPaymentDelegator implements UserpaymentApiDelegate {
         userPaymentMapper.deleteUserPayment(paymentid);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+    @Override
+    public ResponseEntity<UserPayment> userpaymentPaymentidPut(Integer paymentid, UserPayment userPayment) {
+       userPayment.setId(paymentid);
+       userPaymentMapper.updateUserPayment(userPayment);
+       return userpaymentPaymentidGet(paymentid);
+    }
 }

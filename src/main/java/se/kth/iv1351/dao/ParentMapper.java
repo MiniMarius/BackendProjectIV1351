@@ -9,4 +9,5 @@ public interface ParentMapper {
     ParentData selectParent(Integer parentid);
     void insertParent(Parent parent);
     void deleteParent(Integer parentid);
+    void updateParent(Parent parent);
 }

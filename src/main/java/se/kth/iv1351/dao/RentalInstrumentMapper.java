@@ -9,4 +9,5 @@ public interface RentalInstrumentMapper {
     RentalInstrumentData selectRentalInstrument(Integer rentalid);
     void insertRentalInstrument(RentalInstrument rentalInstrument);
     void deleteRentalInstrument(Integer rentalid);
+    void updateRentalInstrument(RentalInstrument rentalInstrument);
 }

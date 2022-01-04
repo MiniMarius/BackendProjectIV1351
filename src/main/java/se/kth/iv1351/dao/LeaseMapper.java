@@ -9,4 +9,5 @@ public interface LeaseMapper {
     LeaseData selectLease(Integer leaseid);
     void insertLease(Lease lease);
     void deleteLease(Integer leaseid);
+    void updateLease(Lease lease);
 }
