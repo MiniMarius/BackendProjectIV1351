@@ -170,6 +170,16 @@ VALUES (5, '2022-01-10T13:00:00', '2022-01-10T16:00:00', 4, 5 , 7);
 INSERT INTO BOOKINGS (id, start_time, end_time, lesson_id, student_id, instructor_id)
 VALUES (6, '2022-01-11T16:00:00', '2020-01-11T19:00:00', 4, 7 , 7);
 
+INSERT INTO BOOKINGS (id, start_time, end_time, lesson_id, student_id, instructor_id)
+VALUES (7, '2022-02-06T16:00:00', '2020-02-06T19:00:00', 4, 4 , 7);
+
+INSERT INTO BOOKINGS (id, start_time, end_time, lesson_id, student_id, instructor_id)
+VALUES (8, '2022-04-10T13:00:00', '2022-04-10T16:00:00', 4, 5 , 7);
+
+INSERT INTO BOOKINGS (id, start_time, end_time, lesson_id, student_id, instructor_id)
+VALUES (9, '2022-07-11T16:00:00', '2020-07-11T19:00:00', 4, 7 , 7);
+
+
 INSERT INTO PARENTS (student_id, parent_id)
 VALUES (1, 14);
 

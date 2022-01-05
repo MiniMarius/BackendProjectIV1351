@@ -15,6 +15,7 @@
 	<description>Backend-Project for course IV1351</description>
 	<properties>
 		<java.version>11</java.version>
+		<start-class>se.kth.iv1351.CliAppMain</start-class>
 	</properties>
 	<dependencies>
 		<dependency>
