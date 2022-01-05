@@ -93,16 +93,16 @@ INSERT INTO LEASES (id, start_time, end_time, rental_instrument_id, student_id)
 VALUES (2, '01.01.2022', '01.11.2022', 3, 2);
 
 INSERT INTO LESSONS (id, name, description, min_participants, max_participants, type, genre)
-VALUES (1, 'group guitar', 'learn how to read notes', 5, 15, 'Guitar', null);
+VALUES (1, 'group guitar', 'learn how to read notes', 5, 15, 'Group lesson', null);
 
 INSERT INTO LESSONS (id, name, description, min_participants, max_participants, type, genre)
-VALUES (2, 'private lesson guitar', 'learn how to play first instrument', 1, 1, 'Guitar', null);
+VALUES (2, 'private lesson guitar', 'learn how to play first instrument', 1, 1, 'Individual lesson', null);
 
 INSERT INTO LESSONS (id, name, description, min_participants, max_participants, type, genre)
-VALUES (3, 'rock ensemble', 'Lets learn how to rock n roll', 5, 30, null, 'rock');
+VALUES (3, 'rock ensemble', 'Lets learn how to rock n roll', 5, 30, "Ensemble", 'rock');
 
 INSERT INTO LESSONS (id, name, description, min_participants, max_participants, type, genre)
-VALUES (4, 'beautiful sounds', 'Lets learn how to play harmonic music', 2, 15, 'Guitar', null);
+VALUES (4, 'beautiful sounds', 'Lets learn how to play harmonic music', 2, 15, 'Ensemble', "soft");
 
 INSERT INTO APPLICATIONS (id, letter, instrument_type_id, user_id)
 VALUES (1, 'Hello i want to play the guitar im very good', 1, 1);
@@ -153,16 +153,22 @@ INSERT INTO USER_INSTRUMENT_TYPES (user_id, instrument_type_id)
 VALUES (10, 1);
 
 INSERT INTO BOOKINGS (id, start_time, end_time, lesson_id, student_id, instructor_id)
-VALUES (1, '2022-01-03T13:00', '2022-01-03T16:00', 2, 1 , 8);
+VALUES (1, '2022-01-03T13:00:00', '2022-01-03T16:00:00', 2, 1 , 8);
 
 INSERT INTO BOOKINGS (id, start_time, end_time, lesson_id, student_id, instructor_id)
-VALUES (2, '2022-01-04T13:00', '2022-01-04T16:00', 4, 2 , 7);
+VALUES (2, '2022-01-04T13:00:00', '2022-01-04T16:00:00', 4, 2 , 7);
 
 INSERT INTO BOOKINGS (id, start_time, end_time, lesson_id, student_id, instructor_id)
-VALUES (3, '2022-01-06T13:00', '2022-01-04T16:00', 4, 3 , 7);
+VALUES (3, '2022-01-06T13:00:00', '2022-01-06T16:00:00', 4, 3 , 7);
 
 INSERT INTO BOOKINGS (id, start_time, end_time, lesson_id, student_id, instructor_id)
-VALUES (41, '2022-01-06T16:00', '2020-01-06T19:00', 4, 4 , 7);
+VALUES (4, '2022-01-06T16:00:00', '2020-01-06T19:00:00', 4, 4 , 7);
+
+INSERT INTO BOOKINGS (id, start_time, end_time, lesson_id, student_id, instructor_id)
+VALUES (5, '2022-01-10T13:00:00', '2022-01-10T16:00:00', 4, 5 , 7);
+
+INSERT INTO BOOKINGS (id, start_time, end_time, lesson_id, student_id, instructor_id)
+VALUES (6, '2022-01-11T16:00:00', '2020-01-11T19:00:00', 4, 7 , 7);
 
 INSERT INTO PARENTS (student_id, parent_id)
 VALUES (1, 14);

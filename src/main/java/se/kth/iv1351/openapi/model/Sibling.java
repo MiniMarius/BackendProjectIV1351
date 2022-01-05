@@ -12,7 +12,7 @@ import javax.validation.constraints.*;
 /**
  * Sibling
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-04T21:37:54.247611+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-05T11:24:25.104682+02:00[Europe/Mariehamn]")
 public class Sibling   {
   @JsonProperty("studentIdOne")
   private Integer studentIdOne;

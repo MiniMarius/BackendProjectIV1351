@@ -1,4 +1,4 @@
-package se.kth.iv1351;
+package se.kth.iv1351.restAppController;
 
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -19,6 +19,7 @@ public class ReportDelegator implements EnsemblesnextweekApiDelegate {
     @Override
     public ResponseEntity<List<Lesson>> ensemblesnextweekGet() {
         ArrayList<Lesson> reportData = reportMapper.getEnsembleReport();
+
         return new ResponseEntity<List<Lesson>>(reportData, HttpStatus.OK);
     }
 }

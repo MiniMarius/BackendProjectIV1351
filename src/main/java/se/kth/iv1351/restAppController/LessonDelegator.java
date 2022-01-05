@@ -1,4 +1,4 @@
-package se.kth.iv1351;
+package se.kth.iv1351.restAppController;
 
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;

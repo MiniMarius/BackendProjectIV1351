@@ -16,7 +16,7 @@ import java.util.Optional;
  * A delegate to be called by the {@link LeaseApiController}}.
  * Implement this interface with a {@link org.springframework.stereotype.Service} annotated class.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-04T21:37:54.247611+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-05T11:24:25.104682+02:00[Europe/Mariehamn]")
 public interface LeaseApiDelegate {
 
     default Optional<NativeWebRequest> getRequest() {
