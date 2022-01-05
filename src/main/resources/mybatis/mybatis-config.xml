@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="org.postgresql.Driver"/>
+                <property name="url" value="jdbc:postgresql://localhost:5439/soundgood"/>
+                <property name="username" value="user"/>
+                <property name="password" value="password"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <mapper resource="mybatis/bookingMapper.xml"/>
+        <mapper resource="mybatis/instrumentTypeMapper.xml"/>
+        <mapper resource="mybatis/leaseMapper.xml"/>
+        <mapper resource="mybatis/lessonMapper.xml"/>
+        <mapper resource="mybatis/parentMapper.xml"/>
+        <mapper resource="mybatis/rentalInstrumentMapper.xml"/>
+        <mapper resource="mybatis/reportMapper.xml"/>
+        <mapper resource="mybatis/siblingMapper.xml"/>
+        <mapper resource="mybatis/userApplicationMapper.xml"/>
+        <mapper resource="mybatis/userInstrumentMapper.xml"/>
+        <mapper resource="mybatis/userMapper.xml"/>
+        <mapper resource="mybatis/userPaymentMapper.xml"/>
+    </mappers>
+</configuration>

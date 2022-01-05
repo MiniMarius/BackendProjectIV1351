@@ -16,7 +16,7 @@ import java.util.Optional;
  * A delegate to be called by the {@link SiblingApiController}}.
  * Implement this interface with a {@link org.springframework.stereotype.Service} annotated class.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-05T12:59:06.928993+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-05T16:27:19.215204+02:00[Europe/Mariehamn]")
 public interface SiblingApiDelegate {
 
     default Optional<NativeWebRequest> getRequest() {

@@ -1,23 +1,35 @@
 package se.kth.iv1351.view;
 
+import lombok.AllArgsConstructor;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import se.kth.iv1351.cliController.UserController;
+import se.kth.iv1351.model.UserData;
 
+import java.util.List;
 import java.util.Scanner;
-
+@Service
 public class BlockingInterpreter {
     private static final String PROMPT = "> ";
     private final Scanner console = new Scanner(System.in);
-    private UserController ctrl;
     private boolean keepReceivingCmds = false;
+
+    private UserController userController;
+
+    public BlockingInterpreter() {
+        
+    }
+
+    public BlockingInterpreter(UserController userController) {
+        this.userController = userController;
+    }
 
     /**
      * Creates a new instance that will use the specified controller for all operations.
      *
      * @param ctrl The controller used by this instance.
      */
-    public BlockingInterpreter(UserController ctrl) {
-        this.ctrl = ctrl;
-    }
 
     /**
      * Stops the commend interpreter.
@@ -49,38 +61,18 @@ public class BlockingInterpreter {
                         keepReceivingCmds = false;
                         break;
                     case NEW:
-                        ctrl.createUser(cmdLine.getParameter(0));
+                        userController.createUser(cmdLine.getParameter(0));
                         break;
                     case DELETE:
-                        ctrl.deleteUser(cmdLine.getParameter(0));
+                        userController.deleteUser(cmdLine.getParameter(0));
                         break;
                     case LIST:
-                        List<? extends AccountDTO> accounts = null;
-                        if (cmdLine.getParameter(0).equals("")) {
-                            accounts = ctrl.getAllAccounts();
-                        } else {
-                            accounts = ctrl.getAccountsForHolder(cmdLine.getParameter(0));
-                        }
-                        for (AccountDTO account : accounts) {
-                            System.out.println("acct no: " + account.getAccountNo() + ", "
-                                    + "holder: " + account.getHolderName() + ", "
-                                    + "balance: " + account.getBalance());
-                        }
-                        break;
-                    case DEPOSIT:
-                        ctrl.deposit(cmdLine.getParameter(0),
-                                Integer.parseInt(cmdLine.getParameter(1)));
-                        break;
-                    case WITHDRAW:
-                        ctrl.withdraw(cmdLine.getParameter(0),
-                                Integer.parseInt(cmdLine.getParameter(1)));
-                        break;
-                    case BALANCE:
-                        AccountDTO acct = ctrl.getAccount(cmdLine.getParameter(0));
-                        if (acct != null) {
-                            System.out.println(acct.getBalance());
-                        } else {
-                            System.out.println("No such account");
+                        List<UserData> users = null;
+                        users = userController.getAllUsers();
+                        for (UserData user : users) {
+                            System.out.println("id: " + user.getId() + ", "
+                                    + "name: " + user.getName() + ", "
+                                    + "role: " + user.getRole());
                         }
                         break;
                     default:

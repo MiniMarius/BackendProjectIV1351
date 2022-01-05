@@ -1,5 +1,8 @@
 package se.kth.iv1351.view;
 
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+
 public class CmdLine {
     private static final String PARAM_DELIMETER = " ";
     private String[] params;
