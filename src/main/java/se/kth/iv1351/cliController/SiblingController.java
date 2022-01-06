@@ -8,6 +8,7 @@ public class SiblingController implements Controller {
     private SqlSessionFactory sqlSessionFactory;
 
     public SiblingController(SqlSessionFactory sqlSessionFactory) {
+        this.sqlSessionFactory = sqlSessionFactory;
     }
 
     public void insert(String id) {

@@ -8,6 +8,7 @@ public class LeaseController implements Controller {
 
     private SqlSessionFactory sqlSessionFactory;
     public LeaseController(SqlSessionFactory sqlSessionFactory) {
+        this.sqlSessionFactory = sqlSessionFactory;
     }
 
     public void insert(String id) {

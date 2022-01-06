@@ -8,6 +8,7 @@ public class RentalInstrumentController implements Controller {
     private SqlSessionFactory sqlSessionFactory;
 
     public RentalInstrumentController(SqlSessionFactory sqlSessionFactory) {
+        this.sqlSessionFactory = sqlSessionFactory;
     }
 
     public void insert(String id) {

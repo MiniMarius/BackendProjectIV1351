@@ -8,6 +8,7 @@ public class ParentController implements Controller {
     private SqlSessionFactory sqlSessionFactory;
 
     public ParentController(SqlSessionFactory sqlSessionFactory) {
+        this.sqlSessionFactory = sqlSessionFactory;
     }
 
     public void insert(String id) {

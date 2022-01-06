@@ -8,6 +8,7 @@ public class UserPaymentController implements Controller {
     private SqlSessionFactory sqlSessionFactory;
 
     public UserPaymentController(SqlSessionFactory sqlSessionFactory) {
+        this.sqlSessionFactory = sqlSessionFactory;
     }
 
     public void insert(String id) {

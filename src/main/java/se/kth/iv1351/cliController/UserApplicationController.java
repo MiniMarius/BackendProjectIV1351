@@ -8,6 +8,7 @@ public class UserApplicationController implements Controller {
     private SqlSessionFactory sqlSessionFactory;
 
     public UserApplicationController(SqlSessionFactory sqlSessionFactory) {
+        this.sqlSessionFactory = sqlSessionFactory;
     }
 
     public void insert(String id) {

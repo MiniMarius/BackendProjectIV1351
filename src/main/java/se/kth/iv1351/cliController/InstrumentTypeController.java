@@ -8,6 +8,7 @@ public class InstrumentTypeController implements Controller {
     private SqlSessionFactory sqlSessionFactory;
 
     public InstrumentTypeController(SqlSessionFactory sqlSessionFactory) {
+        this.sqlSessionFactory = sqlSessionFactory;
     }
 
     public void insert(String id) {

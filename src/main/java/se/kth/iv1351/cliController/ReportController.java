@@ -8,6 +8,7 @@ public class ReportController implements Controller {
     private SqlSessionFactory sqlSessionFactory;
 
     public ReportController(SqlSessionFactory sqlSessionFactory) {
+        this.sqlSessionFactory = sqlSessionFactory;
     }
 
     public void insert(String id) {

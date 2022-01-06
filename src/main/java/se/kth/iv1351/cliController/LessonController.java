@@ -8,6 +8,7 @@ public class LessonController implements Controller {
     private SqlSessionFactory sqlSessionFactory;
 
     public LessonController(SqlSessionFactory sqlSessionFactory) {
+        this.sqlSessionFactory = sqlSessionFactory;
     }
 
     public void insert(String id) {

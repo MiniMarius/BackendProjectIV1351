@@ -9,6 +9,7 @@ public class BookingController implements Controller {
     private SqlSessionFactory sqlSessionFactory;
 
     public BookingController(SqlSessionFactory sqlSessionFactory) {
+        this.sqlSessionFactory = sqlSessionFactory;
     }
 
     public void insert(String id) {
