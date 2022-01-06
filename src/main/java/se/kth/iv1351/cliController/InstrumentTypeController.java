@@ -20,6 +20,9 @@ public class InstrumentTypeController implements Controller {
         InstrumentTypeMapper mapper = sess.getMapper(InstrumentTypeMapper.class);
         mapper.deleteInstrumentType(Integer.parseInt(id));
     }
+    public void update(String id) {
+
+    }
 
     public Object get(String id) {
         SqlSession sess = this.sqlSessionFactory.openSession();

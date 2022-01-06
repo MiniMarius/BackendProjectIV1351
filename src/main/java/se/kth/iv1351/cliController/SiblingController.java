@@ -21,6 +21,10 @@ public class SiblingController implements Controller {
         mapper.deleteSibling(Integer.parseInt(id));
     }
 
+    public void update(String id) {
+
+    }
+
     public Object get(String id) {
         SqlSession sess = this.sqlSessionFactory.openSession();
         SiblingMapper mapper = sess.getMapper(SiblingMapper.class);

@@ -22,6 +22,10 @@ public class ParentController implements Controller {
 
     }
 
+    public void update(String id) {
+
+    }
+
     public Object get(String id) {
         SqlSession sess = this.sqlSessionFactory.openSession();
         ParentMapper mapper = sess.getMapper(ParentMapper.class);

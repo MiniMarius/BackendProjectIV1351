@@ -33,4 +33,8 @@ public class UserController implements Controller {
         UserMapper usermapper = sess.getMapper(UserMapper.class);
         usermapper.deleteUser(Integer.parseInt(param));
     }
+
+    public void update(String id) {
+
+    }
 }

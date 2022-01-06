@@ -21,6 +21,10 @@ public class UserInstrumentController implements Controller {
         mapper.deleteUserInstrument(Integer.parseInt(id));
     }
 
+    public void update(String id) {
+
+    }
+
     public Object get(String id) {
         SqlSession sess = this.sqlSessionFactory.openSession();
         UserInstrumentMapper mapper = sess.getMapper(UserInstrumentMapper.class);

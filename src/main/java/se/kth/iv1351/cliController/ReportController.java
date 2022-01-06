@@ -18,6 +18,10 @@ public class ReportController implements Controller {
     public void delete(String id) {
     }
 
+    public void update(String id) {
+
+    }
+
     public Object get(String id) {
         SqlSession sess = this.sqlSessionFactory.openSession();
         ReportMapper mapper = sess.getMapper(ReportMapper.class);

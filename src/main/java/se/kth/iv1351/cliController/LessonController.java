@@ -22,6 +22,10 @@ public class LessonController implements Controller {
 
     }
 
+    public void update(String id) {
+
+    }
+
     public Object get(String id) {
         SqlSession sess = this.sqlSessionFactory.openSession();
         LessonMapper mapper = sess.getMapper(LessonMapper.class);
