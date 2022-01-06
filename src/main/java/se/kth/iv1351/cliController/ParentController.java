@@ -16,6 +16,9 @@ public class ParentController implements Controller {
     }
 
     public void delete(String id) {
+        SqlSession sess = this.sqlSessionFactory.openSession();
+        ParentMapper mapper = sess.getMapper(ParentMapper.class);
+        mapper.deleteParent(Integer.parseInt(id));
 
     }
 

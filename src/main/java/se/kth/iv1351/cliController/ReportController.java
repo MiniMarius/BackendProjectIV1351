@@ -16,7 +16,6 @@ public class ReportController implements Controller {
     }
 
     public void delete(String id) {
-
     }
 
     public Object get(String id) {

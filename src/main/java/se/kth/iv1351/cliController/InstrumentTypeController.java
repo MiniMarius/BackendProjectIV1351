@@ -16,7 +16,9 @@ public class InstrumentTypeController implements Controller {
     }
 
     public void delete(String id) {
-
+        SqlSession sess = this.sqlSessionFactory.openSession();
+        InstrumentTypeMapper mapper = sess.getMapper(InstrumentTypeMapper.class);
+        mapper.deleteInstrumentType(Integer.parseInt(id));
     }
 
     public Object get(String id) {

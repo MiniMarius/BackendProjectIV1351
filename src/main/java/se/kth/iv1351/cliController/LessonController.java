@@ -16,6 +16,9 @@ public class LessonController implements Controller {
     }
 
     public void delete(String id) {
+        SqlSession sess = this.sqlSessionFactory.openSession();
+        LessonMapper mapper = sess.getMapper(LessonMapper.class);
+        mapper.deleteLesson(Integer.parseInt(id));
 
     }
 

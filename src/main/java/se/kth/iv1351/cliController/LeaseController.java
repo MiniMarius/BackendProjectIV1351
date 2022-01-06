@@ -16,7 +16,9 @@ public class LeaseController implements Controller {
     }
 
     public void delete(String id) {
-
+        SqlSession sess = this.sqlSessionFactory.openSession();
+        LeaseMapper mapper = sess.getMapper(LeaseMapper.class);
+        mapper.deleteLease(Integer.parseInt(id));
     }
 
     public Object get(String id) {

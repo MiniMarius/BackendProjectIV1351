@@ -16,7 +16,9 @@ public class UserPaymentController implements Controller {
     }
 
     public void delete(String id) {
-
+        SqlSession sess = this.sqlSessionFactory.openSession();
+        UserPaymentMapper mapper = sess.getMapper(UserPaymentMapper.class);
+        mapper.deleteUserPayment(Integer.parseInt(id));
     }
 
     public Object get(String id) {

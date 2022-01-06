@@ -16,7 +16,9 @@ public class UserApplicationController implements Controller {
     }
 
     public void delete(String id) {
-
+        SqlSession sess = this.sqlSessionFactory.openSession();
+        UserApplicationMapper mapper = sess.getMapper(UserApplicationMapper.class);
+        mapper.deleteUserApplication(Integer.parseInt(id));
     }
 
     public Object get(String id) {

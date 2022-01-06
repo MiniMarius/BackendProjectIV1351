@@ -17,7 +17,9 @@ public class BookingController implements Controller {
     }
 
     public void delete(String id) {
-
+        SqlSession sess = this.sqlSessionFactory.openSession();
+        BookingMapper mapper = sess.getMapper(BookingMapper.class);
+        mapper.deleteBooking(Integer.parseInt(id));
     }
 
     public Object get(String id) {

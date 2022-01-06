@@ -16,7 +16,9 @@ public class RentalInstrumentController implements Controller {
     }
 
     public void delete(String id) {
-
+        SqlSession sess = this.sqlSessionFactory.openSession();
+        RentalInstrumentMapper mapper = sess.getMapper(RentalInstrumentMapper.class);
+        mapper.deleteRentalInstrument(Integer.parseInt(id));
     }
 
     public Object get(String id) {

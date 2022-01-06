@@ -23,15 +23,14 @@ public class UserController implements Controller {
         return usermapper.selectUser(Integer.parseInt(userid));
     }
 
-    public void create(String param) {
-
-    }
-
     public void insert(String id) {
-
+        SqlSession sess = this.sqlSessionFactory.openSession();
+        UserMapper usermapper = sess.getMapper(UserMapper.class);
     }
 
     public void delete(String param) {
-
+        SqlSession sess = this.sqlSessionFactory.openSession();
+        UserMapper usermapper = sess.getMapper(UserMapper.class);
+        usermapper.deleteUser(Integer.parseInt(param));
     }
 }
