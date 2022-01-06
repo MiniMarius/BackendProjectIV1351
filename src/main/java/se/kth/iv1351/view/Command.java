@@ -5,27 +5,35 @@ package se.kth.iv1351.view;
  */
 public enum Command {
     /**
-     * Creates a new account.
+     * Creates a new object
      */
     NEW,
     /**
-     * Lists all existing accounts.
+     * Choose type to select
+     */
+    TYPE,
+    /**
+     * list specific object
+     */
+    LISTONE,
+    /**
+     * Lists all existing objects.
      */
     LIST,
     /**
-     * Deletes the specified account.
+     * Deletes the specified object.
      */
     DELETE,
     /**
-     * Deposits the specified amount to the specified account
+     * Deposits the specified amount to the specified object
      */
     DEPOSIT,
     /**
-     * Withdraws the specified amount from the specified account
+     * Withdraws the specified amount from the specified object
      */
     WITHDRAW,
     /**
-     * Lists the balance of the specified account.
+     * Lists the balance of the specified object.
      */
     BALANCE,
     /**
@@ -36,6 +44,16 @@ public enum Command {
      * Leave the chat application.
      */
     QUIT,
+    LEASE,
+    LESSON,
+    PARENT,
+    RENTALINSTRUMENT,
+    REPORT,
+    SIBLING,
+    USERAPPLICATION,
+    USERINSTRUMENT,
+    USER,
+    USERPAYMENT,
     /**
      * None of the valid commands above was specified.
      */

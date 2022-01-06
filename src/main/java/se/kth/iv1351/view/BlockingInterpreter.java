@@ -1,28 +1,23 @@
 package se.kth.iv1351.view;
 
-import lombok.AllArgsConstructor;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
-import se.kth.iv1351.cliController.UserController;
+import org.apache.ibatis.session.SqlSessionFactory;
+import se.kth.iv1351.cliController.*;
 import se.kth.iv1351.model.UserData;
+import se.kth.iv1351.openapi.model.User;
 
 import java.util.List;
 import java.util.Scanner;
-@Service
+
 public class BlockingInterpreter {
     private static final String PROMPT = "> ";
     private final Scanner console = new Scanner(System.in);
     private boolean keepReceivingCmds = false;
+    SqlSessionFactory sqlSessionFactory;
 
-    private UserController userController;
+    private Controller ctrl;
 
-    public BlockingInterpreter() {
-        
-    }
-
-    public BlockingInterpreter(UserController userController) {
-        this.userController = userController;
+    public BlockingInterpreter(SqlSessionFactory sqlSessionFactory) {
+        this.sqlSessionFactory = sqlSessionFactory;
     }
 
     /**
@@ -49,35 +44,38 @@ public class BlockingInterpreter {
             try {
                 CmdLine cmdLine = new CmdLine(readNextLine());
                 switch (cmdLine.getCmd()) {
-                    case HELP:
-                        for (Command command : Command.values()) {
-                            if (command == Command.ILLEGAL_COMMAND) {
-                                continue;
-                            }
-                            System.out.println(command.toString().toLowerCase());
-                        }
+                    case USER:
+                        ctrl = new UserController(sqlSessionFactory);
                         break;
-                    case QUIT:
-                        keepReceivingCmds = false;
-                        break;
-                    case NEW:
-                        userController.createUser(cmdLine.getParameter(0));
-                        break;
-                    case DELETE:
-                        userController.deleteUser(cmdLine.getParameter(0));
-                        break;
-                    case LIST:
-                        List<UserData> users = null;
-                        users = userController.getAllUsers();
-                        for (UserData user : users) {
-                            System.out.println("id: " + user.getId() + ", "
-                                    + "name: " + user.getName() + ", "
-                                    + "role: " + user.getRole());
-                        }
-                        break;
-                    default:
-                        System.out.println("illegal command");
+                    case LEASE:
+                        ctrl = new LeaseController(sqlSessionFactory);
                 }
+
+                    switch (cmdLine.getCmd()) {
+                        case HELP:
+                            for (Command command : Command.values()) {
+                                if (command == Command.ILLEGAL_COMMAND) {
+                                    continue;
+                                }
+                                System.out.println(command.toString().toLowerCase());
+                            }
+                            break;
+                        case QUIT:
+                            keepReceivingCmds = false;
+                            break;
+                        case NEW:
+                            ctrl.insert(cmdLine.getParameter(0));
+                            break;
+                        case DELETE:
+                            ctrl.delete(cmdLine.getParameter(0));
+                            break;
+                        case LISTONE:
+                            Object object = ctrl.get(cmdLine.getParameter(0));
+                            System.out.println(object);
+                            break;
+                        default:
+                            System.out.println("illegal command");
+                    }
             } catch (Exception e) {
                 System.out.println("Operation failed");
                 System.out.println(e.getMessage());

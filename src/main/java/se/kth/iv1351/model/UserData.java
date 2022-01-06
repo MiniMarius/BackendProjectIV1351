@@ -22,4 +22,18 @@ public class UserData {
     private String phoneNumber;
 
     private String role;
+
+    @Override
+    public String toString() {
+        return "UserData{" +
+                "id=" + id +
+                ", personNumber='" + personNumber + '\'' +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", address='" + address + '\'' +
+                ", email='" + email + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", role='" + role + '\'' +
+                '}';
+    }
 }

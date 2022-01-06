@@ -16,7 +16,7 @@ import java.util.Optional;
  * A delegate to be called by the {@link UserinstrumentApiController}}.
  * Implement this interface with a {@link org.springframework.stereotype.Service} annotated class.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-05T16:27:19.215204+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-06T10:18:36.432578+02:00[Europe/Mariehamn]")
 public interface UserinstrumentApiDelegate {
 
     default Optional<NativeWebRequest> getRequest() {

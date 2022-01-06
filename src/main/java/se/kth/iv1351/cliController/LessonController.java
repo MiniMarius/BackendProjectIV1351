@@ -1,4 +1,22 @@
 package se.kth.iv1351.cliController;
 
-public class LessonController {
+import org.apache.ibatis.session.SqlSessionFactory;
+
+public class LessonController implements Controller {
+    private SqlSessionFactory sqlSessionFactory;
+
+    public LessonController(SqlSessionFactory sqlSessionFactory) {
+    }
+
+    public void insert(String id) {
+
+    }
+
+    public void delete(String id) {
+
+    }
+
+    public Object get(String id) {
+        return null;
+    }
 }

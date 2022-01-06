@@ -15,6 +15,6 @@ public class CliAppMain {
         InputStream inputStream = Resources.getResourceAsStream(resource);
         SqlSessionFactory sqlSessionFactory =
                 new SqlSessionFactoryBuilder().build(inputStream);
-        new BlockingInterpreter(new UserController(sqlSessionFactory)).handleCmds();
+        new BlockingInterpreter(sqlSessionFactory).handleCmds();
     }
 }
