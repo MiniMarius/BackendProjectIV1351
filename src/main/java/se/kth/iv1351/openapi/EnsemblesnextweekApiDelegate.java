@@ -16,7 +16,7 @@ import java.util.Optional;
  * A delegate to be called by the {@link EnsemblesnextweekApiController}}.
  * Implement this interface with a {@link org.springframework.stereotype.Service} annotated class.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-06T11:23:22.276765+02:00[Europe/Mariehamn]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-01-06T11:50:22.869965+02:00[Europe/Mariehamn]")
 public interface EnsemblesnextweekApiDelegate {
 
     default Optional<NativeWebRequest> getRequest() {

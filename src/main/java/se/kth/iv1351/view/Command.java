@@ -44,15 +44,45 @@ public enum Command {
      * Leave the chat application.
      */
     QUIT,
+    /**
+     *
+     */
     LEASE,
+    /**
+     *
+     */
     LESSON,
+    /**
+     *
+     */
     PARENT,
+    /**
+     *
+     */
     RENTALINSTRUMENT,
+    /**
+     *
+     */
     REPORT,
+    /**
+     *
+     */
     SIBLING,
+    /**
+     *
+     */
     USERAPPLICATION,
+    /**
+     *
+     */
     USERINSTRUMENT,
+    /**
+     *
+     */
     USER,
+    /**
+     *
+     */
     USERPAYMENT,
     /**
      * None of the valid commands above was specified.
