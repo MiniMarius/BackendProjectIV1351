@@ -4,7 +4,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import se.kth.iv1351.dao.LessonMapper;
 
-public class LessonController implements Controller {
+public class LessonController  {
     private SqlSessionFactory sqlSessionFactory;
 
     public LessonController(SqlSessionFactory sqlSessionFactory) {

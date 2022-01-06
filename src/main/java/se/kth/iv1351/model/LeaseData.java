@@ -2,9 +2,11 @@ package se.kth.iv1351.model;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.AllArgsConstructor;
 
 @Getter
 @Setter
+@AllArgsConstructor
 public class LeaseData implements DataModel {
 
     private Integer id;

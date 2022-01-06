@@ -7,11 +7,11 @@
     <select id="selectUserApplication" parameterType="java.lang.Integer" resultType="se.kth.iv1351.model.UserApplicationData">
         SELECT * FROM APPLICATIONS WHERE id= #{applicationid};
     </select>
-    <insert id="insertUserApplication" parameterType="se.kth.iv1351.openapi.model.UserApplication">
+    <insert id="insertUserApplication" parameterType="se.kth.iv1351.model.UserApplicationData">
         INSERT INTO APPLICATIONS (id, letter, instrument_type_id, user_id)
         VALUES (#{id}, #{letter}, #{instrumentTypeId}, #{userId});
     </insert>
-    <update id="updateUserApplication" parameterType="se.kth.iv1351.openapi.model.UserApplication">
+    <update id="updateUserApplication" parameterType="se.kth.iv1351.model.UserApplicationData">
         UPDATE APPLICATIONS SET
         id = #{id},
         letter = #{letter},

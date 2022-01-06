@@ -1,11 +1,10 @@
 package se.kth.iv1351.view;
 
 import org.apache.ibatis.session.SqlSessionFactory;
-import se.kth.iv1351.cliController.*;
-import se.kth.iv1351.model.UserData;
-import se.kth.iv1351.openapi.model.User;
+import se.kth.iv1351.cliController.Controller;
+import se.kth.iv1351.cliController.LeaseController;
+import se.kth.iv1351.model.LeaseData;
 
-import java.util.List;
 import java.util.Scanner;
 
 public class BlockingInterpreter {
@@ -65,48 +64,26 @@ public class BlockingInterpreter {
                         Object object = ctrl.get(cmdLine.getParameter(0));
                         System.out.println(object);
                         break;
-                    case TYPE:
-                        System.out.println("Choose type to do operations on");
+                    case RENTAL:
+                        LeaseController leaseController = new LeaseController(sqlSessionFactory);
+                        System.out.println("list create delete rentals");
                         CmdLine nestedCmdLine = new CmdLine(readNextLine());
                         switch (nestedCmdLine.getCmd()) {
-                            case USER:
-                                System.out.println("user selected");
-                                ctrl = new UserController(sqlSessionFactory);
+                            case LIST:
+                                System.out.println("Listing rental instruments");
+                                System.out.println(leaseController.listRentalInstruments());
                                 break;
-                            case LEASE:
-                                System.out.println("lease selected");
-                                ctrl = new LeaseController(sqlSessionFactory);
-                            case LESSON:
+                            case CREATE:
+                                System.out.println("create a new rental");
+                                String instrumentId = nestedCmdLine.getParameter(0);
+                                String studentId = nestedCmdLine.getParameter(1);
+                                String startTime = nestedCmdLine.getParameter(2);
+                                String endTime = nestedCmdLine.getParameter(3);
+                                LeaseData createdLease = leaseController.create(studentId, instrumentId, startTime, endTime);
+                                System.out.println(createdLease);
+                                break;
+                            case DELETE:
                                 System.out.println("lesson selected");
-                                ctrl = new LessonController(sqlSessionFactory);
-                                break;
-                            case PARENT:
-                                System.out.println("parent selected");
-                                ctrl = new ParentController(sqlSessionFactory);
-                                break;
-                            case RENTALINSTRUMENT:
-                                System.out.println("rental instrument selected");
-                                ctrl = new RentalInstrumentController(sqlSessionFactory);
-                                break;
-                            case REPORT:
-                                System.out.println("report selected");
-                                ctrl = new ReportController(sqlSessionFactory);
-                                break;
-                            case SIBLING:
-                                System.out.println("sibling selected");
-                                ctrl = new SiblingController(sqlSessionFactory);
-                                break;
-                            case USERAPPLICATION:
-                                System.out.println("user application selected");
-                                ctrl = new UserApplicationController(sqlSessionFactory);
-                                break;
-                            case USERINSTRUMENT:
-                                System.out.println("user instrument selected");
-                                ctrl = new UserInstrumentController(sqlSessionFactory);
-                                break;
-                            case USERPAYMENT:
-                                System.out.println("user payment selected");
-                                ctrl = new UserPaymentController(sqlSessionFactory);
                                 break;
                         }
                         break;

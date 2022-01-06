@@ -4,7 +4,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import se.kth.iv1351.dao.ParentMapper;
 
-public class ParentController implements Controller {
+public class ParentController  {
     private SqlSessionFactory sqlSessionFactory;
 
     public ParentController(SqlSessionFactory sqlSessionFactory) {

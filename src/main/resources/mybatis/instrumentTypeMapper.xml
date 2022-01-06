@@ -7,11 +7,11 @@
     <select id="selectInstrumentType" parameterType="java.lang.Integer" resultType="se.kth.iv1351.model.InstrumentTypeData">
         SELECT * FROM INSTRUMENT_TYPES WHERE id= #{instrumentid};
     </select>
-    <insert id="insertInstrumentType" parameterType="se.kth.iv1351.openapi.model.InstrumentType">
+    <insert id="insertInstrumentType" parameterType="se.kth.iv1351.model.InstrumentTypeData">
         INSERT INTO INSTRUMENT_TYPES (id, type)
         VALUES (#{id}, #{type});
     </insert>
-    <update id="updateInstrumentType" parameterType="se.kth.iv1351.openapi.model.InstrumentType">
+    <update id="updateInstrumentType" parameterType="se.kth.iv1351.model.InstrumentTypeData">
         UPDATE INSTRUMENT_TYPES SET
         id = #{id},
         type = #{type}

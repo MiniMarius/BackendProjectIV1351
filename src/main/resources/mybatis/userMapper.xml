@@ -7,11 +7,11 @@
     <select id="selectUser" parameterType="java.lang.Integer" resultType="se.kth.iv1351.model.UserData">
         SELECT * FROM USERS WHERE id= #{userid};
     </select>
-    <insert id="insertUser" parameterType="se.kth.iv1351.openapi.model.User">
+    <insert id="insertUser" parameterType="se.kth.iv1351.model.UserData">
         INSERT INTO USERS (id, person_number, name, age, address, email, phone_number, role)
         VALUES (#{id}, #{personNumber}, #{name}, #{age}, #{address} , #{email}, #{phoneNumber}, #{role});
     </insert>
-    <update id="updateUser" parameterType="se.kth.iv1351.openapi.model.User">
+    <update id="updateUser" parameterType="se.kth.iv1351.model.UserData">
         UPDATE USERS SET
         id = #{id},
         person_number = #{personNumber},

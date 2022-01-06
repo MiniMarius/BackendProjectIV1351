@@ -5,7 +5,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import se.kth.iv1351.dao.BookingMapper;
 import se.kth.iv1351.dao.UserMapper;
 
-public class BookingController implements Controller {
+public class BookingController  {
     private SqlSessionFactory sqlSessionFactory;
 
     public BookingController(SqlSessionFactory sqlSessionFactory) {

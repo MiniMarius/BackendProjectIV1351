@@ -7,11 +7,11 @@
     <select id="selectLesson" parameterType="java.lang.Integer" resultType="se.kth.iv1351.model.LessonData">
         SELECT * FROM LESSONS WHERE id= #{lessonid};
     </select>
-    <insert id="insertLesson" parameterType="se.kth.iv1351.openapi.model.Lesson">
+    <insert id="insertLesson" parameterType="se.kth.iv1351.model.LessonData">
         INSERT INTO LESSONS (id, name, description, min_participants, max_participants, type, genre)
         VALUES (#{id}, #{name}, #{description}, #{minParticipants}, #{maxParticipants}, #{type}, #{genre});
     </insert>
-    <update id="updateLesson" parameterType="se.kth.iv1351.openapi.model.Lesson">
+    <update id="updateLesson" parameterType="se.kth.iv1351.model.LessonData">
         UPDATE LESSONS SET
         id = #{id},
         name = #{name},

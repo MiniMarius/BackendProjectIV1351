@@ -7,11 +7,11 @@
     <select id="selectRentalInstrument" parameterType="java.lang.Integer" resultType="se.kth.iv1351.model.RentalInstrumentData">
         SELECT * FROM RENTAL_INSTRUMENTS WHERE id= #{rentalid};
     </select>
-    <insert id="insertRentalInstrument" parameterType="se.kth.iv1351.openapi.model.RentalInstrument">
+    <insert id="insertRentalInstrument" parameterType="se.kth.iv1351.model.RentalInstrumentData">
         INSERT INTO RENTAL_INSTRUMENTS (id, description, serial_number, instrument_type_id)
         VALUES (#{id}, #{description}, #{serialNumber}, #{instrumentTypeId});
     </insert>
-    <update id="updateRentalInstrument" parameterType="se.kth.iv1351.openapi.model.RentalInstrument">
+    <update id="updateRentalInstrument" parameterType="se.kth.iv1351.model.RentalInstrumentData">
         UPDATE RENTAL_INSTRUMENTS SET
         id = #{id},
         description = #{description},

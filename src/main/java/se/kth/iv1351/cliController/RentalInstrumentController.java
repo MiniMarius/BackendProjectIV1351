@@ -4,7 +4,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import se.kth.iv1351.dao.RentalInstrumentMapper;
 
-public class RentalInstrumentController implements Controller {
+public class RentalInstrumentController  {
     private SqlSessionFactory sqlSessionFactory;
 
     public RentalInstrumentController(SqlSessionFactory sqlSessionFactory) {

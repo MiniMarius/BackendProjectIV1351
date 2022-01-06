@@ -4,7 +4,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import se.kth.iv1351.dao.InstrumentTypeMapper;
 
-public class InstrumentTypeController implements Controller {
+public class InstrumentTypeController  {
     private SqlSessionFactory sqlSessionFactory;
 
     public InstrumentTypeController(SqlSessionFactory sqlSessionFactory) {

@@ -1,3 +1,3 @@
 #!/bin/bash
 
-mvn spring-boot:run
+mvn clean compile exec:java -Dexec.mainClass="se.kth.iv1351.CliAppMain"

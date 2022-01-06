@@ -4,7 +4,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import se.kth.iv1351.dao.ReportMapper;
 
-public class ReportController implements Controller {
+public class ReportController  {
     private SqlSessionFactory sqlSessionFactory;
 
     public ReportController(SqlSessionFactory sqlSessionFactory) {

@@ -1,14 +1,9 @@
 package se.kth.iv1351.cliController;
 
-import lombok.AllArgsConstructor;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
-import org.springframework.stereotype.Service;
 import se.kth.iv1351.dao.UserMapper;
 import se.kth.iv1351.model.UserData;
-import se.kth.iv1351.openapi.model.User;
-
-import java.util.List;
 
 public class UserController implements Controller {
 

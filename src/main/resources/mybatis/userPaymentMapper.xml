@@ -7,11 +7,11 @@
     <select id="selectUserPayment" parameterType="java.lang.Integer" resultType="se.kth.iv1351.model.UserPaymentData">
         SELECT * FROM USER_PAYMENTS WHERE id= #{paymentid};
     </select>
-    <insert id="insertUserPayment" parameterType="se.kth.iv1351.openapi.model.UserPayment">
+    <insert id="insertUserPayment" parameterType="se.kth.iv1351.model.UserPaymentData">
         INSERT INTO USER_PAYMENTS (id, type, amount, currency, user_id)
         VALUES (#{id}, #{type}, #{amount}, #{currency}, #{userid});
     </insert>
-    <update id="updateUserPayment" parameterType="se.kth.iv1351.openapi.model.UserPayment">
+    <update id="updateUserPayment" parameterType="se.kth.iv1351.model.UserPaymentData">
         UPDATE USER_PAYMENTS SET
         id = #{id},
         type = #{type},

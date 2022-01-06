@@ -7,11 +7,11 @@
     <select id="selectLease" parameterType="java.lang.Integer" resultType="se.kth.iv1351.model.LeaseData">
         SELECT * FROM LEASES WHERE id= #{leaseid};
     </select>
-    <insert id="insertLease" parameterType="se.kth.iv1351.openapi.model.Lease">
+    <insert id="insertLease" parameterType="se.kth.iv1351.model.LeaseData">
         INSERT INTO LEASES (id, start_time, end_time, rental_instrument_id, student_id)
         VALUES (#{id}, #{startTime}, #{endTime}, #{rentalInstrumentId}, #{studentId});
     </insert>
-    <update id="updateLease" parameterType="se.kth.iv1351.openapi.model.Lease">
+    <update id="updateLease" parameterType="se.kth.iv1351.model.LeaseData">
         UPDATE LEASES SET
         id = #{id},
         start_time = #{startTime},
