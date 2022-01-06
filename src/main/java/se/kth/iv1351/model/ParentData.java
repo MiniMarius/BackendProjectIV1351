@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class ParentData {
+public class ParentData implements DataModel {
 
     private Integer studentId;
 

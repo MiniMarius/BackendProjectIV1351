@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class UserInstrumentData {
+public class UserInstrumentData implements DataModel {
 
     private Integer userid;
 
