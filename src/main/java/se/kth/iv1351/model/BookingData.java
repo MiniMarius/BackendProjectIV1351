@@ -18,4 +18,16 @@ public class BookingData {
     private Integer studentId;
 
     private Integer instructorId;
+
+    @Override
+    public String toString() {
+        return "BookingData{" +
+                "id=" + id +
+                ", startTime='" + startTime + '\'' +
+                ", endTime='" + endTime + '\'' +
+                ", lessonId=" + lessonId +
+                ", studentId=" + studentId +
+                ", instructorId=" + instructorId +
+                '}';
+    }
 }

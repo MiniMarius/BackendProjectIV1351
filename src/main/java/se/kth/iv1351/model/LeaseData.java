@@ -16,4 +16,15 @@ public class LeaseData {
     private Integer rentalInstrumentId;
 
     private Integer studentId;
+
+    @Override
+    public String toString() {
+        return "LeaseData{" +
+                "id=" + id +
+                ", startTime='" + startTime + '\'' +
+                ", endTime='" + endTime + '\'' +
+                ", rentalInstrumentId=" + rentalInstrumentId +
+                ", studentId=" + studentId +
+                '}';
+    }
 }

@@ -16,4 +16,15 @@ public class UserPaymentData {
     private String currency;
 
     private Integer userid;
+
+    @Override
+    public String toString() {
+        return "UserPaymentData{" +
+                "id=" + id +
+                ", type='" + type + '\'' +
+                ", amount=" + amount +
+                ", currency='" + currency + '\'' +
+                ", userid=" + userid +
+                '}';
+    }
 }

@@ -22,4 +22,18 @@ public class LessonData {
     private String type;
 
     private String genre;
+
+    @Override
+    public String toString() {
+        return "LessonData{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", level='" + level + '\'' +
+                ", minParticipants=" + minParticipants +
+                ", maxParticipants=" + maxParticipants +
+                ", type='" + type + '\'' +
+                ", genre='" + genre + '\'' +
+                '}';
+    }
 }

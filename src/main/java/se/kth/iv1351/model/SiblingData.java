@@ -10,4 +10,12 @@ public class SiblingData {
     private Integer studentIdOne;
 
     private Integer studentIdTwo;
+
+    @Override
+    public String toString() {
+        return "SiblingData{" +
+                "studentIdOne=" + studentIdOne +
+                ", studentIdTwo=" + studentIdTwo +
+                '}';
+    }
 }

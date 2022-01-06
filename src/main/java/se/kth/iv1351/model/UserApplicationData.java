@@ -14,4 +14,14 @@ public class UserApplicationData {
     private Integer instrumentTypeId;
 
     private Integer userId;
+
+    @Override
+    public String toString() {
+        return "UserApplicationData{" +
+                "id=" + id +
+                ", letter='" + letter + '\'' +
+                ", instrumentTypeId=" + instrumentTypeId +
+                ", userId=" + userId +
+                '}';
+    }
 }

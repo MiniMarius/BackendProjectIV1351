@@ -14,4 +14,14 @@ public class RentalInstrumentData {
     private String serialNumber;
 
     private Integer instrumentTypeId;
+
+    @Override
+    public String toString() {
+        return "RentalInstrumentData{" +
+                "id=" + id +
+                ", description='" + description + '\'' +
+                ", serialNumber='" + serialNumber + '\'' +
+                ", instrumentTypeId=" + instrumentTypeId +
+                '}';
+    }
 }

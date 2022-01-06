@@ -49,8 +49,31 @@ public class BlockingInterpreter {
                         break;
                     case LEASE:
                         ctrl = new LeaseController(sqlSessionFactory);
+                    case LESSON:
+                        ctrl = new LessonController(sqlSessionFactory);
+                        break;
+                    case PARENT:
+                        ctrl = new ParentController(sqlSessionFactory);
+                        break;
+                    case RENTALINSTRUMENT:
+                        ctrl = new RentalInstrumentController(sqlSessionFactory);
+                        break;
+                    case REPORT:
+                        ctrl = new ReportController(sqlSessionFactory);
+                        break;
+                    case SIBLING:
+                        ctrl = new SiblingController(sqlSessionFactory);
+                        break;
+                    case USERAPPLICATION:
+                        ctrl = new UserApplicationController(sqlSessionFactory);
+                        break;
+                    case USERINSTRUMENT:
+                        ctrl = new UserInstrumentController(sqlSessionFactory);
+                        break;
+                    case USERPAYMENT:
+                        ctrl = new UserPaymentController(sqlSessionFactory);
+                        break;
                 }
-
                     switch (cmdLine.getCmd()) {
                         case HELP:
                             for (Command command : Command.values()) {

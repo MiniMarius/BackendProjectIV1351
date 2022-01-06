@@ -10,4 +10,12 @@ public class UserInstrumentData {
     private Integer userid;
 
     private Integer instrumentTypeId;
+
+    @Override
+    public String toString() {
+        return "UserInstrumentData{" +
+                "userid=" + userid +
+                ", instrumentTypeId=" + instrumentTypeId +
+                '}';
+    }
 }

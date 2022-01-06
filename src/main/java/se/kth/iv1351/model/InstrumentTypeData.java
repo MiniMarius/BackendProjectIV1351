@@ -10,4 +10,12 @@ public class InstrumentTypeData {
     private Integer id;
 
     private String type;
+
+    @Override
+    public String toString() {
+        return "InstrumentTypeData{" +
+                "id=" + id +
+                ", type='" + type + '\'' +
+                '}';
+    }
 }
