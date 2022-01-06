@@ -15,17 +15,8 @@
         </environment>
     </environments>
     <mappers>
-        <mapper resource="mybatis/bookingMapper.xml"/>
-        <mapper resource="mybatis/instrumentTypeMapper.xml"/>
         <mapper resource="mybatis/leaseMapper.xml"/>
-        <mapper resource="mybatis/lessonMapper.xml"/>
-        <mapper resource="mybatis/parentMapper.xml"/>
         <mapper resource="mybatis/rentalInstrumentMapper.xml"/>
         <mapper resource="mybatis/reportMapper.xml"/>
-        <mapper resource="mybatis/siblingMapper.xml"/>
-        <mapper resource="mybatis/userApplicationMapper.xml"/>
-        <mapper resource="mybatis/userInstrumentMapper.xml"/>
-        <mapper resource="mybatis/userMapper.xml"/>
-        <mapper resource="mybatis/userPaymentMapper.xml"/>
     </mappers>
 </configuration>

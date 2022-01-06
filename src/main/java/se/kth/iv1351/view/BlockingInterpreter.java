@@ -1,10 +1,12 @@
 package se.kth.iv1351.view;
 
 import org.apache.ibatis.session.SqlSessionFactory;
-import se.kth.iv1351.cliController.Controller;
 import se.kth.iv1351.cliController.LeaseController;
+import se.kth.iv1351.cliController.ReportController;
 import se.kth.iv1351.model.LeaseData;
+import se.kth.iv1351.model.ReportData;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class BlockingInterpreter {
@@ -12,8 +14,6 @@ public class BlockingInterpreter {
     private final Scanner console = new Scanner(System.in);
     private boolean keepReceivingCmds = false;
     SqlSessionFactory sqlSessionFactory;
-
-    private Controller ctrl;
 
     public BlockingInterpreter(SqlSessionFactory sqlSessionFactory) {
         this.sqlSessionFactory = sqlSessionFactory;
@@ -51,19 +51,13 @@ public class BlockingInterpreter {
                             System.out.println(command.toString().toLowerCase());
                         }
                         break;
-                    case QUIT:
-                        keepReceivingCmds = false;
+                    case REPORT:
+                        ReportController reportController = new ReportController(sqlSessionFactory);
+                        String reportStartTime = cmdLine.getParameter(0);
+                        List<ReportData> reportDataList = reportController.getReport(reportStartTime);
+                        System.out.println(reportDataList);
                         break;
-                    case NEW:
-                        ctrl.insert(cmdLine.getParameter(0));
-                        break;
-                    case DELETE:
-                        ctrl.delete(cmdLine.getParameter(0));
-                        break;
-                    case LISTONE:
-                        Object object = ctrl.get(cmdLine.getParameter(0));
-                        System.out.println(object);
-                        break;
+
                     case RENTAL:
                         LeaseController leaseController = new LeaseController(sqlSessionFactory);
                         System.out.println("list create delete rentals");

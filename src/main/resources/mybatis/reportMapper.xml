@@ -1,26 +1,37 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="se.kth.iv1351.dao.ReportMapper">
-    <select id="getEnsembleReport" resultType="se.kth.iv1351.model.LessonData">
+    <select id="getEnsembleReport" resultType="se.kth.iv1351.model.ReportData">
+        WITH ensembles_next_week AS
+        (
+            SELECT
+                LESSONS.ID AS lesson_id
+                , MAX(LESSONS.MAX_PARTICIPANTS) - COUNT(DISTINCT BOOKINGS.ID) seats_left
+            FROM
+                LESSONS
+            JOIN
+                BOOKINGS
+            ON LESSONS.ID = BOOKINGS.LESSON_ID
+            WHERE
+                LESSONS.TYPE = 'ensemble'
+            AND CAST(BOOKINGS.START_TIME AS DATE) BETWEEN CAST(#{start_date} AS DATE) AND CAST(#{start_date} AS DATE) + INTERVAL '7 DAY'
+            GROUP BY
+                1
+        )
         SELECT
-            LESSONS.ID
-            , LESSONS.GENRE
-            , CAST(BOOKINGS.START_TIME AS DATE)
-            , LESSONS.MAX_PARTICIPANTS - COUNT(DISTINCT BOOKINGS.ID) seats_left
+            ensembles_next_week.lesson_id
+            , LESSONS.GENRE as genre
+            , extract(dow from cast(bookings.start_time AS DATE)) AS weekday
+            , seats_left
         FROM
-            LESSONS
-        JOIN
-            BOOKINGS
-        ON LESSONS.ID = BOOKINGS.LESSON_ID
-        WHERE
-            LESSONS.TYPE = 'ensemble'
-        AND CAST(BOOKINGS.START_TIME AS DATE) BETWEEN CURRENT_DATE AND CURRENT_DATE + INTERVAL '7 DAY'
-        GROUP BY
-            LESSONS.ID
-            , LESSONS.GENRE
-            , CAST(BOOKINGS.START_TIME AS DATE)
+            ensembles_next_week
+        INNER JOIN
+            lessons
+        ON ensembles_next_week.lesson_id = lessons.id
+        INNER JOIN
+            bookings
+        ON bookings.lesson_id = lessons.id
         ORDER BY
-            LESSONS.GENRE
-            , CAST(BOOKINGS.START_TIME AS DATE);
+            3, 4
     </select>
 </mapper>

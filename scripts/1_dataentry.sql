@@ -99,10 +99,10 @@ INSERT INTO LESSONS (id, name, description, min_participants, max_participants, 
 VALUES (2, 'private lesson guitar', 'learn how to play first instrument', 1, 1, 'Individual lesson', null);
 
 INSERT INTO LESSONS (id, name, description, min_participants, max_participants, type, genre)
-VALUES (3, 'rock ensemble', 'Lets learn how to rock n roll', 5, 30, 'Ensemble', 'rock');
+VALUES (3, 'rock ensemble', 'Lets learn how to rock n roll', 5, 30, 'ensemble', 'rock');
 
 INSERT INTO LESSONS (id, name, description, min_participants, max_participants, type, genre)
-VALUES (4, 'beautiful sounds', 'Lets learn how to play harmonic music', 2, 15, 'Ensemble', 'soft');
+VALUES (4, 'beautiful sounds', 'Lets learn how to play harmonic music', 2, 15, 'ensemble', 'soft');
 
 INSERT INTO APPLICATIONS (id, letter, instrument_type_id, user_id)
 VALUES (1, 'Hello i want to play the guitar im very good', 1, 1);

@@ -7,7 +7,6 @@ import se.kth.iv1351.model.LeaseData;
 public interface LeaseMapper {
     LeaseData selectLease(Integer leaseid);
     void insertLease(LeaseData lease);
-    void deleteLease(Integer leaseid);
     void updateLease(LeaseData lease);
     LeaseData selectActiveLeaseStudent(Integer studentId);
 }
