@@ -1,6 +1,8 @@
 package se.kth.iv1351.cliController;
 
+import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
+import se.kth.iv1351.dao.SiblingMapper;
 
 public class SiblingController implements Controller {
     private SqlSessionFactory sqlSessionFactory;
@@ -17,6 +19,8 @@ public class SiblingController implements Controller {
     }
 
     public Object get(String id) {
-        return null;
+        SqlSession sess = this.sqlSessionFactory.openSession();
+        SiblingMapper mapper = sess.getMapper(SiblingMapper.class);
+        return mapper.selectSibling(Integer.parseInt(id));
     }
 }

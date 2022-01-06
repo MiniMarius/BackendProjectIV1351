@@ -1,6 +1,9 @@
 package se.kth.iv1351.cliController;
 
+import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
+import se.kth.iv1351.dao.BookingMapper;
+import se.kth.iv1351.dao.UserMapper;
 
 public class BookingController implements Controller {
     private SqlSessionFactory sqlSessionFactory;
@@ -17,6 +20,8 @@ public class BookingController implements Controller {
     }
 
     public Object get(String id) {
-        return null;
+        SqlSession sess = this.sqlSessionFactory.openSession();
+        BookingMapper mapper = sess.getMapper(BookingMapper.class);
+        return mapper.selectBooking(Integer.parseInt(id));
     }
 }

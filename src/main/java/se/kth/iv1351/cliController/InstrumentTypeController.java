@@ -1,6 +1,8 @@
 package se.kth.iv1351.cliController;
 
+import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
+import se.kth.iv1351.dao.InstrumentTypeMapper;
 
 public class InstrumentTypeController implements Controller {
     private SqlSessionFactory sqlSessionFactory;
@@ -17,6 +19,8 @@ public class InstrumentTypeController implements Controller {
     }
 
     public Object get(String id) {
-        return null;
+        SqlSession sess = this.sqlSessionFactory.openSession();
+        InstrumentTypeMapper mapper = sess.getMapper(InstrumentTypeMapper.class);
+        return mapper.selectInstrumentType(Integer.parseInt(id));
     }
 }

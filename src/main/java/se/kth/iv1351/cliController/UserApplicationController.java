@@ -1,6 +1,8 @@
 package se.kth.iv1351.cliController;
 
+import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
+import se.kth.iv1351.dao.UserApplicationMapper;
 
 public class UserApplicationController implements Controller {
     private SqlSessionFactory sqlSessionFactory;
@@ -17,6 +19,8 @@ public class UserApplicationController implements Controller {
     }
 
     public Object get(String id) {
-        return null;
+        SqlSession sess = this.sqlSessionFactory.openSession();
+        UserApplicationMapper mapper = sess.getMapper(UserApplicationMapper.class);
+        return mapper.selectUserApplication(Integer.parseInt(id));
     }
 }

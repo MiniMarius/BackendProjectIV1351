@@ -1,6 +1,8 @@
 package se.kth.iv1351.cliController;
 
+import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
+import se.kth.iv1351.dao.LeaseMapper;
 
 public class LeaseController implements Controller {
 
@@ -17,6 +19,8 @@ public class LeaseController implements Controller {
     }
 
     public Object get(String id) {
-        return null;
+        SqlSession sess = this.sqlSessionFactory.openSession();
+        LeaseMapper mapper = sess.getMapper(LeaseMapper.class);
+        return mapper.selectLease(Integer.parseInt(id));
     }
 }

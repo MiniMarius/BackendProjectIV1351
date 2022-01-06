@@ -1,6 +1,8 @@
 package se.kth.iv1351.cliController;
 
+import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
+import se.kth.iv1351.dao.LessonMapper;
 
 public class LessonController implements Controller {
     private SqlSessionFactory sqlSessionFactory;
@@ -17,6 +19,8 @@ public class LessonController implements Controller {
     }
 
     public Object get(String id) {
-        return null;
+        SqlSession sess = this.sqlSessionFactory.openSession();
+        LessonMapper mapper = sess.getMapper(LessonMapper.class);
+        return mapper.selectLesson(Integer.parseInt(id));
     }
 }
