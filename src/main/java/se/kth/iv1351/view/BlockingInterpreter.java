@@ -83,7 +83,10 @@ public class BlockingInterpreter {
                                 System.out.println(createdLease);
                                 break;
                             case DELETE:
-                                System.out.println("lesson selected");
+                                System.out.println("terminate a rental");
+                                String leaseId = nestedCmdLine.getParameter(0);
+                                LeaseData lease = leaseController.terminateLease(leaseId);
+                                System.out.println(lease);
                                 break;
                         }
                         break;

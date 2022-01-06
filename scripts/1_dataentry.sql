@@ -87,10 +87,10 @@ INSERT INTO RENTAL_INSTRUMENTS (id, description, serial_number, instrument_type_
 VALUES (6, 'sounds bad but looks good', '861251', 5);
 
 INSERT INTO LEASES (id, start_time, end_time, rental_instrument_id, student_id)
-VALUES (1, '01.01.2022', '01.06.2022', 2, 1);
+VALUES (1, '2021-01-01T00:00:00', '2021-01-01T00:00:00', 2, 1);
 
 INSERT INTO LEASES (id, start_time, end_time, rental_instrument_id, student_id)
-VALUES (2, '01.01.2022', '01.11.2022', 3, 2);
+VALUES (2, '2021-01-01T00:00:00', '2021-01-01T00:00:00', 3, 2);
 
 INSERT INTO LESSONS (id, name, description, min_participants, max_participants, type, genre)
 VALUES (1, 'group guitar', 'learn how to read notes', 5, 15, 'Group lesson', null);
@@ -99,10 +99,10 @@ INSERT INTO LESSONS (id, name, description, min_participants, max_participants, 
 VALUES (2, 'private lesson guitar', 'learn how to play first instrument', 1, 1, 'Individual lesson', null);
 
 INSERT INTO LESSONS (id, name, description, min_participants, max_participants, type, genre)
-VALUES (3, 'rock ensemble', 'Lets learn how to rock n roll', 5, 30, "Ensemble", 'rock');
+VALUES (3, 'rock ensemble', 'Lets learn how to rock n roll', 5, 30, 'Ensemble', 'rock');
 
 INSERT INTO LESSONS (id, name, description, min_participants, max_participants, type, genre)
-VALUES (4, 'beautiful sounds', 'Lets learn how to play harmonic music', 2, 15, 'Ensemble', "soft");
+VALUES (4, 'beautiful sounds', 'Lets learn how to play harmonic music', 2, 15, 'Ensemble', 'soft');
 
 INSERT INTO APPLICATIONS (id, letter, instrument_type_id, user_id)
 VALUES (1, 'Hello i want to play the guitar im very good', 1, 1);
