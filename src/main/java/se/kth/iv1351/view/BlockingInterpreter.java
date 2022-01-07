@@ -1,10 +1,10 @@
 package se.kth.iv1351.view;
 
 import org.apache.ibatis.session.SqlSessionFactory;
-import se.kth.iv1351.cliController.LeaseController;
-import se.kth.iv1351.cliController.ReportController;
-import se.kth.iv1351.model.LeaseData;
-import se.kth.iv1351.model.ReportData;
+import se.kth.iv1351.controller.LeaseController;
+import se.kth.iv1351.controller.ReportController;
+import se.kth.iv1351.model.Lease;
+import se.kth.iv1351.model.Report;
 
 import java.util.List;
 import java.util.Scanner;
@@ -54,7 +54,7 @@ public class BlockingInterpreter {
                     case REPORT:
                         ReportController reportController = new ReportController(sqlSessionFactory);
                         String reportStartTime = cmdLine.getParameter(0);
-                        List<ReportData> reportDataList = reportController.getReport(reportStartTime);
+                        List<Report> reportDataList = reportController.getReport(reportStartTime);
                         System.out.println(reportDataList);
                         break;
 
@@ -73,13 +73,13 @@ public class BlockingInterpreter {
                                 String studentId = nestedCmdLine.getParameter(1);
                                 String startTime = nestedCmdLine.getParameter(2);
                                 String endTime = nestedCmdLine.getParameter(3);
-                                LeaseData createdLease = leaseController.create(studentId, instrumentId, startTime, endTime);
+                                Lease createdLease = leaseController.create(studentId, instrumentId, startTime, endTime);
                                 System.out.println(createdLease);
                                 break;
                             case DELETE:
                                 System.out.println("terminate a rental");
                                 String leaseId = nestedCmdLine.getParameter(0);
-                                LeaseData lease = leaseController.terminateLease(leaseId);
+                                Lease lease = leaseController.terminateLease(leaseId);
                                 System.out.println(lease);
                                 break;
                         }

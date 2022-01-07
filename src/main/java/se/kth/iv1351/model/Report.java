@@ -7,7 +7,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public class ReportData {
+public class Report {
 
     private Integer lessonId;
 
@@ -19,7 +19,7 @@ public class ReportData {
 
     @Override
     public String toString() {
-        return "ReportData{" +
+        return "Report{" +
                 "lessonId=" + lessonId +
                 ", genre='" + genre + '\'' +
                 ", weekday='" + weekday + '\'' +

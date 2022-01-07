@@ -5,23 +5,23 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class RentalInstrumentData implements DataModel {
+public class UserApplication implements DataModel {
 
     private Integer id;
 
-    private String description;
-
-    private String serialNumber;
+    private String letter;
 
     private Integer instrumentTypeId;
 
+    private Integer userId;
+
     @Override
     public String toString() {
-        return "RentalInstrumentData{" +
+        return "UserApplication{" +
                 "id=" + id +
-                ", description='" + description + '\'' +
-                ", serialNumber='" + serialNumber + '\'' +
+                ", letter='" + letter + '\'' +
                 ", instrumentTypeId=" + instrumentTypeId +
+                ", userId=" + userId +
                 '}';
     }
 }

@@ -2,12 +2,10 @@ package se.kth.iv1351.model;
 
 import lombok.Getter;
 import lombok.Setter;
-import lombok.AllArgsConstructor;
 
 @Getter
 @Setter
-@AllArgsConstructor
-public class LeaseData implements DataModel {
+public class Booking implements DataModel {
 
     private Integer id;
 
@@ -15,18 +13,21 @@ public class LeaseData implements DataModel {
 
     private String endTime;
 
-    private Integer rentalInstrumentId;
+    private Integer lessonId;
 
     private Integer studentId;
 
+    private Integer instructorId;
+
     @Override
     public String toString() {
-        return "LeaseData{" +
+        return "Booking{" +
                 "id=" + id +
                 ", startTime='" + startTime + '\'' +
                 ", endTime='" + endTime + '\'' +
-                ", rentalInstrumentId=" + rentalInstrumentId +
+                ", lessonId=" + lessonId +
                 ", studentId=" + studentId +
+                ", instructorId=" + instructorId +
                 '}';
     }
 }

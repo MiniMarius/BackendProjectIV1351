@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class UserPaymentData implements DataModel {
+public class UserPayment implements DataModel {
 
     private Integer id;
 
@@ -19,7 +19,7 @@ public class UserPaymentData implements DataModel {
 
     @Override
     public String toString() {
-        return "UserPaymentData{" +
+        return "UserPayment{" +
                 "id=" + id +
                 ", type='" + type + '\'' +
                 ", amount=" + amount +

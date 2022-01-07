@@ -1,12 +1,12 @@
 package se.kth.iv1351.dao;
 
 import org.apache.ibatis.annotations.Mapper;
-import se.kth.iv1351.model.LeaseData;
+import se.kth.iv1351.model.Lease;
 
 @Mapper
 public interface LeaseMapper {
-    LeaseData selectLease(Integer leaseid);
-    void insertLease(LeaseData lease);
-    void updateLease(LeaseData lease);
-    LeaseData selectActiveLeaseStudent(Integer studentId);
+    Lease selectLease(Integer leaseid);
+    void insertLease(Lease lease);
+    void updateLease(Lease lease);
+    Lease selectActiveLeaseStudent(Integer studentId);
 }

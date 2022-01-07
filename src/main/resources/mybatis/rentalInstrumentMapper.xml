@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="se.kth.iv1351.dao.RentalInstrumentMapper">
-    <select id="selectAllRentalInstruments" resultType="se.kth.iv1351.model.RentalInstrumentData">
+    <select id="selectAllRentalInstruments" resultType="se.kth.iv1351.model.RentalInstrument">
         SELECT * FROM RENTAL_INSTRUMENTS
     </select>
-    <select id="selectRentalInstrument" parameterType="java.lang.Integer" resultType="se.kth.iv1351.model.RentalInstrumentData">
+    <select id="selectRentalInstrument" parameterType="java.lang.Integer" resultType="se.kth.iv1351.model.RentalInstrument">
         SELECT * FROM RENTAL_INSTRUMENTS WHERE id= #{rentalid};
     </select>
-    <insert id="insertRentalInstrument" parameterType="se.kth.iv1351.model.RentalInstrumentData">
+    <insert id="insertRentalInstrument" parameterType="se.kth.iv1351.model.RentalInstrument">
         INSERT INTO RENTAL_INSTRUMENTS (id, description, serial_number, instrument_type_id)
         VALUES (#{id}, #{description}, #{serialNumber}, #{instrumentTypeId});
     </insert>
-    <update id="updateRentalInstrument" parameterType="se.kth.iv1351.model.RentalInstrumentData">
+    <update id="updateRentalInstrument" parameterType="se.kth.iv1351.model.RentalInstrument">
         UPDATE RENTAL_INSTRUMENTS SET
         id = #{id},
         description = #{description},

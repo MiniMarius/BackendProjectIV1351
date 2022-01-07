@@ -1,11 +1,11 @@
-package se.kth.iv1351.cliController;
+package se.kth.iv1351.controller;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import se.kth.iv1351.dao.LeaseMapper;
 import se.kth.iv1351.dao.RentalInstrumentMapper;
-import se.kth.iv1351.model.LeaseData;
-import se.kth.iv1351.model.RentalInstrumentData;
+import se.kth.iv1351.model.Lease;
+import se.kth.iv1351.model.RentalInstrument;
 import se.kth.iv1351.util.IdGenerator;
 import se.kth.iv1351.util.TimestampGenerator;
 
@@ -19,19 +19,19 @@ public class LeaseController {
         this.sqlSessionFactory = sqlSessionFactory;
     }
 
-    public List<RentalInstrumentData> listRentalInstruments() {
+    public List<RentalInstrument> listRentalInstruments() {
         SqlSession sess = this.sqlSessionFactory.openSession();
         RentalInstrumentMapper mapper = sess.getMapper(RentalInstrumentMapper.class);
         return mapper.selectAllRentalInstruments();
     }
 
-    public LeaseData create(String studentId, String rentalInstrumentId, String startTime, String endTime) throws Exception {
+    public Lease create(String studentId, String rentalInstrumentId, String startTime, String endTime) throws Exception {
         Integer newId = IdGenerator.generate();
-        LeaseData lease = new LeaseData(newId, startTime, endTime, Integer.parseInt(rentalInstrumentId), Integer.parseInt(studentId));
+        Lease lease = new Lease(newId, startTime, endTime, Integer.parseInt(rentalInstrumentId), Integer.parseInt(studentId));
         SqlSession sess = sqlSessionFactory.openSession();
         LeaseMapper mapper = sess.getMapper(LeaseMapper.class);
         try {
-            LeaseData activeLease = mapper.selectActiveLeaseStudent(Integer.parseInt(studentId));
+            Lease activeLease = mapper.selectActiveLeaseStudent(Integer.parseInt(studentId));
             if (activeLease != null) {
                 throw new Exception(String.format("Student already has an active instrument rental %s", activeLease.getId()));
             }
@@ -44,19 +44,19 @@ public class LeaseController {
         return get(newId);
     }
 
-    public LeaseData terminateLease(String id) throws Exception {
+    public Lease terminateLease(String id) throws Exception {
         SqlSession sess = this.sqlSessionFactory.openSession();
         LeaseMapper mapper = sess.getMapper(LeaseMapper.class);
-        LeaseData lease = mapper.selectLease(Integer.parseInt(id));
+        Lease lease = mapper.selectLease(Integer.parseInt(id));
         String newEndTime = TimestampGenerator.generate();
         return update(lease.getId().toString(), lease.getStudentId().toString(), lease.getRentalInstrumentId().toString(), lease.getStartTime().toString(), newEndTime);
     }
 
-    public LeaseData update(String id, String studentId, String rentalInstrumentId, String startTime, String endTime) throws Exception {
+    public Lease update(String id, String studentId, String rentalInstrumentId, String startTime, String endTime) throws Exception {
         SqlSession sess = sqlSessionFactory.openSession();
         LeaseMapper mapper = sess.getMapper(LeaseMapper.class);
         try {
-            LeaseData lease = mapper.selectLease(Integer.parseInt(id));
+            Lease lease = mapper.selectLease(Integer.parseInt(id));
             lease.setStartTime(startTime);
             lease.setEndTime(endTime);
             lease.setStudentId(Integer.parseInt(studentId));
@@ -70,7 +70,7 @@ public class LeaseController {
         return get(Integer.parseInt(id));
     }
 
-    public LeaseData get(Integer id) {
+    public Lease get(Integer id) {
         SqlSession sess = this.sqlSessionFactory.openSession();
         LeaseMapper mapper = sess.getMapper(LeaseMapper.class);
         return mapper.selectLease(id);

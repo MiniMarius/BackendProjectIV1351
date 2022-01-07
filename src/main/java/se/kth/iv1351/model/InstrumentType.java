@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class InstrumentTypeData implements DataModel {
+public class InstrumentType implements DataModel {
 
     private Integer id;
 
@@ -13,7 +13,7 @@ public class InstrumentTypeData implements DataModel {
 
     @Override
     public String toString() {
-        return "InstrumentTypeData{" +
+        return "InstrumentType{" +
                 "id=" + id +
                 ", type='" + type + '\'' +
                 '}';

@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="se.kth.iv1351.dao.LeaseMapper">
-    <select id="selectAllLeases" resultType="se.kth.iv1351.model.LeaseData">
+    <select id="selectAllLeases" resultType="se.kth.iv1351.model.Lease">
         SELECT * FROM LEASES
     </select>
-    <select id="selectLease" parameterType="java.lang.Integer" resultType="se.kth.iv1351.model.LeaseData">
+    <select id="selectLease" parameterType="java.lang.Integer" resultType="se.kth.iv1351.model.Lease">
         SELECT * FROM LEASES WHERE id= #{leaseid};
     </select>
-    <select id="selectActiveLeaseStudent" parameterType="java.lang.Integer" resultType="se.kth.iv1351.model.LeaseData">
+    <select id="selectActiveLeaseStudent" parameterType="java.lang.Integer" resultType="se.kth.iv1351.model.Lease">
         SELECT * FROM LEASES WHERE student_id= #{studentId} AND cast(end_time as date) >= current_date;
     </select>
-    <insert id="insertLease" parameterType="se.kth.iv1351.model.LeaseData">
+    <insert id="insertLease" parameterType="se.kth.iv1351.model.Lease">
         INSERT INTO LEASES (id, start_time, end_time, rental_instrument_id, student_id)
         VALUES (#{id}, #{startTime}, #{endTime}, #{rentalInstrumentId}, #{studentId});
     </insert>
-    <update id="updateLease" parameterType="se.kth.iv1351.model.LeaseData">
+    <update id="updateLease" parameterType="se.kth.iv1351.model.Lease">
         UPDATE LEASES SET
         id = #{id},
         start_time = #{startTime},

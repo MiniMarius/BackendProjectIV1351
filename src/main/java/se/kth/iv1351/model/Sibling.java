@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class SiblingData implements DataModel {
+public class Sibling implements DataModel {
 
     private Integer studentIdOne;
 
@@ -13,7 +13,7 @@ public class SiblingData implements DataModel {
 
     @Override
     public String toString() {
-        return "SiblingData{" +
+        return "Sibling{" +
                 "studentIdOne=" + studentIdOne +
                 ", studentIdTwo=" + studentIdTwo +
                 '}';
