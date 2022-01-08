@@ -162,7 +162,7 @@ INSERT INTO BOOKINGS (id, start_time, end_time, lesson_id, student_id, instructo
 VALUES (3, '2022-01-06T13:00:00', '2022-01-06T16:00:00', 4, 3 , 7);
 
 INSERT INTO BOOKINGS (id, start_time, end_time, lesson_id, student_id, instructor_id)
-VALUES (4, '2022-01-06T16:00:00', '2020-01-06T19:00:00', 4, 4 , 7);
+VALUES (4, '2022-01-06T13:00:00', '2020-01-06T16:00:00', 4, 4 , 7);
 
 INSERT INTO BOOKINGS (id, start_time, end_time, lesson_id, student_id, instructor_id)
 VALUES (5, '2022-01-10T13:00:00', '2022-01-10T16:00:00', 4, 5 , 7);
