@@ -93,10 +93,10 @@ INSERT INTO LEASES (id, start_time, end_time, rental_instrument_id, student_id)
 VALUES (2, '2021-01-01T00:00:00', '2021-01-01T00:00:00', 3, 2);
 
 INSERT INTO LESSONS (id, name, description, min_participants, max_participants, type, genre)
-VALUES (1, 'group guitar', 'learn how to read notes', 5, 15, 'Group lesson', null);
+VALUES (1, 'Funny guitar lesson', 'learn how to read notes', 5, 15, 'group', null);
 
 INSERT INTO LESSONS (id, name, description, min_participants, max_participants, type, genre)
-VALUES (2, 'private lesson guitar', 'learn how to play first instrument', 1, 1, 'Individual lesson', null);
+VALUES (2, 'private lesson guitar', 'learn how to play first instrument', 1, 1, 'individual', null);
 
 INSERT INTO LESSONS (id, name, description, min_participants, max_participants, type, genre)
 VALUES (3, 'rock ensemble', 'Lets learn how to rock n roll', 5, 30, 'ensemble', 'rock');
@@ -168,13 +168,13 @@ INSERT INTO BOOKINGS (id, start_time, end_time, lesson_id, student_id, instructo
 VALUES (5, '2022-01-10T13:00:00', '2022-01-10T16:00:00', 4, 5 , 7);
 
 INSERT INTO BOOKINGS (id, start_time, end_time, lesson_id, student_id, instructor_id)
-VALUES (6, '2022-01-11T16:00:00', '2020-01-11T19:00:00', 4, 7 , 7);
+VALUES (6, '2022-01-11T16:00:00', '2020-01-11T19:00:00', 1, 7 , 7);
 
 INSERT INTO BOOKINGS (id, start_time, end_time, lesson_id, student_id, instructor_id)
 VALUES (7, '2022-02-06T16:00:00', '2020-02-06T19:00:00', 4, 4 , 7);
 
 INSERT INTO BOOKINGS (id, start_time, end_time, lesson_id, student_id, instructor_id)
-VALUES (8, '2022-04-10T13:00:00', '2022-04-10T16:00:00', 4, 5 , 7);
+VALUES (8, '2022-04-10T13:00:00', '2022-04-10T16:00:00', 1, 5 , 7);
 
 INSERT INTO BOOKINGS (id, start_time, end_time, lesson_id, student_id, instructor_id)
 VALUES (9, '2022-07-11T16:00:00', '2020-07-11T19:00:00', 4, 7 , 7);
