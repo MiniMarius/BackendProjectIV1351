@@ -4,34 +4,35 @@
     <select id="getEnsembleReport" resultType="se.kth.iv1351.model.Report">
         WITH ensembles_next_week AS
         (
-            SELECT
-                LESSONS.ID AS lesson_id
-                , MAX(LESSONS.MAX_PARTICIPANTS) - COUNT(DISTINCT BOOKINGS.ID) seats_left
-            FROM
-                LESSONS
-            JOIN
-                BOOKINGS
-            ON LESSONS.ID = BOOKINGS.LESSON_ID
-            WHERE
-                LESSONS.TYPE = 'ensemble'
-            AND CAST(BOOKINGS.START_TIME AS DATE) BETWEEN CAST(#{start_date} AS DATE) AND CAST(#{start_date} AS DATE) + INTERVAL '7 DAY'
-            GROUP BY
-                1
-        )
         SELECT
-            ensembles_next_week.lesson_id
-            , LESSONS.GENRE as genre
-            , extract(dow from cast(bookings.start_time AS DATE)) AS weekday
-            , seats_left
+        LESSONS.ID AS lesson_id
+        , extract(dow from cast(bookings.start_time AS DATE)) AS weekday
+        , MAX(LESSONS.MAX_PARTICIPANTS) - COUNT(DISTINCT BOOKINGS.ID) seats_left
         FROM
-            ensembles_next_week
+        LESSONS
+        JOIN
+        BOOKINGS
+        ON LESSONS.ID = BOOKINGS.LESSON_ID
+        WHERE
+        LESSONS.TYPE = 'ensemble'
+        AND CAST(BOOKINGS.START_TIME AS DATE) BETWEEN CAST(#{start_date} AS DATE) AND CAST(#{start_date} AS DATE) + INTERVAL '7 DAY'
+        GROUP BY
+        1, 2
+        )
+        SELECT DISTINCT
+        ensembles_next_week.lesson_id
+        , LESSONS.GENRE as genre
+        , ensembles_next_week.weekday
+        , seats_left
+        FROM
+        ensembles_next_week
         INNER JOIN
-            lessons
+        lessons
         ON ensembles_next_week.lesson_id = lessons.id
         INNER JOIN
-            bookings
+        bookings
         ON bookings.lesson_id = lessons.id
         ORDER BY
-            3, 4
+        3, 4;
     </select>
 </mapper>
