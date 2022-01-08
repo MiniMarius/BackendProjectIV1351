@@ -13,14 +13,23 @@ public class RentalInstrument implements DataModel {
 
     private String serialNumber;
 
+    private String brand;
+
     private Integer instrumentTypeId;
+
+    private Integer price;
+
+    private String currency;
 
     @Override
     public String toString() {
         return "RentalInstrument{" +
                 "id=" + id +
                 ", description='" + description + '\'' +
+                ", brand='" + brand + '\'' +
                 ", serialNumber='" + serialNumber + '\'' +
+                ", price='" + price + '\'' +
+                ", currency='" + currency + '\'' +
                 ", instrumentTypeId=" + instrumentTypeId +
                 '}';
     }

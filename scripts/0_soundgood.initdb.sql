@@ -70,7 +70,9 @@ CREATE TABLE rental_instruments (
  description VARCHAR(2000),
  serial_number VARCHAR(500),
  brand VARCHAR(500),
- instrument_type_id INT
+ instrument_type_id INT,
+ price INT,
+ currency VARCHAR(500)
 );
 
 ALTER TABLE rental_instruments ADD CONSTRAINT PK_rental_instruments PRIMARY KEY (id);
@@ -84,7 +86,7 @@ CREATE TABLE lessons (
  min_participants INT,
  max_participants INT,
  type VARCHAR(500),
- genre VARCHAR(500),
+ genre VARCHAR(500)
 );
 
 ALTER TABLE lessons ADD CONSTRAINT PK_lessons PRIMARY KEY (id);
