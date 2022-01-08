@@ -33,7 +33,7 @@ ALTER TABLE applications ADD CONSTRAINT PK_applications PRIMARY KEY (id);
 CREATE TABLE user_payments (
  id INT NOT NULL,
  type VARCHAR(500),
- amount VARCHAR(500),
+ amount INT,
  currency VARCHAR(500),
  user_id INT
 );
@@ -69,6 +69,7 @@ CREATE TABLE rental_instruments (
  id INT NOT NULL,
  description VARCHAR(2000),
  serial_number VARCHAR(500),
+ brand VARCHAR(500),
  instrument_type_id INT
 );
 
@@ -79,11 +80,11 @@ CREATE TABLE lessons (
  id INT NOT NULL,
  name VARCHAR(500),
  description VARCHAR(2000),
- level VARCHAR(500),
+ skill_level VARCHAR(500),
  min_participants INT,
  max_participants INT,
  type VARCHAR(500),
- genre VARCHAR(500)
+ genre VARCHAR(500),
 );
 
 ALTER TABLE lessons ADD CONSTRAINT PK_lessons PRIMARY KEY (id);
