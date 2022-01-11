@@ -6,6 +6,11 @@ import java.util.Date;
 import java.util.TimeZone;
 
 public class TimestampGenerator {
+    /**
+     * Generates current timestamp, UTC timezone
+     *
+     * @return generated timestamp
+     */
     public static String generate() {
         TimeZone tz = TimeZone.getTimeZone("UTC");
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss"); // Quoted "Z" to indicate UTC, no timezone offset
